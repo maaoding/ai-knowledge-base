@@ -52,18 +52,19 @@ npm run deploy:check
 
 ## GitHub Pages
 
-云端发布配置暂时保持现状，未随本次内容改名调整。
+GitHub 仓库与公开站点统一使用 AI 综合知识库名称。
 
 Pages 设置：
 
 - Branch：`main`
 - Folder：`/`
-- Custom domain：`ai-drawing-guide.maaoding.icu`
+- Repository：`maaoding/ai-knowledge-base`
+- Custom domain：`ai-knowledge-base.maaoding.icu`
 
 DNS 记录应配置为：
 
 ```text
-ai-drawing-guide.maaoding.icu CNAME maaoding.github.io
+ai-knowledge-base.maaoding.icu CNAME maaoding.github.io
 ```
 
 DNS 生效后，在 GitHub Pages 设置中启用 HTTPS。

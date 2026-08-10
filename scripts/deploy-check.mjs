@@ -14,7 +14,7 @@ for (const file of required) {
 }
 
 const cname = (await readFile(join(root, 'CNAME'), 'utf8')).trim()
-if (cname !== 'ai-drawing-guide.maaoding.icu') {
+if (cname !== 'ai-knowledge-base.maaoding.icu') {
   throw new Error(`Unexpected CNAME: ${cname}`)
 }
 

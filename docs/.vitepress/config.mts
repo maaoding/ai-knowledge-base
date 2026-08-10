@@ -79,7 +79,7 @@ export default defineConfig({
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/maaoding/ai-drawing-guide' }
+      { icon: 'github', link: 'https://github.com/maaoding/ai-knowledge-base' }
     ],
     footer: {
       message: '面向公开发布的 AI 入门资料。请遵守模型、素材、数据与平台许可。',

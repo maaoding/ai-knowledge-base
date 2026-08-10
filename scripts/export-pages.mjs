@@ -8,7 +8,7 @@ const root = resolve(fileURLToPath(new URL('..', import.meta.url)))
 const docsDir = join(root, 'docs')
 const distDir = join(docsDir, '.vitepress', 'dist')
 const manifestPath = join(root, '.pages-manifest.json')
-const cname = 'ai-drawing-guide.maaoding.icu'
+const cname = 'ai-knowledge-base.maaoding.icu'
 const protectedRootEntries = new Set([
   '.git',
   '.gitignore',
@@ -96,7 +96,7 @@ const distEntries = await listDistEntries()
 await copyDistEntries(distEntries)
 
 await writeFile(join(root, '.nojekyll'), '')
-await writeFile(join(root, 'CNAME'), `${cname}\n`)
+await writeFile(join(root, 'CNAME'), cname)
 await writeFile(
   manifestPath,
   `${JSON.stringify(
