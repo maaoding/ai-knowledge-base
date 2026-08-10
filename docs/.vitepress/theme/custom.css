@@ -1,0 +1,39 @@
+.VPHero .image-bg {
+  background-image: none !important;
+  filter: none !important;
+}
+
+.VPHero .image-src {
+  border-radius: 10px;
+  width: min(88vw, 320px);
+  height: auto;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+@media (min-width: 640px) {
+  .VPHero .image-src {
+    width: min(68vw, 380px);
+  }
+}
+
+@media (min-width: 960px) {
+  .VPHero .text {
+    font-size: 52px;
+    line-height: 60px;
+  }
+
+  .VPHero .tagline {
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .VPHero .image-container {
+    transform: translate(-8px, -24px) !important;
+  }
+
+  .VPHero .image-src {
+    width: min(38vw, 460px);
+  }
+}

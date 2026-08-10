@@ -2,7 +2,39 @@
 
 一句话：优先看官方文档、官方示例和长期维护资料；社区教程只作补充，遇到版本差异以官方为准。
 
-## 先看什么
+## LLM 理论与实践
+
+### Google LLM 入门课程
+
+地址：[https://developers.google.com/machine-learning/crash-course/llm](https://developers.google.com/machine-learning/crash-course/llm)
+
+用途：
+
+- 从 Token、上下文和 Transformer 开始理解大语言模型。
+- 适合读完本站 [AI 基础概念](/ai/basics) 后继续学习。
+- 官方课程会持续更新，概念和示例以当前页面为准。
+
+### Hugging Face LLM Course
+
+地址：[https://huggingface.co/learn/llm-course/en/chapter1/1](https://huggingface.co/learn/llm-course/en/chapter1/1)
+
+用途：
+
+- 系统学习 Transformer、Tokenizer、推理、微调和模型使用。
+- 配合 Hugging Face 模型、数据集和代码示例进行实践。
+- 课程以英文和 Python 为主，适合已经理解 [大模型入门](/llm/basics) 的读者。
+
+### Hugging Face Agents Course
+
+地址：[https://huggingface.co/learn/agents-course/en/unit0/introduction](https://huggingface.co/learn/agents-course/en/unit0/introduction)
+
+用途：
+
+- 学习 Agent、工具调用、Agentic RAG 和评估。
+- 配合本站 [RAG 与 Agent](/llm/rag-agent) 理解实践流程。
+- 框架和课程依赖变化较快，运行代码前确认当前单元版本。
+
+## AI 绘画先看什么
 
 如果刚开始学 AI 绘画，建议按这个顺序看：
 
@@ -132,7 +164,7 @@
 
 ## 中文补充
 
-### ComfyUI Wiki 中文基础教程
+### ComfyUI Wiki 中文基础教程（社区资料）
 
 地址：[https://comfyui-wiki.com/zh/tutorial/basic](https://comfyui-wiki.com/zh/tutorial/basic)
 

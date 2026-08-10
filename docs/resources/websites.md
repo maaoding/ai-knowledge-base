@@ -1,6 +1,38 @@
 # 常用网站
 
-一句话：常用网站主要分为模型下载、官方文档、工作流教程、图片后期和社区讨论几类。
+一句话：先用官方文档确认概念、版本和许可，再用研究平台与社区资料补充案例。任何外部资源都可能更新，遇到冲突时以项目当前官方说明为准。
+
+## AI 与 LLM 官方学习
+
+### Google Machine Learning
+
+地址：[https://developers.google.com/machine-learning](https://developers.google.com/machine-learning)
+
+用途：
+
+- 学习机器学习基础、数据、模型和大语言模型概念。
+- 通过短课程建立从 Token 到 Transformer 的基础认识。
+- 适合在阅读框架文档前补齐通用概念。
+
+### Hugging Face LLM Course
+
+地址：[https://huggingface.co/learn/llm-course/en/chapter1/1](https://huggingface.co/learn/llm-course/en/chapter1/1)
+
+用途：
+
+- 系统学习 Transformer、Tokenizer、推理和微调。
+- 配合 Hugging Face 模型与数据生态进行实践。
+- 课程以英文和代码为主，适合掌握本站基础概念后继续学习。
+
+### Hugging Face Agents Course
+
+地址：[https://huggingface.co/learn/agents-course/en/unit0/introduction](https://huggingface.co/learn/agents-course/en/unit0/introduction)
+
+用途：
+
+- 学习 Agent、Tool Use、Function Calling 和 Agentic RAG。
+- 了解常见框架和评估方式。
+- 内容更新较快，使用时注意课程单元和依赖版本。
 
 ## 模型与数据平台
 
@@ -10,11 +42,11 @@
 
 用途：
 
-- 下载开源模型。
-- 查看模型卡、许可证和文件结构。
-- 查找官方或研究机构发布的模型。
+- 查找模型、数据集、演示和官方文档。
+- 查看模型卡、许可证、文件结构和推荐用法。
+- 比较不同任务、框架和模型版本。
 
-注意：下载前看清许可证、所需文件和推荐工作流。
+下载或调用模型前先核对发布者、许可证、所需文件、量化格式和用途限制。
 
 ### Civitai
 
@@ -22,13 +54,46 @@
 
 用途：
 
-- 查找 checkpoint、LoRA、VAE、工作流和示例图。
-- 查看示例提示词和推荐参数。
-- 观察模型社区反馈。
+- 查找 AI 绘画 checkpoint、LoRA、VAE、工作流和示例图。
+- 查看示例 Prompt、推荐参数和社区反馈。
 
-注意：模型质量、许可证和内容分级差异很大，公开使用前要仔细核对。
+这是社区平台，模型质量、来源、许可证和内容分级差异很大，公开使用前要逐项核对。
 
-## 工具与官方文档
+## 论文与研究进展
+
+### arXiv
+
+地址：[https://arxiv.org](https://arxiv.org)
+
+用途：查找 AI、机器学习、自然语言处理和计算机视觉论文预印本。预印本不等于已经同行评审，结论需要结合正式论文、代码和后续研究判断。
+
+### Papers with Code
+
+地址：[https://paperswithcode.com](https://paperswithcode.com)
+
+用途：按任务查找论文、代码实现、数据集和公开结果。排行榜只能作为线索，不能代替对测试条件和复现结果的检查。
+
+## RAG、Agent 与本地模型
+
+### LangChain 文档
+
+地址：[https://docs.langchain.com](https://docs.langchain.com)
+
+用途：了解模型调用、工具、检索和 Agent 应用结构。框架 API 变化较快，示例代码必须对应当前文档版本。
+
+### LlamaIndex 文档
+
+地址：[https://docs.llamaindex.ai](https://docs.llamaindex.ai)
+
+用途：学习文档加载、索引、检索、RAG 和 Agent 数据流程。
+
+### Ollama
+
+地址：[https://ollama.com](https://ollama.com)
+
+用途：查看本地模型运行工具、支持模型和使用文档。下载模型前仍需阅读原始模型许可证和硬件要求。
+
+## AI 绘画工具与项目
 
 ### ComfyUI
 
@@ -36,36 +101,15 @@
 
 用途：
 
-- 本地节点式 AI 绘画工具。
-- 学习工作流和节点数据流。
-- 运行新模型和复杂图像编辑流程。
-
-### VitePress
-
-地址：[https://vitepress.dev](https://vitepress.dev)
-
-用途：
-
-- 搭建静态文档站。
-- 编写个人知识库、教程和项目文档。
-
-## 精选教程入口
-
-已整理到：[精选教程](/resources/tutorials)
-
-最推荐先看：
-
-- [ComfyUI 官方中文文档](https://docs.comfy.org/zh)：优先理解 ComfyUI 的基础界面、节点和官方教程入口。
-- [ComfyUI 官方示例工作流](https://comfyanonymous.github.io/ComfyUI_examples/)：对照示例学习不同任务的节点组合。
-- [Hugging Face Model Cards](https://huggingface.co/docs/hub/en/model-cards)：下载模型前先核对许可证、用途限制和推荐用法。
-
-## 模型机构与项目
+- 获取节点式 AI 绘画工具和发布说明。
+- 学习工作流、节点数据流和模型支持情况。
+- 排查自定义节点和核心版本兼容问题。
 
 ### Stability AI
 
 地址：[https://stability.ai](https://stability.ai)
 
-用途：了解 Stable Diffusion 相关模型与公告。
+用途：了解 Stable Diffusion 相关模型与项目公告。
 
 ### Black Forest Labs
 
@@ -73,24 +117,26 @@
 
 用途：了解 FLUX 系列模型与相关发布。
 
-## 中文学习入口
+## 文档建设
 
-中文教程更新很快，建议关注时注意发布时间和适用版本。
+### VitePress
 
-可以搜索：
+地址：[https://vitepress.dev](https://vitepress.dev)
 
-- ComfyUI 入门教程。
-- Stable Diffusion 基础概念。
-- LoRA 训练入门。
-- ControlNet 教程。
-- AI 绘画模型许可证。
+用途：搭建静态文档站、个人知识库和项目教程。
 
-建议优先选择会明确写出模型版本、节点版本、下载来源和参数设置的教程。
+## 精选教程入口
+
+完整清单见 [精选教程](/resources/tutorials)。最推荐先看：
+
+- [Google LLM 入门课程](https://developers.google.com/machine-learning/crash-course/llm)：建立大模型基础概念。
+- [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/en/chapter1/1)：继续学习 Transformer 与模型实践。
+- [ComfyUI 官方中文文档](https://docs.comfy.org/zh)：进入 AI 绘画工作流。
 
 ## 使用外部资源的原则
 
-- 优先看官方模型卡和官方文档。
-- 下载前确认许可证。
-- 不要把未知来源模型用于公开或商业项目。
-- 不要把别人的作品、角色或素材当作无风险训练素材。
-- 记录模型来源，方便以后复查。
+- 优先看官方文档、模型卡和官方示例，并检查更新时间。
+- 下载模型、数据或代码前确认发布者、许可证和用途限制。
+- 不把未知来源模型、数据、角色或素材直接用于公开或商业项目。
+- 记录来源、版本、访问日期和关键配置，保证以后可以复查。
+- 社区教程用于补充操作经验，涉及参数、下载和兼容性时回到官方资料核对。

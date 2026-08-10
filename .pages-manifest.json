@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-06-28T13:38:37.406Z",
+  "generatedAt": "2026-08-10T08:25:48.683Z",
   "source": "docs/.vitepress/dist",
   "entries": [
     "404.html",
+    "ai",
     "apple-touch-icon.png",
     "assets",
     "concepts",
@@ -11,7 +12,7 @@
     "guide",
     "hashmap.json",
     "index.html",
-    "logo.svg",
+    "llm",
     "lora",
     "models",
     "prompting",
