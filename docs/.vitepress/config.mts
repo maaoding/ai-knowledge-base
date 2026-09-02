@@ -6,6 +6,9 @@ export default defineConfig({
   description: '面向零基础用户的 AI 基础、LLM 理论、Prompt、工具与 AI 绘画知识库',
   cleanUrls: true,
   lastUpdated: true,
+  sitemap: {
+    hostname: 'https://ai-knowledge-base.maaoding.icu'
+  },
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }]
@@ -13,7 +16,26 @@ export default defineConfig({
   themeConfig: {
     logo: '/assets/logo.png',
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: '搜索文档',
+            buttonAriaLabel: '搜索文档'
+          },
+          modal: {
+            noResultsText: '未能找到相关结果',
+            resetButtonTitle: '清除查询条件',
+            displayDetails: '显示详细列表',
+            hideDetails: '隐藏详细列表',
+            footer: {
+              selectText: '选择',
+              navigateText: '切换',
+              closeText: '关闭'
+            }
+          }
+        }
+      }
     },
     nav: [
       { text: '入门', link: '/guide/getting-started' },
@@ -34,14 +56,18 @@ export default defineConfig({
       {
         text: 'AI 基础',
         items: [
-          { text: 'AI 基础概念', link: '/ai/basics' }
+          { text: 'AI 基础概念', link: '/ai/basics' },
+          { text: '机器学习入门', link: '/ai/machine-learning' },
+          { text: '神经网络直觉', link: '/ai/neural-networks' }
         ]
       },
       {
         text: 'LLM 理论',
         items: [
           { text: '大模型入门', link: '/llm/basics' },
+          { text: 'Tokenization 与 Embedding', link: '/llm/tokenization-embedding' },
           { text: 'Transformer 直觉', link: '/llm/transformer' },
+          { text: '推理与解码', link: '/llm/inference-decoding' },
           { text: '训练、微调与对齐', link: '/llm/training-alignment' },
           { text: 'RAG 与 Agent', link: '/llm/rag-agent' }
         ]
@@ -93,7 +119,21 @@ export default defineConfig({
       text: '最后更新'
     },
     outline: {
-      label: '本页目录'
-    }
+      label: '本页目录',
+      level: [2, 3]
+    },
+    notFound: {
+      theme: '404',
+      title: '页面不存在',
+      quote: '你访问的地址可能已更改或从未存在，从首页重新出发吧。',
+      linkText: '返回首页',
+      link: '/'
+    },
+    darkModeSwitchLabel: '外观',
+    lightModeSwitchTitle: '切换到浅色模式',
+    darkModeSwitchTitle: '切换到深色模式',
+    sidebarMenuLabel: '菜单',
+    returnToTopLabel: '回到顶部',
+    skipToContentLabel: '跳转到内容'
   }
 })

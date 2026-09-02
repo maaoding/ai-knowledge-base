@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T08:47:09.055Z",
+  "generatedAt": "2026-08-31T17:39:09.772Z",
   "source": "docs/.vitepress/dist",
   "entries": [
     "404.html",
@@ -17,6 +17,7 @@
     "models",
     "prompting",
     "resources",
+    "sitemap.xml",
     "tools",
     "vp-icons.css",
     "workflows"
