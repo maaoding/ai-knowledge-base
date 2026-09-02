@@ -29,9 +29,9 @@ VitePress 构建产物位于：
 docs/.vitepress/dist
 ```
 
-## 导出到 GitHub Pages 根目录
+## 本地导出与部署检查
 
-本仓库参考现有 GitHub Pages 项目，使用 `main` 分支根目录作为发布来源。
+如需在本地同步仓库根目录中的静态发布副本，可运行：
 
 ```powershell
 npm run docs:export
@@ -44,7 +44,7 @@ npm run docs:export
 - 写入 `.nojekyll` 和 `CNAME`。
 - 生成 `.pages-manifest.json`，用于下次导出时清理旧产物。
 
-部署前可运行：
+提交前可运行：
 
 ```powershell
 npm run deploy:check
@@ -54,10 +54,11 @@ npm run deploy:check
 
 GitHub 仓库与公开站点统一使用 AI 综合知识库名称。
 
+推送到 `main` 后，[Pages 工作流](.github/workflows/pages.yml)会在 Node.js 24 环境中安装依赖、构建 VitePress，并且只把 `docs/.vitepress/dist` 上传为站点产物。
+
 Pages 设置：
 
-- Branch：`main`
-- Folder：`/`
+- Build source：GitHub Actions
 - Repository：`maaoding/ai-knowledge-base`
 - Custom domain：`ai-knowledge-base.maaoding.icu`
 
