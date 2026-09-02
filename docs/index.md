@@ -1,5 +1,6 @@
 ---
 layout: home
+description: '面向零基础中文读者的 AI 综合知识库，按 AI 基础、LLM、Prompt、RAG、Agent、工具与 AI 绘画路线系统学习。'
 
 hero:
   name: AI 综合知识库

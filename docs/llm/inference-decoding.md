@@ -1,3 +1,7 @@
+---
+description: '解释大模型自回归生成、Logit、Temperature、Top-k、Top-p、上下文窗口、KV Cache 与推理成本。'
+---
+
 # 推理与解码
 
 > **一句话结论：** 自回归 LLM 每次根据已有上下文计算下一个 Token 的 Logit，再按解码策略选出 Token 并重复；采样参数改变的是选择方式，不会给模型增加知识或推理能力。

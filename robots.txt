@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ai-knowledge-base.maaoding.icu/sitemap.xml

@@ -1,3 +1,7 @@
+---
+description: '解释文本如何经过 Tokenizer 变成 Token ID 与向量，并区分 Token Embedding、语义 Embedding 和 Textual Inversion。'
+---
+
 # Tokenization 与 Embedding
 
 > **一句话结论：** Tokenizer 先把文本映射为 Vocabulary 中的 Token ID，模型再把 ID 查表变成向量；通用语义 Embedding 和 AI 绘画中的 Textual Inversion 是相关但不同的概念。

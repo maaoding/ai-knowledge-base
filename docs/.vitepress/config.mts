@@ -1,5 +1,16 @@
 import { defineConfig } from 'vitepress'
 
+const siteUrl = 'https://ai-knowledge-base.maaoding.icu'
+const siteName = 'AI 综合知识库'
+const socialImageUrl = `${siteUrl}/assets/home-hero.png`
+
+function canonicalUrlFor(relativePath: string) {
+  const normalizedPath = relativePath.replace(/\\/g, '/').replace(/\.md$/, '')
+  const route = normalizedPath === 'index' ? '' : normalizedPath.replace(/\/index$/, '')
+
+  return route ? `${siteUrl}/${route}` : `${siteUrl}/`
+}
+
 export default defineConfig({
   lang: 'zh-CN',
   title: 'AI 综合知识库',
@@ -7,7 +18,64 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   sitemap: {
-    hostname: 'https://ai-knowledge-base.maaoding.icu'
+    hostname: siteUrl
+  },
+  transformHead({ pageData, title, description }) {
+    if (pageData.isNotFound) return []
+
+    const canonicalUrl = canonicalUrlFor(pageData.relativePath)
+    const isHome = pageData.relativePath === 'index.md'
+    const structuredData = isHome
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          '@id': `${siteUrl}/#website`,
+          url: `${siteUrl}/`,
+          name: siteName,
+          description,
+          inLanguage: 'zh-CN'
+        }
+      : {
+          '@context': 'https://schema.org',
+          '@type': 'TechArticle',
+          '@id': `${canonicalUrl}#article`,
+          url: canonicalUrl,
+          headline: pageData.title,
+          description,
+          inLanguage: 'zh-CN',
+          mainEntityOfPage: canonicalUrl,
+          isPartOf: {
+            '@type': 'WebSite',
+            '@id': `${siteUrl}/#website`,
+            url: `${siteUrl}/`,
+            name: siteName
+          }
+        }
+
+    return [
+      ['link', { rel: 'canonical', href: canonicalUrl }],
+      ['meta', { property: 'og:type', content: isHome ? 'website' : 'article' }],
+      ['meta', { property: 'og:locale', content: 'zh_CN' }],
+      ['meta', { property: 'og:site_name', content: siteName }],
+      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:description', content: description }],
+      ['meta', { property: 'og:url', content: canonicalUrl }],
+      ['meta', { property: 'og:image', content: socialImageUrl }],
+      ['meta', { property: 'og:image:type', content: 'image/png' }],
+      ['meta', { property: 'og:image:width', content: '1200' }],
+      ['meta', { property: 'og:image:height', content: '760' }],
+      ['meta', { property: 'og:image:alt', content: 'AI 综合知识库主视觉' }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:description', content: description }],
+      ['meta', { name: 'twitter:image', content: socialImageUrl }],
+      ['meta', { name: 'twitter:image:alt', content: 'AI 综合知识库主视觉' }],
+      [
+        'script',
+        { type: 'application/ld+json' },
+        JSON.stringify(structuredData).replace(/</g, '\\u003c')
+      ]
+    ]
   },
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
