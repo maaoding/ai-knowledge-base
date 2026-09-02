@@ -159,11 +159,11 @@ RNN 必须按顺序逐个 Token 计算，后一步依赖前一步的结果，难
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[Tokenization 与 Embedding](/llm/tokenization-embedding)：先看文本如何变成向量，再看向量如何被注意力加工。
-- 下一篇：[推理与解码](/llm/inference-decoding)：理解模型如何逐 Token 生成内容，以及采样参数的真实作用。
-- 相关阅读：[大模型入门](/llm/basics)：把架构放回 LLM 的整体图景中。
+- **前置概念：** [Tokenization 与 Embedding](/llm/tokenization-embedding)说明文本如何变成向量。
+- **同主题：** [推理与解码](/llm/inference-decoding)解释模型如何逐 Token 生成内容以及采样参数的作用。
+- **跨主题：** [基本原理](/concepts/how-it-works)展示注意力机制在扩散模型中的相关用法。
 
 ## 官方或原始资料来源
 

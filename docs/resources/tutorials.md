@@ -191,10 +191,11 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[常用网站](/resources/websites)：先知道有哪些官方站点，再从本页挑怎么跟。
-- 下一篇：[术语表](/glossary)：跟教程遇到生词（checkpoint、CFG、触发词）随时回查。
+- **核对来源：** [常用网站](/resources/websites)汇总官方站点、模型平台与研究入口。
+- **选择工具：** [常用工具](/tools/common-tools)帮助判断教程使用的工具是否适合当前任务。
+- **随时查词：** [术语表](/glossary)解释 checkpoint、CFG、触发词等常见术语。
 
 ## 官方或原始资料来源
 

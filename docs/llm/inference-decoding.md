@@ -179,10 +179,11 @@ Top-k 固定最多保留 5 个高概率候选；Top-p 保留累计概率达到 0
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[Transformer 直觉](/llm/transformer)：先看 Attention 如何利用上下文，再看生成时如何逐 Token 选择。
-- 下一篇：[训练、微调与对齐](/llm/training-alignment)：推理时参数固定；训练阶段正是把这些参数调整出来的过程。
+- **前置概念：** [Transformer 直觉](/llm/transformer)说明 Attention 如何利用上下文。
+- **同主题：** [训练、微调与对齐](/llm/training-alignment)解释生成时固定的参数是怎样形成的。
+- **应用方向：** [Prompt 入门](/prompting/basics)区分任务说明与采样参数各自能改变什么。
 
 ## 官方或原始资料来源
 

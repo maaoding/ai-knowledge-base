@@ -159,13 +159,11 @@ seed 决定起点的那片初始噪声。扩散模型是从噪声里逐步“洗
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[AI 绘画由哪些部分组成](/concepts/components)：本页解释那些部件“为什么存在”，可对照阅读。
-- 下一篇：[常见模型生态](/models/ecosystems)：原理相通，不同底模生态的差异与选择。
-- 相关阅读：[Transformer 直觉](/llm/transformer)：交叉注意力机制的底层原理，与 LLM 同源。
-- 相关阅读：[神经网络直觉](/ai/neural-networks)：负责去噪的底模本身就是神经网络，可补底层直觉。
-- 相关阅读：[推理与解码](/llm/inference-decoding)：LLM 的“逐 Token 生成”与本页的“逐步去噪”可类比。
+- **前置概念：** [AI 绘画由哪些部分组成](/concepts/components)介绍参与去噪流程的主要部件。
+- **同主题：** [常见模型生态](/models/ecosystems)说明相同原理下不同底模生态怎样分化。
+- **跨主题：** [Transformer 直觉](/llm/transformer)补充交叉注意力与上下文表示的直觉。
 
 ## 官方或原始资料来源
 

@@ -198,10 +198,11 @@ Token Embedding 通常是语言模型内部每个 Token 的初始向量；通用
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[大模型入门](/llm/basics)：先知道 LLM 在预测什么，再看文本如何被切成 Token。
-- 下一篇：[Transformer 直觉](/llm/transformer)：看 Token 向量进入模型后如何结合上下文形成表示。
+- **前置概念：** [大模型入门](/llm/basics)说明 LLM 在预测什么，以及 Token 位于流程中的哪一步。
+- **同主题：** [Transformer 直觉](/llm/transformer)解释 Token 向量进入模型后怎样结合上下文形成表示。
+- **应用方向：** [RAG 与 Agent](/llm/rag-agent)展示语义 Embedding 在检索增强中的用途。
 
 ## 官方或原始资料来源
 

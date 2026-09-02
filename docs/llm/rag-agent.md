@@ -173,12 +173,11 @@ Function Calling 把模型不擅长的部分交给工具：查实时数据、运
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[训练、微调与对齐](/llm/training-alignment)：了解“微调 vs RAG”选择背后的训练原理。
-- 下一篇：[底模是什么](/concepts/base-model)：LLM 部分到此结束，下一篇进入 AI 绘画专题，说明底模在图像生成中的角色。
-- 相关阅读：[Prompt 入门](/prompting/basics)：学习任务、上下文、约束和工具参数的表达方式。
-- 相关阅读：[常用工具](/tools/common-tools)：比较 Web、API、本地模型、RAG 与 Agent 工具的适用场景。
+- **原理基础：** [训练、微调与对齐](/llm/training-alignment)帮助判断何时选择微调、RAG 或外部工具。
+- **同主题：** [Prompt 入门](/prompting/basics)说明任务、上下文、约束和工具参数该怎样表达。
+- **流程组织：** [工作流和模板区别](/workflows/workflow-vs-template)用于比较固定步骤与 Agent 动态决策。
 
 ## 官方或原始资料来源
 

@@ -169,12 +169,11 @@ LLM 的基本训练目标就是**预测下一个 Token（Next-Token Prediction�
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[神经网络直觉](/ai/neural-networks)：补齐“神经网络怎么从数据中学规律”的底层直觉。
-- 下一篇：[Tokenization 与 Embedding](/llm/tokenization-embedding)：展开“文本如何变成模型可处理的 ID 与向量”。
-- 相关阅读：[训练、微调与对齐](/llm/training-alignment)：想知道三个训练阶段的细节，从这里继续。
-- 相关阅读：[Prompt 入门](/prompting/basics)：把模型能力转化为可验证的任务说明。
+- **前置概念：** [AI 基础概念](/ai/basics)用于补齐模型、训练、参数和推理等基础词义。
+- **同主题：** [Tokenization 与 Embedding](/llm/tokenization-embedding)展开文本如何变成模型可处理的 ID 与向量。
+- **应用方向：** [Prompt 入门](/prompting/basics)把模型能力转化为可验证的任务说明。
 
 ## 官方或原始资料来源
 

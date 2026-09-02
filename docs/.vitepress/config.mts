@@ -106,19 +106,42 @@ export default defineConfig({
       }
     },
     nav: [
-      { text: '入门', link: '/guide/getting-started' },
-      { text: 'AI 基础', link: '/ai/basics' },
-      { text: 'LLM', link: '/llm/basics' },
-      { text: 'AI 绘画', link: '/concepts/base-model' },
-      { text: '工具', link: '/tools/common-tools' },
-      { text: '资源', link: '/resources/websites' }
+      {
+        text: '学习地图',
+        link: '/guide/getting-started',
+        activeMatch: '^/(?:$|guide/getting-started(?:$|/))'
+      },
+      { text: 'AI 基础', link: '/ai/basics', activeMatch: '^/ai/' },
+      {
+        text: '大模型',
+        link: '/llm/basics',
+        activeMatch:
+          '^/llm/(?:basics|tokenization-embedding|transformer|inference-decoding|training-alignment)(?:$|/)'
+      },
+      {
+        text: '应用实践',
+        link: '/prompting/basics',
+        activeMatch:
+          '^/(?:prompting/basics|llm/rag-agent|workflows/workflow-vs-template|tools/common-tools)(?:$|/)'
+      },
+      {
+        text: 'AI 绘画',
+        link: '/concepts/base-model',
+        activeMatch:
+          '^/(?:concepts/(?:base-model|components|how-it-works)|models/ecosystems|lora/basics)(?:$|/)'
+      },
+      {
+        text: '资源',
+        link: '/resources/websites',
+        activeMatch: '^/(?:resources/|glossary(?:$|/))'
+      }
     ],
     sidebar: [
       {
-        text: '开始',
+        text: '学习地图',
         items: [
           { text: '首页', link: '/' },
-          { text: '入门路线', link: '/guide/getting-started' }
+          { text: '学习地图', link: '/guide/getting-started' }
         ]
       },
       {
@@ -130,14 +153,22 @@ export default defineConfig({
         ]
       },
       {
-        text: 'LLM 理论',
+        text: '大模型原理',
         items: [
           { text: '大模型入门', link: '/llm/basics' },
           { text: 'Tokenization 与 Embedding', link: '/llm/tokenization-embedding' },
           { text: 'Transformer 直觉', link: '/llm/transformer' },
           { text: '推理与解码', link: '/llm/inference-decoding' },
-          { text: '训练、微调与对齐', link: '/llm/training-alignment' },
-          { text: 'RAG 与 Agent', link: '/llm/rag-agent' }
+          { text: '训练、微调与对齐', link: '/llm/training-alignment' }
+        ]
+      },
+      {
+        text: '应用实践',
+        items: [
+          { text: 'Prompt 入门', link: '/prompting/basics' },
+          { text: 'RAG 与 Agent', link: '/llm/rag-agent' },
+          { text: '工作流和模板区别', link: '/workflows/workflow-vs-template' },
+          { text: '常用工具', link: '/tools/common-tools' }
         ]
       },
       {
@@ -151,20 +182,7 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Prompt 与工作流',
-        items: [
-          { text: 'Prompt 入门', link: '/prompting/basics' },
-          { text: '工作流和模板区别', link: '/workflows/workflow-vs-template' }
-        ]
-      },
-      {
-        text: '工具',
-        items: [
-          { text: '常用工具', link: '/tools/common-tools' }
-        ]
-      },
-      {
-        text: '资料',
+        text: '资源',
         items: [
           { text: '常用网站', link: '/resources/websites' },
           { text: '精选教程', link: '/resources/tutorials' },
@@ -180,8 +198,8 @@ export default defineConfig({
       copyright: 'Copyright © 2026'
     },
     docFooter: {
-      prev: '上一页',
-      next: '下一页'
+      prev: false,
+      next: false
     },
     lastUpdated: {
       text: '最后更新'

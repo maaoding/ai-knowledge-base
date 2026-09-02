@@ -139,7 +139,7 @@ FLUX / Qwen-Image / Z-Image 等（DiT 类架构）
 <details>
 <summary>查看答案</summary>
 
-checkpoint 是完整底模，通常 GB 级；LoRA 只存对底模权重的小幅修改（低秩的小矩阵），通常几十到几百 MB。因为 LoRA 冻结底模、只训练少量新增参数，所以文件小，也正因此必须挂在匹配的底模上使用；原理细节见下一篇。
+checkpoint 是完整底模，通常 GB 级；LoRA 只存对底模权重的小幅修改（低秩的小矩阵），通常几十到几百 MB。因为 LoRA 冻结底模、只训练少量新增参数，所以文件小，也正因此必须挂在匹配的底模上使用；原理细节见 [LoRA 入门](/lora/basics)。
 
 </details>
 
@@ -161,12 +161,11 @@ checkpoint 是完整底模，通常 GB 级；LoRA 只存对底模权重的小幅
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[基本原理](/concepts/how-it-works)：先懂原理，再看生态差异为什么存在。
-- 下一篇：[LoRA 入门](/lora/basics)：生态里数量最庞大的附件类型，单独展开。
-- 相关阅读：[常用工具](/tools/common-tools)：认识了文件类型，接下来看用什么工具加载它们。
-- 相关阅读：[术语表](/glossary)：遇到生词（checkpoint、VAE、CFG）随时回查。
+- **原理基础：** [基本原理](/concepts/how-it-works)解释不同生态共享的生成机制。
+- **同主题：** [LoRA 入门](/lora/basics)展开生态中最常见的附件类型。
+- **工具选择：** [常用工具](/tools/common-tools)比较加载这些模型与文件的常见界面。
 
 ## 官方或原始资料来源
 

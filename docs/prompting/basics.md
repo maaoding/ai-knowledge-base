@@ -181,11 +181,11 @@ low quality, blurry, watermark, text, bad anatomy, extra fingers
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[LoRA 入门](/lora/basics)：AI 绘画部分的收尾；从本页开始，把想法写成有效的任务说明。
-- 下一篇：[工作流和模板区别](/workflows/workflow-vs-template)：单个 Prompt 之外，多步骤任务怎么组织。
-- 相关阅读：[RAG 与 Agent](/llm/rag-agent)：Prompt 之上，用检索与工具补足知识盲区。
+- **原理基础：** [大模型入门](/llm/basics)解释上下文、Token、幻觉和能力边界。
+- **同主题：** [工作流和模板区别](/workflows/workflow-vs-template)说明单个 Prompt 之外怎样组织多步骤任务。
+- **能力扩展：** [RAG 与 Agent](/llm/rag-agent)展示怎样用检索和工具补足知识与行动能力。
 
 ## 官方或原始资料来源
 

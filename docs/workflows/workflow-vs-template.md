@@ -163,11 +163,11 @@ description: '区分 Prompt、模板、Workflow 与 Agent，理解固定流程�
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[Prompt 入门](/prompting/basics)：先把单步任务写清楚，再谈多步骤编排。
-- 下一篇：[常用工具](/tools/common-tools)：这些流程最终落在哪些工具上。
-- 相关阅读：[RAG 与 Agent](/llm/rag-agent)：Agent 是“步骤由模型动态决定”的工作流，对照理解。
+- **前置概念：** [Prompt 入门](/prompting/basics)说明单步任务怎样表达清楚。
+- **同主题：** [RAG 与 Agent](/llm/rag-agent)用于比较固定流程与模型动态决策。
+- **工具选择：** [常用工具](/tools/common-tools)展示这些流程可以落在哪些工具形态上。
 
 ## 官方或原始资料来源
 

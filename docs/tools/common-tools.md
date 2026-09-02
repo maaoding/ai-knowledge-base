@@ -164,12 +164,11 @@ Ollama、LM Studio、llama.cpp 可以在自己电脑上下载和运行开源模�
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[工作流和模板区别](/workflows/workflow-vs-template)：工具承载的流程，先分清模板与工作流。
-- 下一篇：[常用网站](/resources/websites)：按本页的工具分类找官方文档与学习资源。
-- 相关阅读：[精选教程](/resources/tutorials)：选定工具后的系统学习入口。
-- 相关阅读：[术语表](/glossary)：使用工具时遇到生词随时回查。
+- **流程组织：** [工作流和模板区别](/workflows/workflow-vs-template)帮助判断工具承载的是模板还是完整流程。
+- **能力扩展：** [RAG 与 Agent](/llm/rag-agent)说明检索、工具调用与动态决策怎样组合。
+- **继续学习：** [精选教程](/resources/tutorials)提供选定工具后的系统学习入口。
 
 ## 官方或原始资料来源
 

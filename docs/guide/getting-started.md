@@ -1,189 +1,146 @@
 ---
-description: '为零基础读者规划 AI 学习顺序，按概念、LLM、AI 绘画、Prompt 与工具分阶段阅读，并提供一周入门路线与跳读建议。'
+description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理、应用实践、AI 绘画与资源五类主题查找内容，并提供按目标选读和一周入门建议。'
 ---
 
-# 入门路线
+# 学习地图
 
-> **一句话结论：** 本站按“建立 AI 概念、理解 LLM 原理、AI 绘画专题、动手实践、积累资料”五个阶段组织；零基础读者建议按顺序走完整路线，有明确目标的读者可以按背景跳读。
+> **一句话结论：** 本站是一份按主题查阅的手册；AI 基础提供共同概念，大模型原理、应用实践和 AI 绘画可以按目标选择，资源与术语表则适合在阅读过程中随时查阅。
 
 ## 前置知识
 
-- 本页是全站路线图，可以直接从这一页开始，不要求先读任何其他页面。
+- 本页是全站地图，可以直接从这里开始，不要求先读任何其他页面。
 - 不要求编程经验，也不要求数学基础；各页涉及的新术语都会先解释。
-- 一个边界：本页只给路线和取舍建议，不替代各页正文，具体概念以对应页面为准。
+- 本页只帮助你找到入口和组合页面，具体概念以对应正文为准。
 
 ## 学习目标
 
 读完后，你应该能够：
 
-- 说出本站五个阶段各自回答什么问题。
-- 根据自己的背景选择一条主线，并说明哪些页面可以暂时跳过。
-- 安排第一周的具体学习任务，并知道要产出什么笔记。
-- 判断每条路线走完时自己应该留下什么产出。
-- 遇到陌生概念时，判断它大概能在哪一页找到解释。
+- 说出本站各主题分别回答什么问题。
+- 根据当前目标选出最相关的几页，而不是被迫读完整站。
+- 为零基础入门安排一周的可选练习，并留下可检查的产出。
+- 遇到陌生概念时，知道该用搜索、术语表还是主题侧栏定位。
 
 ## 核心概念
 
-### 整体路线分为哪几个阶段
+### 知识库由哪些主题组成
 
-本站全部页面可以分成五个阶段，每个阶段解决一类问题：
+本站的主题关系可以概括为：
 
 ```text
-建立概念（AI 基础） -> 理解模型（LLM 理论） -> 专题深入（AI 绘画） -> 动手实践（Prompt 与工具） -> 持续积累（资料与术语表）
+                    ┌─ 大模型原理 ──┐
+共同基础（AI 基础） ├─ 应用实践      ├─ 按目标组合阅读
+                    └─ AI 绘画 ─────┘
+资源与术语表：阅读任何主题时都可以随时查阅
 ```
 
-五个阶段的顺序反映的是依赖关系：后面的阶段会反复使用前面的概念。不理解 Token 和上下文，就很难判断一段提示词为什么失效；不理解训练和推理的区别，就容易把采样参数当成知识开关。
+- **AI 基础。** [AI 基础概念](/ai/basics)、[机器学习入门](/ai/machine-learning)、[神经网络直觉](/ai/neural-networks)，用于理解模型、训练、参数、泛化和神经网络等共通知识。
+- **大模型原理。** [大模型入门](/llm/basics)、[Tokenization 与 Embedding](/llm/tokenization-embedding)、[Transformer 直觉](/llm/transformer)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)，用于理解文本怎样进入模型、回答怎样生成以及能力怎样形成。
+- **应用实践。** [Prompt 入门](/prompting/basics)、[RAG 与 Agent](/llm/rag-agent)、[工作流和模板区别](/workflows/workflow-vs-template)、[常用工具](/tools/common-tools)，用于把模型能力组织成明确、可验证、可复用的任务流程。
+- **AI 绘画。** [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics)，用于理解图像生成系统及常见模型文件。
+- **资源。** [常用网站](/resources/websites)、[精选教程](/resources/tutorials)、[术语表](/glossary)，用于查来源、找教程和确认词义，不需要单独“学完”。
 
-- **阶段一：建立概念。** [AI 基础概念](/ai/basics)、[机器学习入门](/ai/machine-learning)、[神经网络直觉](/ai/neural-networks)。目标不是推导公式，而是知道模型怎样从数据中调整参数，以及为什么训练表现不等于真实表现。
-  - 解决的问题：模型和“写死规则的程序”差在哪，参数、损失、泛化这些词在说什么。
-  - 顺带澄清的误解：“AI 会像人一样思考”“训练时的表现就是真实效果”。
-- **阶段二：理解 LLM 理论。** [大模型入门](/llm/basics)、[Tokenization 与 Embedding](/llm/tokenization-embedding)、[Transformer 直觉](/llm/transformer)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)、[RAG 与 Agent](/llm/rag-agent)。目标是能说明“文本表示、模型计算、解码选择、内部能力、外部资料与工具调用”各自负责什么。
-  - 解决的问题：一段文字如何变成 Token，模型如何利用上下文，回答是怎么逐词生成的。
-  - 顺带澄清的误解：“联网了就一定准确”“调高采样参数能提升智力”。
-- **阶段三：AI 绘画专题。** [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics)。目标是看懂一张工作流图在做什么，先跑通最小文生图流程，再逐步加入 LoRA、ControlNet、局部重绘和放大。
-  - 解决的问题：底模、LoRA、工作流各自决定画面的哪一部分，出图失败该先查哪里。
-  - 顺带澄清的误解：“换更新的底模就能解决所有问题”“一个 LoRA 能覆盖所有风格”。
-- **阶段四：动手实践。** [Prompt 入门](/prompting/basics)、[工作流和模板区别](/workflows/workflow-vs-template)、[常用工具](/tools/common-tools)。目标是把任务写清楚，并区分工具界面与模型能力。
-  - 解决的问题：为什么同一个模型在不同工具里表现不同，一份完整的任务说明长什么样。
-  - 顺带澄清的误解：“存在万能 Prompt 模板”“工具界面好看就代表模型更强”。
-- **阶段五：持续积累。** [常用网站](/resources/websites)、[精选教程](/resources/tutorials)、[术语表](/glossary)。目标是建立自己的资料体系：记录来源与版本、模型卡与许可证、有效 Prompt 与失败案例。
-  - 解决的问题：教程和模型更新很快，怎样让学过的东西可以复用、可以追溯。
-  - 顺带澄清的误解：“收藏了链接就等于学会了”。
+### 如何选择入口
 
-以上页面标题、链接和顺序与侧边栏一致，就是推荐的阅读顺序；个别页面之间的依赖关系，还会在该页开头的前置知识里再次说明。
+- 完全不确定从哪里开始：先读 [AI 基础概念](/ai/basics)，再用 [大模型入门](/llm/basics)了解当前主流生成式 AI 的整体图景。
+- 已经有明确目标：直接从下面的“按目标选读”进入，对不熟悉的前置概念再回头补充。
+- 只记得一个术语：优先用顶部搜索；仍不确定含义和关联时，再查[术语表](/glossary)。
+- 正在使用某个产品：先在[常用工具](/tools/common-tools)判断它属于哪类，再去对应原理或实践页面。
 
-### 为什么先概念后工具
+### 每个主题读到什么程度就够用
 
-工具界面可能每隔几个月就大改，概念却相对稳定。先理解 Token、上下文、幻觉这些概念，再学 Prompt 和工作流，遇到新工具时能自己判断“这个选项大概在改什么”；反过来，先堆工具和技巧，往往只能背模板，换一个任务或工具就失效。
+- AI 基础：能区分 AI、机器学习、深度学习和模型，并解释过拟合与泛化。
+- 大模型原理：能说清文本如何变成 Token、模型如何利用上下文、生成时采样参数改变了什么。
+- 应用实践：能写出包含任务、上下文、输出格式和约束的 Prompt，并判断何时需要 RAG、工作流或 Agent。
+- AI 绘画：能说出底模、VAE、采样器和 LoRA 的分工，并看懂最小文生图流程。
+- 资源：知道怎样核对官方文档、版本和许可证，并保存可追溯的学习记录。
 
-### 每个阶段读到什么程度就可以继续
+## 按目标选读
 
-- 阶段一：能区分 AI、机器学习、深度学习和模型，能解释什么是过拟合与泛化就够了，不必会推导反向传播。
-- 阶段二：能说清一段文字如何变成 Token、模型如何利用上下文、生成时采样参数改变了什么就够了。
-- 阶段三：能跑通一次文生图，并说出工作流里主要节点各负责什么。
-- 阶段四：能独立写出一个包含任务、上下文、输出格式、约束的 Prompt，并知道角色与示例这两个进阶要素什么时候用。
-- 阶段五：只需要建立习惯，遇到问题时知道回哪里查。
+下面每一行都是独立入口；箭头只表示这条目标路线中的建议先后，不代表全站阅读顺序。
 
-### 遇到某个词，该回哪一页查
+| 目标 | 建议组合 | 重点记住 |
+| --- | --- | --- |
+| 快速用上对话 AI | [AI 基础概念](/ai/basics) → [大模型入门](/llm/basics) → [Prompt 入门](/prompting/basics) → [常用工具](/tools/common-tools) | Token、上下文窗口、幻觉、结果验证 |
+| 搞懂大模型原理 | [机器学习入门](/ai/machine-learning) → [神经网络直觉](/ai/neural-networks) → [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Transformer 直觉](/llm/transformer) → [推理与解码](/llm/inference-decoding) → [训练、微调与对齐](/llm/training-alignment) | 注意力、自回归生成、训练与推理 |
+| 搭建 RAG 或 Agent | [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Prompt 入门](/prompting/basics) → [训练、微调与对齐](/llm/training-alignment) → [RAG 与 Agent](/llm/rag-agent) → [工作流和模板区别](/workflows/workflow-vs-template) | 检索质量、工具权限、失败路径 |
+| 画 AI 插画 | [AI 基础概念](/ai/basics) → [底模是什么](/concepts/base-model) → [AI 绘画由哪些部分组成](/concepts/components) → [基本原理](/concepts/how-it-works) → [常见模型生态](/models/ecosystems) → [LoRA 入门](/lora/basics) | 底模、采样、生态兼容性、LoRA |
+| 组织可复用任务 | [Prompt 入门](/prompting/basics) → [工作流和模板区别](/workflows/workflow-vs-template) → [RAG 与 Agent](/llm/rag-agent) → [常用工具](/tools/common-tools) | 输入输出、固定步骤、动态决策、审计 |
 
-[术语表](/glossary)是全部术语的总索引；此外，常见词大致落在这些页面，忘了直接回去翻对应章节即可：
+路线只是入口。读到不熟悉的概念时回到相关页面补充；已经掌握的内容可以跳过，不需要为了“完成进度”重复阅读。
 
-- Token、上下文窗口、幻觉：[大模型入门](/llm/basics)。
-- Embedding、向量、子词切分：[Tokenization 与 Embedding](/llm/tokenization-embedding)。
-- Attention、上下文表示：[Transformer 直觉](/llm/transformer)。
-- Temperature、Top-p、KV Cache、自回归：[推理与解码](/llm/inference-decoding)。
-- 预训练、微调、对齐：[训练、微调与对齐](/llm/training-alignment)。
-- 检索增强、工具调用、Agent：[RAG 与 Agent](/llm/rag-agent)。
-- 底模、Checkpoint：[底模是什么](/concepts/base-model)。
-- LoRA、触发词：[LoRA 入门](/lora/basics)。
-- 工作流、模板：[工作流和模板区别](/workflows/workflow-vs-template)。
-- 过拟合、泛化、评估指标：[机器学习入门](/ai/machine-learning)。
-- 权重、激活函数、反向传播：[神经网络直觉](/ai/neural-networks)。
+## 动手试试：可选的一周入门
 
-## 按目标选路线
+如果你还没有明确目标，可以用下面这条一周路线建立最小共同基础。它不是全站必修顺序，时间紧张时也可以整体拉长：
 
-五阶段是默认顺序；如果目标已经明确，也可以直接按下面四条路线走。每条路线都列出了推荐阅读顺序、可以暂时跳过的页面和走完时最该记住的东西：
+- **第 1-2 天**：读 [AI 基础概念](/ai/basics) 和 [机器学习入门](/ai/machine-learning)，用自己的话写 5 句话说明 AI、机器学习、深度学习、模型、训练和推理的关系。
+- **第 3-4 天**：读 [大模型入门](/llm/basics)，用常见对话助手做三个小实验：解释熟悉概念、总结长文、回答较新的事实问题，并核对结果。
+- **第 5 天**：读 [Prompt 入门](/prompting/basics)，把角色、任务、上下文、输出格式、约束和示例用在一个真实小任务上。
+- **第 6 天**：选择一个方向：读 [RAG 与 Agent](/llm/rag-agent)、[底模是什么](/concepts/base-model)或[工作流和模板区别](/workflows/workflow-vs-template)。
+- **第 7 天**：使用搜索和[术语表](/glossary)整理本周仍不清楚的词，并决定接下来深入哪个主题。
 
-| 目标 | 推荐路线（按顺序） | 可以先跳过 | 重点记住 |
+一周结束时应留下：一页概念笔记、三份实验记录、一条改进过的 Prompt，以及一份“仍需查清”的术语清单。判断是否有收获，看这些产出能否说明你的理解，而不是看读了多少页。
+
+## 不同背景读者怎么选
+
+| 读者背景 | 建议入口 | 暂时不必深入 | 当前目标 |
 | --- | --- | --- | --- |
-| 快速用上对话 AI | [AI 基础概念](/ai/basics) → [大模型入门](/llm/basics) → [Prompt 入门](/prompting/basics) → [常用工具](/tools/common-tools) | 数学与架构细节页（神经网络、Transformer 的推导部分） | Token、上下文窗口、幻觉 |
-| 搞懂大模型原理 | [机器学习入门](/ai/machine-learning) → [神经网络直觉](/ai/neural-networks) → [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Transformer 直觉](/llm/transformer) → [推理与解码](/llm/inference-decoding) → [训练、微调与对齐](/llm/training-alignment) | AI 绘画与动手实践页 | 预测下一个词、注意力、训练三阶段 |
-| 画 AI 插画 | [AI 基础概念](/ai/basics) → [底模是什么](/concepts/base-model) → [AI 绘画由哪些部分组成](/concepts/components) → [基本原理](/concepts/how-it-works) → [常见模型生态](/models/ecosystems) → [LoRA 入门](/lora/basics) → [Prompt 入门](/prompting/basics) | LLM 理论页（微调概念读 [训练、微调与对齐](/llm/training-alignment) 回补即可） | 底模、采样器与步数、LoRA 兼容性 |
-| 写好 Prompt | [Prompt 入门](/prompting/basics) → [大模型入门](/llm/basics) → [工作流和模板区别](/workflows/workflow-vs-template) → [RAG 与 Agent](/llm/rag-agent) | 神经网络与架构页 | 六要素、负向约束的局限、迭代改进 |
+| 完全零基础 | [学习地图](/guide/getting-started) → [AI 基础概念](/ai/basics) → [大模型入门](/llm/basics)，然后选择一个主题 | 神经网络和 Transformer 的推演细节 | 建立概念图并找到主方向 |
+| 有编程经验 | [大模型入门](/llm/basics)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)、[RAG 与 Agent](/llm/rag-agent) | 已熟悉的机器学习直觉内容 | 理解模型的工程行为与成本 |
+| 主要使用 AI 绘画 | [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics) | 大模型原理的大部分页面 | 看懂工作流并定位出图问题 |
+| 主要使用对话模型 | [大模型入门](/llm/basics)、[Prompt 入门](/prompting/basics)、[RAG 与 Agent](/llm/rag-agent)、[常用工具](/tools/common-tools) | AI 绘画专题 | 稳定地交付任务并验证结果 |
 
-所有路线都默认先过一遍 [AI 基础概念](/ai/basics)；途中术语卡住，就回 [术语表](/glossary) 查。路线只是入口，走完一条后再回到五阶段主线，把其余页面补齐。
-
-## 动手试试：第一周该做什么
-
-第一周不追求读完本站，只追求建立初步概念并留下笔记。以下按每天 30-60 分钟的节奏安排，时间紧张可以整体拉长：
-
-- **第 1-2 天**：读 [AI 基础概念](/ai/basics) 和 [机器学习入门](/ai/machine-learning)。用自己的话写 5 句话笔记，说明 AI、机器学习、深度学习、模型的关系，以及训练和推理的区别。
-- **第 3-4 天**：读 [大模型入门](/llm/basics)，并打开一个你常用的对话助手做三个小实验：让它解释一个你熟悉的概念，检查有没有错；让它总结一段长文，看它有没有抓住重点；问一个较新的时事问题，观察它是承认不知道还是编造答案。
-- **第 5 天**：读 [Prompt 入门](/prompting/basics)，把六要素（角色、任务、上下文、输出格式、约束、示例）套在一个真实小任务上（例如整理一段笔记），保存你使用的 Prompt 和得到的结果。
-- **第 6 天**：读 [常用工具](/tools/common-tools)，对照你正在用的工具，弄清它属于哪一类：Web 助手、API、本地模型还是绘画界面。
-- **第 7 天**：翻一遍 [术语表](/glossary)，把本周遇到但还没搞懂的词记成一份“待弄清”清单，带着它进入第二阶段。
-
-一周结束时的产出：
-
-- 一页概念笔记：写清 AI、机器学习、深度学习、模型的关系，以及训练和推理的区别。
-- 三份实验记录：保存当时的输入、输出和你发现的问题。
-- 一条改进过的 Prompt：对照六要素说明你改了什么、为什么改。
-- 一份“待弄清”术语清单。
-
-做实验时注意三点：一次只改一个变量，否则说不清是哪个因素起了作用；保存原始输入和输出，不要凭印象复述；把“模型答错了”也记下来，错误样本最能暴露概念盲区。
-
-一周只是参考节奏，工作忙可以拉长到两周，重要的是每天留下一小段笔记，而不是赶进度；中断之后，从上次的产出清单接着走即可。完成这些只说明你建立了初步概念，不等于掌握了理论细节，后续页面会逐层展开。
-
-## 不同背景读者的路径建议
-
-下表按背景给出主线；无论哪条路线，都建议先跑通最小流程，再逐步增加环节，否则出了问题很难定位：
-
-| 读者背景 | 建议主线 | 可暂时跳过 | 阶段目标 |
-| --- | --- | --- | --- |
-| 完全零基础 | 阶段一到五基本按顺序读，第一遍允许略读 [神经网络直觉](/ai/neural-networks) 的推导部分 | 暂无 | 建立完整的概念图 |
-| 有编程经验 | 快速过 [AI 基础概念](/ai/basics)，直接进 [大模型入门](/llm/basics)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment) | [机器学习入门](/ai/machine-learning) 的大部分直觉内容 | 理解 LLM 的工程行为与成本 |
-| 只想用 AI 绘画 | [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics) | LLM 理论的大部分页面 | 看懂工作流，独立完成文生图 |
-| 只想用对话模型 | [大模型入门](/llm/basics)、[Prompt 入门](/prompting/basics)、[RAG 与 Agent](/llm/rag-agent)、[常用工具](/tools/common-tools) | [神经网络直觉](/ai/neural-networks) 与 AI 绘画专题 | 稳定地把任务交给模型并验证结果 |
-
-两条提醒：只想用 AI 绘画的读者也建议至少读一遍 [AI 基础概念](/ai/basics) 和 [Prompt 入门](/prompting/basics)，绘画工作流同样建立在模型、训练和提示条件这些概念上；表中“跳过”都只是推迟，不是永远不用读。
-
-如果你不确定自己属于哪一类，先按“完全零基础”的路线走完前两个阶段，再回头决定要不要调整。
+这些入口不是身份标签。需求变化时直接切换主题即可；不需要先把原来的方向全部读完。
 
 ## 常见误区
 
-这些误区贯穿路线的各个阶段，先在这里集中列出，后面各页还会结合具体场景回到它们：
-
-- **“背会提示词模板就能用好 AI”**：Prompt 是任务说明而不是咒语；不理解模型、数据和工具之间的关系，换个任务就失效。
+- **“必须从首页一路读到最后一页”**：不同目标需要的知识组合不同；只要补齐当前页面标出的前置概念，就可以直接进入相关主题。
+- **“背会提示词模板就能用好 AI”**：Prompt 是任务说明而不是咒语；不理解模型、数据和工具之间的关系，换个任务就容易失效。
 - **“演示或训练时的表现就是真实效果”**：真实效果要结合验证数据、测试数据和自己的任务来看。
 - **“调高 Temperature、Top-p 模型就更聪明”**：采样参数只改变输出的选择方式，不会增加知识或推理能力。
 - **“回答流畅就说明内容正确”**：流畅和正确是两回事，重要结论需要自行核对来源。
 - **“接入 RAG 或 Agent 就会自动可靠”**：检索质量、权限控制和失败路径决定实际效果，接入不等于可靠。
-- **“资料、模型和素材可以随便用”**：数据、模型、素材、API 和平台都可能有许可证与用途限制，公开分发或商用前必须确认。
 
 ## 自测问题
 
-### 1. 为什么本站把 Prompt 和工具放在理论之后，而不是放在最前面？
+### 1. 为什么这份知识库不要求所有人采用同一条阅读路线？
 
 <details>
 <summary>查看答案</summary>
 
-因为 Prompt 的写法取决于对模型能力边界的理解：不知道 Token、上下文和幻觉这些概念，调 Prompt 很容易变成碰运气。先建立概念，再学技巧，遇到新工具时也能自己判断每个选项在做什么。
-
-反过来，只背模板时你只知道“这样说有效”，却不知道为什么有效，也无法判断一次失败究竟是 Prompt 的问题，还是任务本身不适合这个模型。
+因为大模型原理、应用实践和 AI 绘画解决的问题不同，它们只共享一部分基础概念。按当前目标组合页面更容易形成完整认识，也能避免为了“完成顺序”阅读暂时用不到的内容。
 
 </details>
 
-### 2. 如果你的目标是 AI 绘画，主线是哪几页？为什么仍建议读一遍 AI 基础概念？
+### 2. 如果目标是 AI 绘画，应从哪些页面进入？为什么仍建议了解 AI 基础？
 
 <details>
 <summary>查看答案</summary>
 
-主线是底模是什么、模型组成、基本原理、常见模型生态和 LoRA 入门。但绘画模型同样要经过训练，同样用 Prompt 表达生成条件，模型、训练、推理这些概念是通用的；读一遍 AI 基础概念，后面页面里的术语就不再陌生。
-
-绘画工具里的提示词同样是交给模型的生成条件，而不是万能口令——这一点和对话模型完全一致。
+可以从底模、模型组成、基本原理、模型生态和 LoRA 这组页面进入。绘画模型同样涉及模型、训练、推理和提示条件；先了解 AI 基础，会更容易理解这些共同概念，但不要求先学完大模型原理。
 
 </details>
 
-### 3. 第一周结束时，用什么标准判断自己“跟上了”？
+### 3. 一周入门结束时，怎样判断自己是否有收获？
 
 <details>
 <summary>查看答案</summary>
 
-不看“读了几页”，看能否合上页面用自己的话复述核心概念之间的关系，并且留下了实际产出：概念笔记、实验记录、改进过的 Prompt 和术语清单。能说清楚自己还不懂什么，也是跟上的标志。
+不看读了几页，而看能否用自己的话复述概念关系，并留下概念笔记、实验记录、改进过的 Prompt 和待查术语清单。能准确指出自己还不懂什么，也是一种有效产出。
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[首页](/)：回看本站的定位与整体介绍。
-- 下一篇：[AI 基础概念](/ai/basics)：路线第一站，建立 AI、机器学习、深度学习与模型的概念框架。
-- 相关阅读：[术语表](/glossary)：阅读任何一页时遇到陌生词，都可以回来查。
+- **返回总览：** [首页](/)介绍本站定位与全部主题入口。
+- **共同基础：** [AI 基础概念](/ai/basics)适合不确定起点时先读。
+- **随时查词：** [术语表](/glossary)汇总各主题中的常见术语。
 
 ## 官方或原始资料来源
 
-以下资料供路线走完后的深入阅读，第一周不必全读：
+以下资料适合在选定主题后继续深入，不必一次全部阅读：
 
-- [Google：Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course)：Google 官方机器学习速成课程，对应阶段一。
-- [3Blue1Brown：Neural Networks](https://www.3blue1brown.com/topics/neural-networks)：可视化的神经网络系列视频，辅助建立阶段一的直觉。
-- [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1)：Hugging Face 官方 LLM 课程，对应阶段二。
-- [Hugging Face：Diffusers 文档](https://huggingface.co/docs/diffusers/index)：扩散模型官方文档，对应阶段四的基本原理。
+- [Google：Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course)：Google 官方机器学习速成课程，对应 AI 基础。
+- [3Blue1Brown：Neural Networks](https://www.3blue1brown.com/topics/neural-networks)：可视化的神经网络系列视频，辅助建立基础直觉。
+- [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/chapter1/1)：Hugging Face 官方大模型课程，对应大模型原理。
+- [Hugging Face：Diffusers 文档](https://huggingface.co/docs/diffusers/index)：扩散模型官方文档，对应 AI 绘画主题。

@@ -173,11 +173,11 @@ W' = 1+1  0+0  2+1  0+0        2 0 3 0
 
 </details>
 
-## 下一步阅读
+## 关联阅读
 
-- 上一篇：[常见模型生态](/models/ecosystems)：先了解 LoRA 文件在生态里的位置与来源。
-- 下一篇：[Prompt 入门](/prompting/basics)：AI 绘画部分到此收尾；下一部分讲如何把想法写成有效的任务描述。
-- 相关阅读：[训练、微调与对齐](/llm/training-alignment)：LLM 侧的微调概念与本页的低秩适配同源。
+- **前置概念：** [底模是什么](/concepts/base-model)说明 LoRA 依附和调整的基础模型是什么。
+- **同主题：** [常见模型生态](/models/ecosystems)帮助判断 LoRA 文件的来源与兼容关系。
+- **跨主题：** [训练、微调与对齐](/llm/training-alignment)说明低秩适配在模型训练体系中的位置。
 
 ## 官方或原始资料来源
 
