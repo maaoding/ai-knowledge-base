@@ -30,17 +30,25 @@ description: '汇总 AI、LLM、Prompt、RAG、Agent 与 AI 绘画常见术语�
 
 基础模型。在 LLM 中通常指尚未完成特定指令对齐的通用预训练模型；在 AI 绘画中也用于说明 checkpoint 或 LoRA 所属的模型生态。详见 [底模是什么](/concepts/base-model)。
 
+## Benchmark
+
+基准测试。公开的标准考试（如 MMLU、HumanEval、SWE-bench），用于横向比较模型的大致能力段位。分数不能直接预测具体任务的表现，可能存在数据污染与任务分布差异；最终应以自己的固定测试集验证。详见 [效果评估](/prompting/evaluation)。
+
 ## Bias
 
 偏置。神经元在加权输入之外学习的平移参数，使激活门槛不必固定经过原点。这里的 Bias 是模型参数，不等同于数据偏差或算法公平性语境中的偏见。详见 [神经网络直觉](/ai/neural-networks)。
 
-## Checkpoint
+## Chain-of-Thought
 
-保存某一训练阶段模型权重和相关状态的文件。AI 绘画中常见扩展名包括 `.safetensors` 和 `.ckpt`，日常说“换底模”通常就是换一个 checkpoint 文件。详见 [底模是什么](/concepts/base-model)。
+思维链。让模型在给出最终答案前先生成中间思考步骤的做法；推理模型把这类思考作为生成输出的一部分。思考 Token 同样占用上下文窗口、产生成本，也会出错。详见 [推理与解码](/llm/inference-decoding)。
 
 ## CFG
 
 CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模型听提示词程度的参数：太低容易跑题，过高可能颜色过饱和、结构僵硬，应从模型卡推荐值起步。详见 [AI 绘画由哪些部分组成](/concepts/components)。
+
+## Checkpoint
+
+保存某一训练阶段模型权重和相关状态的文件。AI 绘画中常见扩展名包括 `.safetensors` 和 `.ckpt`，日常说“换底模”通常就是换一个 checkpoint 文件。详见 [底模是什么](/concepts/base-model)。
 
 ## Chunk
 
@@ -130,6 +138,10 @@ Latent（潜空间表示）。模型内部的压缩图像表示。主流绘画�
 
 Large Language Model，大语言模型。它根据上下文处理和生成 Token，可用于问答、写作、代码、信息抽取和工具调用，但不会自动保证事实正确。详见 [大模型入门](/llm/basics)。
 
+## LLM-as-a-Judge
+
+用模型给模型阅卷：把待评输出和评分量规交给一个模型，让它打分并说明理由，适合批量初筛。judge 存在位置偏差、长度偏好和自我偏好，重要决策仍需人工抽查校准。详见 [效果评估](/prompting/evaluation)。
+
 ## Logit
 
 模型输出层产生的未归一化分数。Softmax 可以把一组 Logit 转换为概率分布；Logit 本身不是概率，也不代表现实事实为真的可能性。详见 [推理与解码](/llm/inference-decoding)。
@@ -141,6 +153,10 @@ Low-Rank Adaptation，低秩适配。通过训练少量附加参数调整模型�
 ## Loss Function
 
 损失函数。把预测与训练目标之间的差距转换成可优化数值，为参数更新提供方向。训练损失较低不保证业务指标、事实性或泛化一定更好。详见 [神经网络直觉](/ai/neural-networks)。
+
+## MCP
+
+MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外部工具、数据源的对接标准化的开放协议：工具方按协议暴露能力，支持 MCP 的客户端都能直接调用。它不取代 Function Calling，标准化的是工具的发现、描述与对接层。详见 [RAG 与 Agent](/llm/rag-agent)。
 
 ## Model Card
 
@@ -170,6 +186,10 @@ Low-Rank Adaptation，低秩适配。通过训练少量附加参数调整模型�
 
 提示或任务说明。LLM Prompt 通常包含角色、任务、上下文、输出格式、约束和示例；图像 Prompt 常描述主体、场景、风格和构图，并可能区分正向与负向提示词。详见 [Prompt 入门](/prompting/basics)。
 
+## Prompt Injection
+
+提示注入。把恶意指令藏进模型会读到的内容（网页、文档、检索片段、工具返回）里，诱导模型当成任务指令执行。RAG 与 Agent 会放大其后果，防护靠权限最小化、高危操作人工确认与调用审计。详见 [RAG 与 Agent](/llm/rag-agent)。
+
 ## Quantization
 
 量化。把模型权重从高精度数字压缩成低精度存储与计算的方法，用少量质量损失换取更小的显存和内存占用，是本地工具运行开源模型的常用手段。详见 [常用工具](/tools/common-tools)。
@@ -177,6 +197,10 @@ Low-Rank Adaptation，低秩适配。通过训练少量附加参数调整模型�
 ## RAG
 
 Retrieval-Augmented Generation，检索增强生成。先从外部资料中检索相关片段，再把资料放入上下文供模型回答。详见 [RAG 与 Agent](/llm/rag-agent)。
+
+## Reasoning Model
+
+推理模型。在给出最终答案前先生成中间思考 Token 的模型（这里的“推理”指 Reasoning 多步思考，注意与指 Inference 的“推理”区分），如 o1/o3、DeepSeek-R1、Qwen 思考系列。擅长可分步验证的任务；思考 Token 会增加延迟与成本。详见 [推理与解码](/llm/inference-decoding)。
 
 ## Reinforcement Learning
 
@@ -225,6 +249,10 @@ SFT（Supervised Fine-Tuning，指令微调）。用成对的“指令-回答”
 ## Test Set
 
 测试集。在模型和超参数基本确定后用于最终评估的独立数据。若反复根据测试结果调参，测试集会失去独立性。详见 [机器学习入门](/ai/machine-learning)。
+
+## Test-time Compute
+
+测试时计算。参数训练完成后固定不变，通过在推理阶段投入更多计算换取更好的结果，常见形式包括更长的思考预算、Best-of-N 采样和验证器筛选。代价是延迟与 Token 成本上升。详见 [推理与解码](/llm/inference-decoding)。
 
 ## Text Encoder
 

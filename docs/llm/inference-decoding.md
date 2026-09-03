@@ -1,10 +1,10 @@
 ---
-description: '解释大模型自回归生成、Logit、Temperature、Top-k、Top-p、上下文窗口、KV Cache 与推理成本。'
+description: '解释大模型自回归生成、Logit、Temperature、Top-k、Top-p、上下文窗口、KV Cache、推理成本与推理模型的测试时计算。'
 ---
 
 # 推理与解码
 
-> **一句话结论：** 自回归 LLM 每次根据已有上下文计算下一个 Token 的 Logit，再按解码策略选出 Token 并重复；采样参数改变的是选择方式，不会给模型增加知识或推理能力。
+> **一句话结论：** 自回归 LLM 每次根据已有上下文计算下一个 Token 的 Logit，再按解码策略选出 Token 并重复；采样参数改变的是选择方式，不会给模型增加知识或推理能力。推理模型同样如此——它只是把“思考”也变成了要生成的 Token。
 
 ## 前置知识
 
@@ -21,6 +21,7 @@ description: '解释大模型自回归生成、Logit、Temperature、Top-k、Top
 - 区分 Greedy、Temperature、Top-k 和 Top-p。
 - 说明上下文窗口与 KV Cache 各自解决什么问题。
 - 区分延迟、吞吐量和 Token 成本。
+- 解释推理模型如何把中间思考变成生成的一部分，以及测试时计算的代价与适用边界。
 - 避免把采样参数当成事实性或能力开关。
 
 ## 核心概念
@@ -106,6 +107,29 @@ Transformer Attention 会为 Token 计算 Key 和 Value。自回归生成第 100
 
 “更低延迟”和“更高吞吐量”不是同一个目标。面向单人实时对话时更关注首 Token 和逐 Token 延迟；批量离线任务更关注总吞吐量。
 
+### 推理模型：把“思考”也变成生成
+
+先澄清一个译名：本页标题里的“推理”指 Inference（模型根据输入生成输出的过程）；这里说的推理模型（Reasoning Model）里的“推理”指 Reasoning（多步思考）。两个英文词在中文里都被译作“推理”，读英文资料时要靠原文区分。
+
+推理模型指 OpenAI 的 o1/o3 系列、DeepSeek-R1、Qwen 的思考系列这类模型：在给出最终答案之前，先生成一段中间思考文本——常被称为思维链（Chain-of-Thought）或思考 Token（Reasoning Tokens）——再输出面向用户的结果。它的本质没有任何新机制，仍然是本页前面讲的自回归生成：逐 Token 计算 Logit、按解码策略选 Token。变化的只是任务的构成——普通模型相当于拿到题一步作答，推理模型先把草稿打完，再誊写交卷。
+
+这类做法背后的思路叫测试时计算（Test-time Compute）：参数训练完成后固定不变，但可以在推理阶段投入更多计算，换取更好的结果。常见形式包括更长的思考预算（思考模式，thinking budget）、同一问题多次采样再挑选（Best-of-N）、以及用验证器筛选候选答案。类比考试：草稿纸更多、时间更长，难题的正确率会上升；但简单题这样做只是变慢，想得太久还可能把自己绕偏。
+
+代价同样来自“草稿也是生成出来的 Token”：
+
+- 思考 Token 占上下文窗口。一段 500 Token 的思考加 100 Token 的答案，窗口里要装下 600 Token。
+- 思考 Token 计算成本与时间。按 Token 计费的服务里，这 600 Token 通常都算输出量；用户等待的时间也覆盖全部 600 Token 的生成。这就是推理模型“想得越深，回答越慢、越贵”的原因。
+
+什么时候值得用推理模型：
+
+- 收益明显：数学、代码、多步规划这类可以分步展开、能逐步核对的任务。
+- 通常没必要：简单问答、翻译、摘要、闲聊——直接生成更快、更便宜，结果差别不大。
+
+两个提醒：
+
+- 思考过程不等于可靠依据。中间步骤同样会出错、会跑偏，“推理了很长时间”不是结论正确的证据；重要结论仍要按[效果评估](/prompting/evaluation)的思路核对。
+- 不同平台对思考过程的展示与计费方式不同：有的完整展示、有的只给摘要、有的隐藏，思考 Token 是否计费也各不相同，以所用服务的官方说明为准。
+
 ## 最小推演：三种候选 Token
 
 假设模型对下一个 Token 给出三个 Logit：
@@ -139,6 +163,7 @@ Softmax 只关心相对差值。由此可以推演：
 | Top-p | 限制为动态累计概率集合 | 通常采样 | p 过高会保留长尾噪声 |
 | 上下文窗口 | 限制一次可处理的 Token 总量 | 不适用 | 长上下文增加计算和内存 |
 | KV Cache | 复用过去 Token 的 Key/Value | 不改变选择规则 | 以更多内存换取解码速度 |
+| 推理模型 / 测试时计算 | 先生成思考 Token 再作答，用更多计算换复杂任务的正确率 | 不改变解码规则（思考 Token 照常按策略采样） | 思考 Token 增加延迟、窗口占用与成本 |
 
 ## 常见误区
 
@@ -149,6 +174,8 @@ Softmax 只关心相对差值。由此可以推演：
 - **“上下文窗口全都可用于输出”**：输入、历史、工具结果和输出通常共同占用窗口。
 - **“吞吐量高就代表每个用户更快”**：批处理可能提高总吞吐量，同时增加单请求排队时间。
 - **“Token 数只影响账单”**：它也影响延迟、显存、内存和可容纳上下文。
+- **“推理模型思考得越多答案越可靠”**：思考过程同样可能出错或跑偏；更长的思考只代表更多计算投入，不代表结论正确。
+- **“用上推理模型就不用管采样参数了”**：推理模型内部仍按解码策略逐 Token 生成，Temperature、Top-p 照常起作用，思考 Token 同样占窗口和计费。
 
 ## 自测问题
 
@@ -179,11 +206,21 @@ Top-k 固定最多保留 5 个高概率候选；Top-p 保留累计概率达到 0
 
 </details>
 
+### 4. 推理模型为什么常在数学题上表现更强，却让简单问答变得更慢、更贵？
+
+<details>
+<summary>查看答案</summary>
+
+因为它把“打草稿”变成了生成的一部分：先产出大量中间思考 Token，再给出最终答案。数学、代码这类可以分步展开并逐步核对的任务能从中获益；而简单问答本来一步就能答对，思考 Token 只是白白增加延迟、上下文占用和成本，想得太久还可能偏离正确方向。
+
+</details>
+
 ## 关联阅读
 
 - **前置概念：** [Transformer 直觉](/llm/transformer)说明 Attention 如何利用上下文。
 - **同主题：** [训练、微调与对齐](/llm/training-alignment)解释生成时固定的参数是怎样形成的。
 - **应用方向：** [Prompt 入门](/prompting/basics)区分任务说明与采样参数各自能改变什么。
+- **延伸方向：** [效果评估](/prompting/evaluation)说明怎样用固定测试集验证改动与选型的真实效果，而不是凭单次输出下结论。
 
 ## 官方或原始资料来源
 
@@ -192,4 +229,5 @@ Top-k 固定最多保留 5 个高概率候选；Top-p 保留累计概率达到 0
 - [Hugging Face Transformers：Cache strategies](https://huggingface.co/docs/transformers/kv_cache)：KV Cache 等缓存机制的官方文档。
 - [Hugging Face Transformers：LLM inference optimization](https://huggingface.co/docs/transformers/llm_optims)：推理优化与部署的官方指南。
 - [Holtzman 等：The Curious Case of Neural Text Degeneration](https://arxiv.org/abs/1904.09751)：提出 Top-p（Nucleus）采样的原始论文。
+- [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](https://arxiv.org/abs/2501.12948)：推理模型（强化学习训练思维链）的代表性论文。
 - [Vaswani 等：Attention Is All You Need](https://arxiv.org/abs/1706.03762)：Transformer 架构的原始论文。

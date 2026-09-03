@@ -186,6 +186,7 @@ low quality, blurry, watermark, text, bad anatomy, extra fingers
 - **原理基础：** [大模型入门](/llm/basics)解释上下文、Token、幻觉和能力边界。
 - **同主题：** [工作流和模板区别](/workflows/workflow-vs-template)说明单个 Prompt 之外怎样组织多步骤任务。
 - **能力扩展：** [RAG 与 Agent](/llm/rag-agent)展示怎样用检索和工具补足知识与行动能力。
+- **验证改动：** [效果评估](/prompting/evaluation)说明怎样用固定测试集判断一次 Prompt 改动是否真的有效。
 
 ## 官方或原始资料来源
 
