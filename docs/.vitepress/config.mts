@@ -128,7 +128,7 @@ export default defineConfig({
         text: 'AI 绘画',
         link: '/concepts/base-model',
         activeMatch:
-          '^/(?:concepts/(?:base-model|components|how-it-works)|models/ecosystems|lora/basics)(?:$|/)'
+          '^/(?:concepts/(?:base-model|components|how-it-works|controlnet)|models/ecosystems|lora/basics)(?:$|/)'
       },
       {
         text: '资源',
@@ -179,7 +179,8 @@ export default defineConfig({
           { text: 'AI 绘画由哪些部分组成', link: '/concepts/components' },
           { text: '基本原理', link: '/concepts/how-it-works' },
           { text: '常见模型生态', link: '/models/ecosystems' },
-          { text: 'LoRA 入门', link: '/lora/basics' }
+          { text: 'LoRA 入门', link: '/lora/basics' },
+          { text: 'ControlNet 入门', link: '/concepts/controlnet' }
         ]
       },
       {

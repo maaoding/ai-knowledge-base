@@ -64,7 +64,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 | 快速用上对话 AI | [AI 基础概念](/ai/basics) → [大模型入门](/llm/basics) → [Prompt 入门](/prompting/basics) → [常用工具](/tools/common-tools) | Token、上下文窗口、幻觉、结果验证 |
 | 搞懂大模型原理 | [AI 基础概念](/ai/basics) → [机器学习入门](/ai/machine-learning) → [神经网络直觉](/ai/neural-networks) → [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Transformer 直觉](/llm/transformer) → [推理与解码](/llm/inference-decoding) → [训练、微调与对齐](/llm/training-alignment) | 注意力、自回归生成、训练与推理 |
 | 搭建 RAG 或 Agent | [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Prompt 入门](/prompting/basics) → [训练、微调与对齐](/llm/training-alignment) → [RAG 与 Agent](/llm/rag-agent) → [工作流和模板区别](/workflows/workflow-vs-template) | 检索质量、工具权限、失败路径 |
-| 画 AI 插画 | [AI 基础概念](/ai/basics) → [底模是什么](/concepts/base-model) → [AI 绘画由哪些部分组成](/concepts/components) → [基本原理](/concepts/how-it-works) → [常见模型生态](/models/ecosystems) → [LoRA 入门](/lora/basics) | 底模、采样、生态兼容性、LoRA |
+| 画 AI 插画 | [AI 基础概念](/ai/basics) → [底模是什么](/concepts/base-model) → [AI 绘画由哪些部分组成](/concepts/components) → [基本原理](/concepts/how-it-works) → [常见模型生态](/models/ecosystems) → [LoRA 入门](/lora/basics) → [ControlNet 入门](/concepts/controlnet) | 底模、采样、生态兼容性、LoRA、可控构图 |
 | 组织可复用任务 | [Prompt 入门](/prompting/basics) → [工作流和模板区别](/workflows/workflow-vs-template) → [RAG 与 Agent](/llm/rag-agent) → [常用工具](/tools/common-tools) → [效果评估](/prompting/evaluation) | 输入输出、固定步骤、动态决策、审计、测试集与基线 |
 
 路线只是入口。读到不熟悉的概念时回到相关页面补充；已经掌握的内容可以跳过，不需要为了“完成进度”重复阅读。
@@ -87,7 +87,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 | --- | --- | --- | --- |
 | 完全零基础 | [学习地图](/guide/getting-started) → [AI 基础概念](/ai/basics) → [大模型入门](/llm/basics)，然后选择一个主题 | 神经网络和 Transformer 的推演细节 | 建立概念图并找到主方向 |
 | 有编程经验 | [大模型入门](/llm/basics)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)、[RAG 与 Agent](/llm/rag-agent) | 已熟悉的机器学习直觉内容 | 理解模型的工程行为与成本 |
-| 主要使用 AI 绘画 | [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics) | 大模型原理的大部分页面 | 看懂工作流并定位出图问题 |
+| 主要使用 AI 绘画 | [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics)、[ControlNet 入门](/concepts/controlnet) | 大模型原理的大部分页面 | 看懂工作流并定位出图问题 |
 | 主要使用对话模型 | [大模型入门](/llm/basics)、[Prompt 入门](/prompting/basics)、[RAG 与 Agent](/llm/rag-agent)、[效果评估](/prompting/evaluation)、[常用工具](/tools/common-tools) | AI 绘画专题 | 稳定地交付任务并验证结果 |
 
 这些入口不是身份标签。需求变化时直接切换主题即可；不需要先把原来的方向全部读完。

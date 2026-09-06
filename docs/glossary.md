@@ -69,7 +69,7 @@ CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模�
 
 ## ControlNet
 
-结构控制模块，可以用姿势、线稿、深度图等条件控制生成结果。详见 [AI 绘画由哪些部分组成](/concepts/components)。
+结构控制模块，可以用姿势、线稿、深度图等条件控制生成结果。详见 [ControlNet 入门](/concepts/controlnet)。
 
 ## Cross-Attention
 

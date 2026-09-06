@@ -177,6 +177,7 @@ W' = 1+1  0+0  2+1  0+0        2 0 3 0
 
 - **前置概念：** [底模是什么](/concepts/base-model)说明 LoRA 依附和调整的基础模型是什么。
 - **同主题：** [常见模型生态](/models/ecosystems)帮助判断 LoRA 文件的来源与兼容关系。
+- **姊妹插件：** [ControlNet 入门](/concepts/controlnet)讲另一类附件：控制构图结构，而非补充概念。
 - **跨主题：** [训练、微调与对齐](/llm/training-alignment)说明低秩适配在模型训练体系中的位置。
 
 ## 官方或原始资料来源
