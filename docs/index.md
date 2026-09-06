@@ -7,7 +7,7 @@ hero:
   text: 从基础原理到应用实践
   tagline: 按主题查找，也可沿学习地图入门——不堆链接，不追热点，全部从零讲起
   image:
-    src: /assets/home-hero.png
+    src: /assets/home-hero.webp
     alt: AI 知识库主视觉
   actions:
     - theme: brand
