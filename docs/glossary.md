@@ -1,10 +1,15 @@
 ---
 description: '汇总 AI、LLM、Prompt、RAG、Agent 与 AI 绘画常见术语，提供简明定义、关联概念和延伸阅读入口。'
+outline: false
 ---
 
 # 术语表
 
 术语按英文字母序排列，解释与本站正文口径一致，条目末尾附对应的正文页面；遇到生词时可以随时回查本页。
+
+**快速跳转：** [A](#activation-function) · [B](#backpropagation) · [C](#cfg) · [D](#decoding) · [E](#embedding) · [F](#feature) · [G](#gan) · [H](#hallucination) · [I](#inference) · [K](#knowledge-cutoff) · [L](#label) · [M](#mcp) · [N](#negative-prompt) · [O](#overfitting) · [P](#positional-encoding) · [Q](#quantization) · [R](#rag) · [S](#safetensors) · [T](#temperature) · [U](#u-net) · [V](#vae) · [W](#webui)
+
+词条内容核对于 2026 年 9 月。
 
 ## Activation Function
 
@@ -38,13 +43,13 @@ description: '汇总 AI、LLM、Prompt、RAG、Agent 与 AI 绘画常见术语�
 
 偏置。神经元在加权输入之外学习的平移参数，使激活门槛不必固定经过原点。这里的 Bias 是模型参数，不等同于数据偏差或算法公平性语境中的偏见。详见 [神经网络直觉](/ai/neural-networks)。
 
-## Chain-of-Thought
-
-思维链。让模型在给出最终答案前先生成中间思考步骤的做法；推理模型把这类思考作为生成输出的一部分。思考 Token 同样占用上下文窗口、产生成本，也会出错。详见 [推理与解码](/llm/inference-decoding)。
-
 ## CFG
 
 CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模型听提示词程度的参数：太低容易跑题，过高可能颜色过饱和、结构僵硬，应从模型卡推荐值起步。详见 [AI 绘画由哪些部分组成](/concepts/components)。
+
+## Chain-of-Thought
+
+思维链。让模型在给出最终答案前先生成中间思考步骤的做法；推理模型把这类思考作为生成输出的一部分。思考 Token 同样占用上下文窗口、产生成本，也会出错。详见 [推理与解码](/llm/inference-decoding)。
 
 ## Checkpoint
 
@@ -74,13 +79,21 @@ CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模�
 
 解码。LLM 根据每一步的 Logit 或概率分布选择下一个 Token 的过程。Greedy、Temperature、Top-k 和 Top-p 都会影响选择方式，但不会为模型增加新知识。详见 [推理与解码](/llm/inference-decoding)。
 
-## Denoising Strength / 去噪强度
+## Denoising Strength
 
 去噪强度（Denoising Strength，常简称 Denoise）。图生图和局部重绘中的常见参数：决定在原图噪声基础上改动多大，数值越高，改动越大。详见 [基本原理](/concepts/how-it-works)。
 
+## Diffusion Model
+
+扩散模型。从纯噪声出发、一步步去噪得到图像的生成模型，是当前开源 AI 绘画的主流架构。详见 [基本原理](/concepts/how-it-works)。
+
+## Distillation
+
+蒸馏。用大模型的输出训练更小的模型，让小模型以更低成本接近大模型的能力。详见 [底模是什么](/concepts/base-model)。
+
 ## DiT
 
-DiT（Diffusion Transformer，扩散 Transformer）。用 Transformer 架构充当去噪网络的扩散模型结构。FLUX、Qwen-Image 等新一代绘画模型采用这类架构，与 U-Net 时代的插件和 LoRA 生态不直接通用。详见 [底模是什么](/concepts/base-model)。
+DiT（Diffusion Transformer，扩散 Transformer）。用 Transformer 架构充当去噪网络的扩散模型结构；SD3/SD3.5 使用的 MMDiT（多模态 DiT）是其代表变体。FLUX、Qwen-Image 等新一代绘画模型采用这类架构，与 U-Net 时代的插件和 LoRA 生态不直接通用。详见 [底模是什么](/concepts/base-model)。
 
 ## DPO
 
@@ -94,13 +107,21 @@ DPO（Direct Preference Optimization，直接偏好优化）。与 RLHF 使用�
 
 特征。模型用于做预测的输入信息，例如邮件中的链接数量、图片像素或用户行为统计。特征是否与目标相关、能否在真实推理时获得，会直接影响模型质量。详见 [机器学习入门](/ai/machine-learning)。
 
+## Few-shot
+
+少样本示例。在提示中附上几条输入输出示例，让模型照样子完成同类任务；不附示例直接下指令则常称 zero-shot（零样本）。详见 [Prompt 入门](/prompting/basics)。
+
 ## Fine-tuning
 
 微调。在预训练模型基础上继续使用特定数据训练，以改变模型的任务能力、格式、语气或领域行为。需要更新知识时不一定适合用微调，常应先评估 RAG。详见 [训练、微调与对齐](/llm/training-alignment)。
 
+## Flow Matching
+
+流匹配。把噪声与真实数据之间连成可学习的“传输路径”来训练生成模型；新一代绘画模型（如 FLUX）用它替代传统扩散目标。详见 [基本原理](/concepts/how-it-works)。
+
 ## Function Calling
 
-模型按约定结构生成函数名和参数，由应用程序验证后调用真实函数。模型提出调用意图，程序负责权限、执行、错误处理和结果回传。详见 [RAG 与 Agent](/llm/rag-agent)。
+模型按约定结构生成函数名和参数，由应用程序验证后调用真实函数。模型提出调用意图，程序负责权限、执行、错误处理和结果回传，也称 Tool Use。详见 [RAG 与 Agent](/llm/rag-agent)。
 
 ## GAN
 
@@ -118,9 +139,17 @@ GAN（Generative Adversarial Network，生成对抗网络）。由生成器与�
 
 幻觉。模型生成了流畅、看似合理但缺少依据或事实错误的内容。检索、工具和 Prompt 可以降低风险，但仍需要来源与结果验证。详见 [大模型入门](/llm/basics)。
 
+## Hyperparameter
+
+超参数。训练开始前人工设定的配置（如学习率、轮次），与模型训练中学出来的参数相对。详见 [机器学习入门](/ai/machine-learning)。
+
 ## Inference
 
 推理。使用训练完成的模型处理输入并生成预测或内容的阶段。普通用户的大多数模型调用都属于推理。详见 [推理与解码](/llm/inference-decoding)。
+
+## Knowledge Cutoff
+
+知识截止。模型训练数据的时间下限，之后发生的事它默认不知道。详见 [大模型入门](/llm/basics)。
 
 ## KV Cache
 
@@ -134,13 +163,17 @@ Key-Value Cache。自回归生成时保存过去 Token 在各 Transformer 层产
 
 Latent（潜空间表示）。模型内部的压缩图像表示。主流绘画模型在潜空间里去噪，最后由 VAE 解码成像素图；潜空间尺寸也决定了出图的分辨率习惯。详见 [基本原理](/concepts/how-it-works)。
 
+## Learning Rate
+
+学习率。每次参数更新的步子大小，太大容易震荡，太小训练缓慢。详见 [神经网络直觉](/ai/neural-networks)。
+
 ## LLM
 
 Large Language Model，大语言模型。它根据上下文处理和生成 Token，可用于问答、写作、代码、信息抽取和工具调用，但不会自动保证事实正确。详见 [大模型入门](/llm/basics)。
 
 ## LLM-as-a-Judge
 
-用模型给模型阅卷：把待评输出和评分量规交给一个模型，让它打分并说明理由，适合批量初筛。judge 存在位置偏差、长度偏好和自我偏好，重要决策仍需人工抽查校准。详见 [效果评估](/prompting/evaluation)。
+用模型给模型阅卷（也称 LLM-as-judge）：把待评输出和评分量规交给一个模型，让它打分并说明理由，适合批量初筛。judge 存在位置偏差、长度偏好和自我偏好，重要决策仍需人工抽查校准。详见 [效果评估](/prompting/evaluation)。
 
 ## Logit
 
@@ -162,6 +195,10 @@ MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外�
 
 模型卡。记录模型用途、训练背景、评估、限制、许可证和推荐用法的说明文档。下载或部署模型前应优先阅读。详见 [常见模型生态](/models/ecosystems)。
 
+## MoE
+
+稀疏混合专家（Mixture of Experts）。把 Transformer 的前馈层拆成多个“专家”，每个 Token 只激活其中一小部分，用更大的总参数量换更低的推理成本；DeepSeek-V3 等主流模型采用。详见 [Transformer 直觉](/llm/transformer)。
+
 ## Multimodal
 
 多模态。同一个模型能同时处理文字与图片、音频等多种形式的输入输出；本站为讲清原理把文字与图像分开讲解，真实产品正在走向融合。详见 [大模型入门](/llm/basics)。
@@ -177,6 +214,14 @@ MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外�
 ## Overfitting
 
 过拟合。模型过度适应训练数据中的细节与噪声，训练表现很好，但在验证集、测试集或真实新数据上表现变差。详见 [机器学习入门](/ai/machine-learning)。
+
+## Positional Encoding
+
+位置编码。给序列中每个 Token 注入位置信息的机制，让注意力能区分词序；Transformer 常用 RoPE 等旋转位置编码方案。详见 [Tokenization 与 Embedding](/llm/tokenization-embedding)。
+
+## Preprint
+
+预印本。正式发表前先公开在 arXiv 等平台的论文版本，未经同行评审。详见 [常用网站](/resources/websites)。
 
 ## Pre-training
 
@@ -200,11 +245,15 @@ Retrieval-Augmented Generation，检索增强生成。先从外部资料中检�
 
 ## Reasoning Model
 
-推理模型。在给出最终答案前先生成中间思考 Token 的模型（这里的“推理”指 Reasoning 多步思考，注意与指 Inference 的“推理”区分），如 o1/o3、DeepSeek-R1、Qwen 思考系列。擅长可分步验证的任务；思考 Token 会增加延迟与成本。详见 [推理与解码](/llm/inference-decoding)。
+推理模型。在给出最终答案前先生成中间思考 Token 的模型（这里的“推理”指 Reasoning 多步思考，注意与指 Inference 的“推理”区分），如 GPT-5 的内置思考模式、Claude 的扩展思考、Gemini 的思考模式，以及 DeepSeek-R1、Qwen 思考系列等开源推理模型。擅长可分步验证的任务；思考 Token 会增加延迟与成本。详见 [推理与解码](/llm/inference-decoding)。
 
 ## Reinforcement Learning
 
 强化学习。智能体在环境中采取动作，并根据奖励或惩罚学习策略的机器学习方式。奖励可以延迟出现，因此重点是连续决策的长期结果。详见 [机器学习入门](/ai/machine-learning)。
+
+## Rerank
+
+重排。检索链路中的二次排序步骤：先用快速检索召回一批候选片段，再用专门的重排模型按“与问题的相关程度”精细排序，把最相关的排到最前，是提升检索质量的常用手段。详见 [RAG 与 Agent](/llm/rag-agent)。
 
 ## Reward Model
 
@@ -216,7 +265,7 @@ RLHF（Reinforcement Learning from Human Feedback，基于人类反馈的强化�
 
 ## safetensors
 
-safetensors。为安全设计的模型权重存储格式，不夹带可执行代码；旧的 `.ckpt` 格式理论上可被塞入恶意代码，来源不明的文件优先避开。同一扩展名下可能是 checkpoint、LoRA、VAE 等不同内容，按模型页说明判断。详见 [常见模型生态](/models/ecosystems)。
+safetensors。为安全设计的模型权重存储格式，不夹带可执行代码；旧的 `.ckpt` 格式可能被塞入可执行代码，来源不明的文件优先避开。同一扩展名下可能是 checkpoint、LoRA、VAE 等不同内容，按模型页说明判断。详见 [常见模型生态](/models/ecosystems)。
 
 ## Sampler
 
@@ -234,6 +283,10 @@ safetensors。为安全设计的模型权重存储格式，不夹带可执行代
 
 自注意力。同一段输入内部的 Token 互相关注，从而形成包含上下文关系的新表示。详见 [Transformer 直觉](/llm/transformer)。
 
+## Self-supervised Learning
+
+自监督学习。从数据自身构造监督信号的学习方式：遮住一部分输入，让模型预测被遮住的内容，不需要人工打标签。大模型的预训练用的正是这一路。详见 [机器学习入门](/ai/machine-learning)。
+
 ## SFT
 
 SFT（Supervised Fine-Tuning，指令微调）。用成对的“指令-回答”示例继续训练预训练模型，让它学会按指令完成任务、遵守输出格式。它教的是“怎么用”预训练能力，不是往模型里塞新知识。详见 [训练、微调与对齐](/llm/training-alignment)。
@@ -241,6 +294,10 @@ SFT（Supervised Fine-Tuning，指令微调）。用成对的“指令-回答”
 ## Supervised Learning
 
 监督学习。使用带标签样本训练模型，让模型学习从特征到标签的映射，常用于分类和回归。详见 [机器学习入门](/ai/machine-learning)。
+
+## System Prompt
+
+系统提示。平台或开发者预先设定、长期生效的全局指令；用户通常看不到，一般也不能修改，也称系统指令。详见 [推理与解码](/llm/inference-decoding)。
 
 ## Temperature
 
@@ -270,6 +327,10 @@ AI 绘画中的小型提示词嵌入，用少量学习到的向量触发特定�
 
 分词器。把字符串按特定规范化与子词规则编码成 Token ID 序列，也负责把 Token 解码回文本。不同模型的 Tokenizer 和 Vocabulary 可能不同。详见 [Tokenization 与 Embedding](/llm/tokenization-embedding)。
 
+## Tool Use
+
+工具调用。让模型调用外部函数/工具的能力，社区也常写作 Function Calling（见 Function Calling 词条）。详见 [RAG 与 Agent](/llm/rag-agent)。
+
 ## Top-k
 
 解码采样方法。每一步只保留概率最高的 `k` 个候选 Token，再重新归一化并采样。候选数量固定，不会自动适应概率分布的集中程度。详见 [推理与解码](/llm/inference-decoding)。
@@ -298,9 +359,13 @@ U-Net。以卷积为主的网络结构，SD1.5 与 SDXL 两代绘画模型用它
 
 无监督学习。使用没有预先标签的数据寻找结构、相似性或低维表示，常见任务包括聚类和降维。模型发现的组仍需结合领域知识解释。详见 [机器学习入门](/ai/machine-learning)。
 
+## Upscaler
+
+放大模型。流水线末端的辅助模型：不重新理解提示词，只在低分辨率图上补充细节、扩大尺寸。详见 [AI 绘画由哪些部分组成](/concepts/components)。
+
 ## VAE
 
-变分自编码器。负责在 latent 和最终图片之间转换。详见 [AI 绘画由哪些部分组成](/concepts/components)。
+变分自编码器。在潜空间表示（Latent）与像素图之间双向转换。详见 [AI 绘画由哪些部分组成](/concepts/components)。
 
 ## Validation Set
 

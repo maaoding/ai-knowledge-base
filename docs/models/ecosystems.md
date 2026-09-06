@@ -35,7 +35,7 @@ description: '比较 Stable Diffusion、SDXL、FLUX 等模型生态的兼容性�
 
 判断渠道是否可信，看三点：发布者是不是官方或实名创作者、页面说明是否完整、能否追溯到许可证。三样缺任何一样，就换渠道。
 
-文件格式本身也值得注意：`.safetensors` 是为安全设计的存储格式，不夹带可执行代码；旧的 `.ckpt` 格式理论上能被塞入恶意代码，来源不明时优先避开。
+文件格式本身也值得注意：`.safetensors` 是为安全设计的存储格式，不夹带可执行代码；旧的 `.ckpt` 格式可能被塞入可执行代码，来源不明时优先避开。
 
 ### 文件类型怎么认
 
@@ -53,20 +53,7 @@ description: '比较 Stable Diffusion、SDXL、FLUX 等模型生态的兼容性�
 
 ### 生态为什么会分代：从 1.5 到 SDXL、FLUX
 
-生态分代的根源是底模换代。底模一换（架构、分辨率、文本编码器变化），旧插件就不直接通用，社区资源要重新积累：
-
-- **SD1.5**：最早普及的一代，U-Net 架构、512 系分辨率。因为门槛低、发布早，围绕它生长出的 LoRA、插件和教程至今最庞大。
-- **SDXL**：架构加大、分辨率升到 1024 系，生态已相当成熟。Pony、Illustrious、NoobAI 等二次元向生态多基于 SDXL 架构再训练，各有自己的标签与玩法规则（例如 Pony 系模型在训练时用 score_9 到 score_1 的质量标签给图片打分，生成时写上高分标签可提升质量，这就是常说的评分标签体系），彼此不要默认兼容。
-- **FLUX、Qwen-Image、Z-Image 等新一代**：DiT（Diffusion Transformer）类架构，普遍更擅长自然语言理解和质感，部分主打中文、文字渲染或图像编辑；生态仍在快速生长，教程与 LoRA 数量明显少于 SD 系。
-
-几代之间的结构关系：
-
-```text
-SD1.5（U-Net，512 系分辨率）
-SDXL（U-Net 加大，1024 系分辨率）
- └─ Pony / Illustrious / NoobAI 等二次元向再训练分支
-FLUX / Qwen-Image / Z-Image 等（DiT 类架构）
-```
+生态分代的根源是底模换代：底模一换（架构、分辨率、文本编码器变化），旧插件就不直接通用，社区资源要重新积累。各代底模的结构差异与谱系图见[底模是什么](/concepts/base-model)，本页只看生态角度：SD1.5 生态起步最早、门槛最低，围绕它的 LoRA、插件和教程至今最庞大；SDXL 生态已相当成熟，Pony、Illustrious、NoobAI 等二次元向生态多基于 SDXL 架构再训练，各有自己的标签与玩法规则（例如 Pony 系模型在训练时用 score_9 到 score_1 的质量标签给图片打分，生成时写上高分标签可提升质量，这就是常说的评分标签体系），彼此不要默认兼容；SD3 / SD3.5 与 FLUX（含 2025 年 11 月发布的 FLUX.2）、Qwen-Image、Z-Image 等新一代转向 DiT 类架构，生态仍在快速生长，教程与 LoRA 数量明显少于 SD 系。
 
 生态规模的差别由此而来：一代底模发布越早、门槛越低，社区在它上面攒下的 LoRA、插件和教程就越多；1.5 生态最庞大，正是因为它起步最早、活的时间最长。
 
@@ -75,6 +62,8 @@ FLUX / Qwen-Image / Z-Image 等（DiT 类架构）
 对初学者的含义：**先固定一个生态**，不要同时混用多代模型。生态迁移是社区性的长期过程，新模型未必是新手的最好起点——资源成熟度往往比“新”更重要。
 
 按需求粗略对应：低显存或跟老教程，SD1.5；通用绘画与设计，SDXL；动漫角色与 LoRA 玩法，Pony / Illustrious / NoobAI；自然语言提示与质感体验，FLUX 等新一代。这只是一张粗略的地图，具体以你的显存和用途为准。
+
+显存吃紧时的常见思路，按代价从低到高：降低出图分辨率或步数；换用参数更小的一代底模；先出小图再用放大模型补尺寸（见[AI 绘画由哪些部分组成](/concepts/components)）；再往后才是量化模型、分块 VAE、把部分计算挪回内存这类工具层手段，具体设置以所用工具的官方文档为准。
 
 ### 模型卡与许可证：用之前必须核对什么
 
@@ -121,7 +110,7 @@ FLUX / Qwen-Image / Z-Image 等（DiT 类架构）
 | Embedding | 概念压缩成的提示词向量 | KB 到几 MB | models/embeddings |
 | ControlNet 模型 | 按条件类型的控制模型 | GB 级 | models/controlnet |
 
-目录名以所用工具的文档为准，这里给的是主流工具的常见习惯；认类型的关键不是文件后缀（都是 `.safetensors`），而是模型页对用途的说明。量级也只是心理预期：同类型文件随模型代际不同，大小可能相差数倍。
+目录名以所用工具的文档为准，这里给的是主流工具的常见习惯；认类型的关键不是文件后缀（常见都是 `.safetensors`），而是模型页对用途的说明。量级也只是心理预期：同类型文件随模型代际不同，大小可能相差数倍。
 
 ## 常见误区
 
@@ -163,6 +152,7 @@ checkpoint 是完整底模，通常 GB 级；LoRA 只存对底模权重的小幅
 
 ## 关联阅读
 
+- **前置概念：** [底模是什么](/concepts/base-model)从结构角度讲清各代底模的分野，是理解生态分代的前提。
 - **原理基础：** [基本原理](/concepts/how-it-works)解释不同生态共享的生成机制。
 - **同主题：** [LoRA 入门](/lora/basics)展开生态中最常见的附件类型。
 - **工具选择：** [常用工具](/tools/common-tools)比较加载这些模型与文件的常见界面。
@@ -173,5 +163,6 @@ checkpoint 是完整底模，通常 GB 级；LoRA 只存对底模权重的小幅
 - [Hugging Face safetensors](https://github.com/huggingface/safetensors)：safetensors 安全存储格式的官方仓库。
 - [Civitai Education Hub](https://education.civitai.com/)：Civitai 官方教程站，覆盖模型页阅读、下载与训练入门。
 - [Stability AI 官网](https://stability.ai)：Stable Diffusion 系列主要发布方之一。
-- [FLUX 官方仓库](https://github.com/black-forest-labs/flux)：Black Forest Labs 的 FLUX 系列官方代码与说明。
+- [FLUX 官方仓库](https://github.com/black-forest-labs/flux)：Black Forest Labs 的 FLUX.1 系列官方代码与说明。
+- [FLUX.2 官方仓库](https://github.com/black-forest-labs/flux2)：FLUX.2 的官方推理仓库。
 - [Qwen-Image 官方仓库](https://github.com/QwenLM/Qwen-Image)：Qwen-Image 的官方代码与模型说明。

@@ -24,7 +24,7 @@ features:
       alt: AI 基础与大模型图标
       width: 48
       height: 48
-    details: 从 AI、机器学习和神经网络，到 Token、Embedding、Transformer、推理解码与训练对齐，共 8 页，适合建立原理框架或按概念查阅。
+    details: 从 AI、机器学习和神经网络，到 Token、Embedding、Transformer、推理与解码、训练与对齐，共 8 页，适合建立原理框架或按概念查阅。
   - title: 应用实践（5 页）
     icon:
       src: /assets/icon-tools.png
@@ -47,15 +47,15 @@ features:
 
 本站按主题组织知识。每页都以一个明确的结论开头，配上前置知识、学习目标、对比表和自测问题，既可以围绕一个目标组合阅读，也可以直接当查阅手册使用。
 
-第一次访问又不确定从哪里开始，可以先看[学习地图](/guide/getting-started)；已经有明确问题时，直接进入对应主题或使用顶部搜索。术语拿不准时查[术语表](/glossary)。
+如果是第一次访问，还不确定从哪里开始，可以先看[学习地图](/guide/getting-started)；已经有明确问题时，直接进入对应主题或使用顶部搜索。术语拿不准时查[术语表](/glossary)。
 
 ## 按主题浏览
 
 - **AI 基础**：从 [AI 基础概念](/ai/basics) 开始，按需补充 [机器学习入门](/ai/machine-learning) 和 [神经网络直觉](/ai/neural-networks)。
-- **大模型原理**：从 [大模型入门](/llm/basics) 建立总览，再查 Token、Transformer、推理解码或训练对齐。
-- **应用实践**：从 [Prompt 入门](/prompting/basics) 进入，也可以直接查 [RAG 与 Agent](/llm/rag-agent)、[工作流和模板区别](/workflows/workflow-vs-template)、[效果评估](/prompting/evaluation)或[常用工具](/tools/common-tools)。
+- **大模型原理**：从 [大模型入门](/llm/basics) 建立总览，再查 Token、Transformer、推理与解码或训练与对齐。
+- **应用实践**：从 [Prompt 入门](/prompting/basics) 进入，也可以直接查 [RAG 与 Agent](/llm/rag-agent)、[工作流和模板区别](/workflows/workflow-vs-template)、[效果评估](/prompting/evaluation) 或 [常用工具](/tools/common-tools)。
 - **AI 绘画**：从 [底模是什么](/concepts/base-model) 认识核心对象，再按问题查组成、原理、模型生态与 LoRA。
-- **资源**：通过 [常用网站](/resources/websites) 和 [精选教程](/resources/tutorials)继续学习，遇到陌生词随时查[术语表](/glossary)。
+- **资源**：通过 [常用网站](/resources/websites) 和 [精选教程](/resources/tutorials) 继续学习，遇到陌生词随时查 [术语表](/glossary)。
 
 这些主题不是必须依次完成的课程。想快速解决问题可以直接查对应页面；想系统入门，则在[学习地图](/guide/getting-started)里选择一条符合目标的路线。
 

@@ -51,7 +51,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 
 - AI 基础：能区分 AI、机器学习、深度学习和模型，并解释过拟合与泛化。
 - 大模型原理：能说清文本如何变成 Token、模型如何利用上下文、生成时采样参数改变了什么。
-- 应用实践：能写出包含任务、上下文、输出格式和约束的 Prompt，判断何时需要 RAG、工作流或 Agent，并用固定测试集验证改动效果。
+- 应用实践：能写出包含角色、任务、上下文、输出格式、约束和示例六要素的 Prompt，判断何时需要 RAG、工作流或 Agent，并用固定测试集验证改动效果。
 - AI 绘画：能说出底模、VAE、采样器和 LoRA 的分工，并看懂最小文生图流程。
 - 资源：知道怎样核对官方文档、版本和许可证，并保存可追溯的学习记录。
 
@@ -62,7 +62,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 | 目标 | 建议组合 | 重点记住 |
 | --- | --- | --- |
 | 快速用上对话 AI | [AI 基础概念](/ai/basics) → [大模型入门](/llm/basics) → [Prompt 入门](/prompting/basics) → [常用工具](/tools/common-tools) | Token、上下文窗口、幻觉、结果验证 |
-| 搞懂大模型原理 | [机器学习入门](/ai/machine-learning) → [神经网络直觉](/ai/neural-networks) → [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Transformer 直觉](/llm/transformer) → [推理与解码](/llm/inference-decoding) → [训练、微调与对齐](/llm/training-alignment) | 注意力、自回归生成、训练与推理 |
+| 搞懂大模型原理 | [AI 基础概念](/ai/basics) → [机器学习入门](/ai/machine-learning) → [神经网络直觉](/ai/neural-networks) → [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Transformer 直觉](/llm/transformer) → [推理与解码](/llm/inference-decoding) → [训练、微调与对齐](/llm/training-alignment) | 注意力、自回归生成、训练与推理 |
 | 搭建 RAG 或 Agent | [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Prompt 入门](/prompting/basics) → [训练、微调与对齐](/llm/training-alignment) → [RAG 与 Agent](/llm/rag-agent) → [工作流和模板区别](/workflows/workflow-vs-template) | 检索质量、工具权限、失败路径 |
 | 画 AI 插画 | [AI 基础概念](/ai/basics) → [底模是什么](/concepts/base-model) → [AI 绘画由哪些部分组成](/concepts/components) → [基本原理](/concepts/how-it-works) → [常见模型生态](/models/ecosystems) → [LoRA 入门](/lora/basics) | 底模、采样、生态兼容性、LoRA |
 | 组织可复用任务 | [Prompt 入门](/prompting/basics) → [工作流和模板区别](/workflows/workflow-vs-template) → [RAG 与 Agent](/llm/rag-agent) → [常用工具](/tools/common-tools) → [效果评估](/prompting/evaluation) | 输入输出、固定步骤、动态决策、审计、测试集与基线 |

@@ -82,7 +82,7 @@ export default defineConfig({
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }]
   ],
   themeConfig: {
-    logo: '/assets/logo.png',
+    logo: { src: '/assets/logo.png', alt: 'AI 综合知识库' },
     search: {
       provider: 'local',
       options: {

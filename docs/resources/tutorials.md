@@ -28,7 +28,7 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
 
 ### 如何按教程类型选
 
-教程大体分三类：**概念课程**补理论，**工具实操**练上手，**模型与训练**进阶。零基础先从概念课程或官方入门文档起步，不要一上来就照抄进阶训练脚本。下面按类型列出精选条目。
+教程大体分概念课程、工具实操、模型与训练等几类：**概念课程**补理论，**工具实操**练上手，**模型与训练**进阶。零基础先从概念课程或官方入门文档起步，不要一上来就照抄进阶训练脚本。下面按类型列出精选条目。
 
 #### LLM 理论与实践
 
@@ -43,6 +43,24 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
 - **Hugging Face Agents Course**（地址：[https://huggingface.co/learn/agents-course/en/unit0/introduction](https://huggingface.co/learn/agents-course/en/unit0/introduction)）
   - 学习 Agent、工具调用、Agentic RAG 和评估，配合本站 [RAG 与 Agent](/llm/rag-agent) 理解实践流程。
   - 框架和课程依赖变化较快，运行代码前确认当前单元版本。
+
+#### Prompt 工程
+
+- **OpenAI Prompt engineering 指南**（地址：[https://developers.openai.com/api/docs/guides/prompt-engineering](https://developers.openai.com/api/docs/guides/prompt-engineering)）
+  - 按官方策略逐条对照改写自己的 Prompt，把每条建议当成一次可验证的练习。
+  - 适合读完本站 [Prompt 入门](/prompting/basics) 后跟着练。
+
+- **Anthropic Prompt engineering**（地址：[https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)）
+  - 跟着官方章节从清晰指令、示例到长任务拆解逐节练习，练完对照自己 Prompt 的差距。
+  - 示例面向 Claude，思路对其他模型也大多适用。
+
+- **Prompt Engineering Guide**（地址：[https://www.promptingguide.ai](https://www.promptingguide.ai)）
+  - 按主题浏览技巧与应用场景索引，挑一两条拿到自己的任务上做对照测试。
+  - 社区汇总性质，具体结论仍以模型官方文档为准。
+
+- **OpenAI Cookbook**（地址：[https://cookbook.openai.com](https://cookbook.openai.com)）
+  - OpenAI 官方示例与实战笔记，代码可直接复制跟跑。
+  - 适合在读懂概念后动手复现，再替换成自己的任务。
 
 #### ComfyUI 入门
 
@@ -71,12 +89,14 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
 - **ComfyUI 官方示例工作流**（地址：[https://comfyanonymous.github.io/ComfyUI_examples/](https://comfyanonymous.github.io/ComfyUI_examples/)）
   - 查看可直接参考的官方示例流程，学习不同任务需要哪些节点组合。
   - 对照自己的工作流排查节点缺失或连接错误。
+  - 其中的放大（upscale）示例演示如何把小图放大成高清大图，对应[AI 绘画由哪些部分组成](/concepts/components)里的放大模型概念。
 
 #### WebUI / A1111
 
 - **AUTOMATIC1111 官方 Wiki**（地址：[https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki)）
   - 查找 Stable Diffusion WebUI 的官方说明，理解 WebUI 的功能入口、扩展和参数。
   - 适合使用 A1111 而不是 ComfyUI 的用户。
+  - 该界面生态近年更新放缓，新项目多转向 ComfyUI。
 
 - **功能说明**（地址：[https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features)）
   - 查看 WebUI 主要功能列表，对照界面理解 txt2img、img2img、inpaint、extras 等模块。
@@ -205,3 +225,11 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
 - [Hugging Face Model Cards 文档](https://huggingface.co/docs/hub/en/model-cards)：模型卡阅读与撰写的官方文档。
 - [Hugging Face Diffusers LoRA 训练文档](https://huggingface.co/docs/diffusers/en/training/lora)：LoRA 训练的官方实践文档。
 - [ComfyUI 官方示例工作流](https://comfyanonymous.github.io/ComfyUI_examples/)：ComfyUI 作者维护的官方示例集。
+- [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/en/unit0/introduction)：Agent 与工具调用的官方课程。
+- [AUTOMATIC1111 官方 Wiki](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki)：Stable Diffusion WebUI 的官方说明与功能列表。
+- [kohya-ss/sd-scripts](https://github.com/kohya-ss/sd-scripts)：常见 LoRA 训练脚本的原始仓库。
+- [OpenAI Prompt engineering 指南](https://developers.openai.com/api/docs/guides/prompt-engineering)：Prompt 编写的官方指南。
+- [Anthropic Prompt engineering](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)：Claude 官方文档的 Prompt 工程章节。
+- [Prompt Engineering Guide](https://www.promptingguide.ai)：社区维护的开源 Prompt 工程指南汇总。
+- [OpenAI Cookbook](https://cookbook.openai.com)：OpenAI 官方示例与实战笔记。
+- [ComfyUI Wiki 中文基础教程](https://comfyui-wiki.com/zh/tutorial/basic)：社区维护的中文基础教程，站点已自我标注为社区资料（非官方）。

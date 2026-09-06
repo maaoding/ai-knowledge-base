@@ -8,7 +8,7 @@ description: '说明 AI 绘画底模的作用、checkpoint 与 LoRA 的关系、
 
 ## 前置知识
 
-- 已阅读 [大模型入门](/llm/basics)，知道模型是训练得到的产物；LLM 部分讲过“预训练给能力，微调教用法，对齐定边界”——底模就是绘画模型的地基：它决定整体的风格倾向与能力上限。读过 [训练、微调与对齐](/llm/training-alignment) 会更顺，但不强制。
+- 读过 [大模型入门](/llm/basics) 会更顺，知道模型是训练得到的产物即可——LLM 部分讲过“预训练给能力，微调教用法，对齐定边界”，底模就是绘画模型的地基：它决定整体的风格倾向与能力上限。[训练、微调与对齐](/llm/training-alignment)提供微调与对齐的背景，同样不强制。
 - 不要求安装过 ComfyUI 或 WebUI，本页只建立概念，工具选择在 [常用工具](/tools/common-tools) 展开。
 - 先接受一个边界：本页只讲底模的结构性差异（架构、分辨率、生态），不提供下载地址，也不回答“哪个模型最强”这类时效性问题。
 
@@ -61,7 +61,8 @@ Stable Diffusion 系列几代底模的差异，主要是结构性的：
 
 - **SD1.5**：最早普及的一代，采用 **U-Net**（一种以卷积为主的网络结构）做去噪，基础分辨率以 512 系为主。发布早、门槛低，围绕它积累的插件、教程和 LoRA 至今最庞大。
 - **SDXL**：仍沿用 U-Net 架构但规模更大，基础分辨率升到 1024 系，画面结构和细节通常更好，生态成熟度很高。
-- **FLUX、Qwen-Image 等新一代**：转向 **DiT（Diffusion Transformer，扩散 Transformer）** 类架构，普遍对自然语言长句理解更好、质感更强；工作流和 LoRA 生态与 SD 系不直接通用。
+- **SD3 / SD3.5**：SD3（2024 年 6 月）首次引入 **MMDiT**（DiT 类）架构，同年 10 月的 SD3.5 延续这一架构，是 SD 系从 U-Net 转向 DiT 类架构的一代；SD3.5 的社区许可对年收入低于 100 万美元的主体免费商用。
+- **FLUX、Qwen-Image、Z-Image 等新一代**：转向 **DiT（Diffusion Transformer，扩散 Transformer）** 类架构，普遍对自然语言长句理解更好、质感更强；工作流和 LoRA 生态与 SD 系不直接通用。
 
 几代之间的结构关系：
 
@@ -69,7 +70,8 @@ Stable Diffusion 系列几代底模的差异，主要是结构性的：
 SD1.5（U-Net，512 系分辨率）
 SDXL（U-Net 加大，1024 系分辨率）
  └─ Pony / Illustrious / NoobAI 等二次元向再训练分支
-FLUX / Qwen-Image 等（DiT 类架构）
+SD3 / SD3.5（MMDiT，DiT 类架构）
+FLUX / Qwen-Image / Z-Image 等（DiT 类架构）
 ```
 
 同一生态内部还有变体，例如用于局部重绘的修补版、减少步数的蒸馏加速版（蒸馏：用大模型的输出训练一个更小模型的过程）。变体与主模型同属一个生态，插件兼容性通常保留，具体以发布说明为准。
@@ -124,7 +126,7 @@ FLUX / Qwen-Image 等（DiT 类架构）
 
 - **“底模越新越好”**：新架构不等于适合你。生态成熟度、显存要求、LoRA 与教程数量都是现实约束，换代期旧生态往往资源更全。
 - **“换个提示词就能换画风”**：提示词只能在底模已有能力范围内引导。偏写实的底模很难只靠提示词稳定变成纯动漫风，反之亦然。
-- **“所有 `.safetensors` 文件都一样”**：同一扩展名下可能是 checkpoint、LoRA、VAE 或文本编码器，用途和大小量级完全不同，要按模型页说明判断。
+- **“所有 `.safetensors` 文件都一样”**：同一扩展名下可能是 checkpoint、LoRA、VAE、Embedding 或文本编码器，用途和大小量级完全不同，要按模型页说明判断。
 - **“底模决定一切，参数无所谓”**：采样器、步数、CFG、分辨率同样明显影响成品；底模只定上限，不出成品。
 - **“名字像的底模就能混用插件”**：不同大版本之间（例如 SD1.5 与 SDXL）默认不兼容，同一生态的新旧大版本也要以模型页的 Base Model 标注为准。
 - **“底模就是一个文件”**：新一代模型常由底模、文本编码器、VAE 等多个文件组成，缺件会导致报错或效果异常。
@@ -168,7 +170,8 @@ LoRA 学到的是“如何修改某个底模内部权重的特定方向”，它
 
 - [Stable Diffusion 论文](https://arxiv.org/abs/2112.10752)：Stable Diffusion 的原始论文，底模基本架构的出处。
 - [SDXL 论文](https://arxiv.org/abs/2307.01952)：SDXL 相对前代结构性改进的官方论文。
-- [FLUX 官方仓库](https://github.com/black-forest-labs/flux)：Black Forest Labs 的 FLUX 系列官方代码与说明。
+- [FLUX 官方仓库](https://github.com/black-forest-labs/flux)：Black Forest Labs 的 FLUX.1 系列官方代码与说明。
+- [FLUX.2 官方仓库](https://github.com/black-forest-labs/flux2)：FLUX.2 的官方推理仓库。
 - [Hugging Face Diffusers 文档](https://huggingface.co/docs/diffusers/index)：各代 Stable Diffusion 模型结构与用法的官方文档。
 - [Stability AI 官网](https://stability.ai)：Stable Diffusion 系列主要发布方之一，模型发布与技术说明的第一手来源。
 - [Qwen-Image 官方仓库](https://github.com/QwenLM/Qwen-Image)：Qwen-Image 的官方代码与模型说明。

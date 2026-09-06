@@ -51,7 +51,7 @@ Token ID 只是索引，不包含可直接解释的语义距离。ID 为 `120` �
 
 ### Token Embedding 与位置表示
 
-神经网络不能直接处理字符串。模型内部有一张 Token Embedding 矩阵，每个 Token ID 对应其中一行向量：
+神经网络不能直接处理字符串。模型内部有一张 [Token Embedding](/glossary#embedding) 矩阵，每个 Token ID 对应其中一行向量：
 
 ```text
 Token ID -> 查 Embedding 矩阵 -> 初始 Token 向量
@@ -60,7 +60,7 @@ Token ID -> 查 Embedding 矩阵 -> 初始 Token 向量
 初始 Token Embedding 表示“这是哪个 Token”，但序列还需要位置信息。不同架构可能：
 
 - 把可学习或固定的位置向量与 Token Embedding 相加。
-- 在 Attention 中使用旋转位置编码（RoPE，一种给 token 注入位置信息的方法）。
+- 在 Attention 中使用旋转位置编码（RoPE，一种给 Token 注入位置信息的方法）。
 - 使用相对位置偏置或其他位置机制。
 
 经过多层 Transformer 后，每个位置得到的是结合上下文的隐藏状态。同一个 Token 在“苹果很好吃”和“苹果发布新品”中的初始 Token Embedding 可以相同，但后续上下文表示会不同。
@@ -79,7 +79,7 @@ Token ID -> 查 Embedding 矩阵 -> 初始 Token 向量
 
 ### Token、Embedding 与 Textual Inversion
 
-（这个小节提前用到了 AI 绘画章节的“触发词”“文本编码器”概念；还没读到那里时，只需记住：绘画里的 Embedding 与本文讲的文本向量是两回事。）
+（这个小节提前用到了 AI 绘画章节的“触发词”“文本编码器”概念，见[AI 绘画由哪些部分组成](/concepts/components)；还没读到那里时，只需记住：绘画里的 Embedding 与本文讲的文本向量是两回事。）
 
 在 AI 绘画中，Textual Inversion 会学习一小组向量，并用一个触发词把这些向量送入文本编码器，以表达某个视觉概念。
 

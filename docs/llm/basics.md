@@ -8,7 +8,7 @@ description: '介绍大语言模型如何学习和生成文本，解释上下文
 
 ## 前置知识
 
-- 已阅读 [AI 基础概念](/ai/basics)，知道模型是训练得到的产物、训练与推理的区别；读过 [机器学习入门](/ai/machine-learning) 会更顺，但不强制。
+- 已阅读 [AI 基础概念](/ai/basics)，知道模型是训练得到的产物、训练与推理的区别——这里的“推理”指模型运行（Inference），与“多步思考”意义上的推理不同，见[推理与解码](/llm/inference-decoding)；读过 [机器学习入门](/ai/machine-learning) 会更顺，但不强制。
 - 不要求编程或数学基础，本页的推演只用计数和加法；对 [Tokenization 与 Embedding](/llm/tokenization-embedding) 里的 Token 概念有印象即可，没读过也不影响。
 - 先接受一个边界：本页只搭建整体框架，训练阶段的细节在 [训练、微调与对齐](/llm/training-alignment) 展开，逐 Token 生成的采样机制在 [推理与解码](/llm/inference-decoding) 展开。
 
@@ -45,7 +45,7 @@ description: '介绍大语言模型如何学习和生成文本，解释上下文
 - 在缺少上下文时知道你的私有信息。
 - 对所有数学、逻辑和最新事实做到零错误。
 
-围绕 LLM 的常见应用形态：Chat（对话问答）、Copilot（在软件或代码环境里辅助操作）、RAG（先检索资料再回答）、Agent（规划步骤并调用工具）、Workflow（把模型调用放进固定业务流程）。RAG 和 Agent 在 [RAG 与 Agent](/llm/rag-agent) 单独展开。
+围绕 LLM 的常见应用形态：Chat（对话问答）、Copilot（在软件或代码环境里辅助操作）、RAG（先检索资料再回答）、Agent（规划步骤并调用工具）、Workflow（把模型调用放进固定业务流程）。RAG 和 Agent 在 [RAG 与 Agent](/llm/rag-agent) 单独展开；Workflow 与模板的区别见 [工作流和模板区别](/workflows/workflow-vs-template)。
 
 ### 三个训练阶段：预训练 → 微调 → 对齐
 
@@ -82,7 +82,7 @@ LLM 的基本训练目标就是**预测下一个 Token（Next-Token Prediction�
 
 同时，LLM 有几类结构性局限：
 
-- **幻觉（Hallucination）**：生成了看似合理但不真实的内容。常出现在问题缺少上下文、资料已过期、要求给出引用却没有提供资料的时候；根源是模型在按概率生成“像样的续写”，而不是在查证事实。
+- **[幻觉（Hallucination）](/glossary#hallucination)**：生成了看似合理但不真实的内容。常出现在问题缺少上下文、资料已过期、要求给出引用却没有提供资料的时候；根源是模型在按概率生成“像样的续写”，而不是在查证事实。
 - **知识截止（Knowledge Cutoff）**：参数在训练结束时固定，模型通常不知道训练截止之后发生的事。
 - **上下文窗口（Context Window）**：一次能处理的 Token 数量有限，超长对话和超长文档放不下。
 - **不会主动获取外部信息**：除非系统接入检索或工具，模型无法自己查数据库或上网核实。

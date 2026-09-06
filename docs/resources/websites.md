@@ -18,7 +18,7 @@ description: '按用途分组整理常用 AI 网站并说明选用时机，给�
 
 读完后，你应该能够：
 
-- 按用途从本页七组资源里选出当下需要的一两个，而不是全部收藏。
+- 按用途从本页八组资源里选出当下需要的一两个，而不是全部收藏。
 - 说出核对一个外部资源的六个检查点：官方性、更新时间、许可证、发布者、社区热度、交叉验证。
 - 在下载一个模型前，按“发布者 → 模型卡 → 许可证 → 文件与量化 → 社区反馈 → 记录存档”的顺序做一遍尽调。
 - 解释为什么预印本、Star 数、跑通教程都不能单独作为可信依据。
@@ -142,6 +142,34 @@ description: '按用途分组整理常用 AI 网站并说明选用时机，给�
 用途：查看本地模型运行工具、支持模型和使用文档。下载模型前仍需阅读原始模型许可证和硬件要求。
 
 选用：想在本地跑模型时，从这里的支持列表和文档入手；它不负责教你选模型——选型回到模型卡和许可证。
+
+## Prompt 与效果评估
+
+这组解决“Prompt 怎么写、效果怎么评”：把 [Prompt 入门](/prompting/basics) 和 [效果评估](/prompting/evaluation) 的方法对应到官方与社区维护的提示词工程指南。
+
+### OpenAI Prompt engineering 指南
+
+地址：[https://developers.openai.com/api/docs/guides/prompt-engineering](https://developers.openai.com/api/docs/guides/prompt-engineering)
+
+用途：OpenAI 官方文档中的 Prompt 编写指南，按策略讲解怎么组织指令、上下文与示例。
+
+选用：写面向 ChatGPT 或 API 的 Prompt 需要官方建议时用；示例围绕其自家模型，思路可以迁移到其他模型。
+
+### Anthropic Prompt engineering
+
+地址：[https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
+
+用途：Claude 官方文档的 Prompt 工程章节，从清晰指令讲到示例与长任务写法。
+
+选用：主要使用 Claude 时用；写法思路对其他模型也大多适用，具体行为差异以各家官方文档为准。
+
+### Prompt Engineering Guide
+
+地址：[https://www.promptingguide.ai](https://www.promptingguide.ai)
+
+用途：社区长期维护的开源 Prompt 工程指南汇总，按主题覆盖技巧、应用场景与风险。
+
+选用：想按主题系统浏览 Prompt 技术时用；它是转述汇总，具体结论要回到模型官方文档核对。
 
 ## AI 绘画工具与项目
 
@@ -288,3 +316,12 @@ description: '按用途分组整理常用 AI 网站并说明选用时机，给�
 - **选择工具：** [常用工具](/tools/common-tools)帮助先判断需要哪类产品或框架。
 - **继续学习：** [精选教程](/resources/tutorials)从“知道网站”走到“跟着练”。
 - **随时查词：** [术语表](/glossary)解释文档和教程里的常见术语。
+
+## 官方或原始资料来源
+
+- [Google Machine Learning](https://developers.google.com/machine-learning)：Google 官方机器学习与大模型课程入口。
+- [Hugging Face](https://huggingface.co)：模型、数据集、官方课程与文档的主站。
+- [arXiv](https://arxiv.org)：论文预印本平台。
+- [OpenAI Prompt engineering 指南](https://developers.openai.com/api/docs/guides/prompt-engineering)：Prompt 编写的官方指南。
+- [Anthropic Prompt engineering](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)：Claude 官方 Prompt 工程文档。
+- [Model Context Protocol](https://modelcontextprotocol.io)：模型上下文协议（MCP）官方网站。
