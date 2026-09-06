@@ -102,7 +102,7 @@ with warm lighting and a calm atmosphere.
 low quality, blurry, watermark, text, bad anatomy, extra fingers
 ```
 
-负向提示词适合减少常见质量问题，不能让模型凭空学会训练中没有的能力——底模没学过的概念，提示词和插件都补不上（见[底模是什么](/concepts/base-model)）。生成“不跟手”时按顺序排查：底模是否适合这个题材、提示词是否冲突、[LoRA](/lora/basics) 是否匹配底模、CFG 与采样设置是否按模型卡建议、是否需要 ControlNet 或局部重绘。部件分工详见 [AI 绘画由哪些部分组成](/concepts/components)。
+负向提示词适合减少常见质量问题，不能让模型凭空学会训练中没有的能力——底模没学过的概念，提示词和插件都补不上（见[底模是什么](/concepts/base-model)）。生成“不跟手”时按顺序排查：底模是否适合这个题材、提示词是否冲突、[LoRA](/lora/basics) 是否匹配底模、CFG 与采样设置是否按模型卡建议、是否需要 [ControlNet](/concepts/controlnet) 或局部重绘。部件分工详见 [AI 绘画由哪些部分组成](/concepts/components)。
 
 ## 最小推演：同一任务，差 Prompt 与结构化 Prompt 对照
 
