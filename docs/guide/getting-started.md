@@ -36,8 +36,8 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 
 - **AI 基础。** [AI 基础概念](/ai/basics)、[机器学习入门](/ai/machine-learning)、[神经网络直觉](/ai/neural-networks)，用于理解模型、训练、参数、泛化和神经网络等共通知识。
 - **大模型原理。** [大模型入门](/llm/basics)、[Tokenization 与 Embedding](/llm/tokenization-embedding)、[Transformer 直觉](/llm/transformer)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)，用于理解文本怎样进入模型、回答怎样生成以及能力怎样形成。
-- **应用实践。** [Prompt 入门](/prompting/basics)、[效果评估](/prompting/evaluation)、[RAG 入门](/llm/rag-agent)、[Agent 入门](/llm/agents)、[工作流和模板区别](/workflows/workflow-vs-template)、[常用工具](/tools/common-tools)，用于把模型能力组织成明确、可验证、可复用的任务流程。
-- **AI 绘画。** [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics)，用于理解图像生成系统及常见模型文件。
+- **应用实践。** [Prompt 入门](/prompting/basics)、[效果评估](/prompting/evaluation)、[RAG 入门](/llm/rag-agent)、[Agent 入门](/llm/agents)、[MCP 入门](/llm/mcp)、[工作流和模板区别](/workflows/workflow-vs-template)、[常用工具](/tools/common-tools)，用于把模型能力组织成明确、可验证、可复用的任务流程。
+- **AI 绘画。** [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[采样器与步数](/concepts/samplers)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics)、[ControlNet 入门](/concepts/controlnet)、[ComfyUI 入门](/concepts/comfyui)，用于理解图像生成系统及常见模型文件。
 - **资源。** [常用网站](/resources/websites)、[精选教程](/resources/tutorials)、[术语表](/glossary)，用于查来源、找教程和确认词义，不需要单独“学完”。
 
 ### 如何选择入口

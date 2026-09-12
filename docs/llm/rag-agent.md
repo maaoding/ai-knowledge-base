@@ -211,7 +211,7 @@ RAG 的回答基于外部资料，而外部资料不一定干净。提示注入�
 
 ## 关联阅读
 
-- **本页续篇：** [Agent 入门](/llm/agents)把工具调用、MCP 与提示注入安全展开成独立一页。
+- **本页续篇：** [Agent 入门](/llm/agents)把工具调用与提示注入安全展开成独立一页；工具对接标准化的部分见 [MCP 入门](/llm/mcp)。
 - **原理基础：** [训练、微调与对齐](/llm/training-alignment)帮助判断何时选择微调、RAG 或外部工具。
 - **同主题：** [Prompt 入门](/prompting/basics)按角色、任务、上下文、输出格式、约束、示例六要素讲解 Prompt 写法——RAG 的“拼 Prompt”一步同样用得上。
 - **效果验证：** [效果评估](/prompting/evaluation)说明改完切分、检索参数与 Prompt 后，如何判断是否真的变好了。

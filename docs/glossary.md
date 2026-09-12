@@ -189,7 +189,7 @@ Low-Rank Adaptation，低秩适配。通过训练少量附加参数调整模型�
 
 ## MCP
 
-MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外部工具、数据源的对接标准化的开放协议：工具方按协议暴露能力，兼容的宿主可通过 MCP 客户端发现和调用；具体功能、权限、认证与版本兼容仍取决于实现。它不取代 Function Calling，标准化的是工具的发现、描述与对接层。详见 [Agent 入门](/llm/agents)。
+MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外部工具、数据源的对接标准化的开放协议：工具方按协议暴露能力，兼容的宿主可通过 MCP 客户端发现和调用；具体功能、权限、认证与版本兼容仍取决于实现。它不取代 Function Calling，标准化的是工具的发现、描述与对接层。详见 [MCP 入门](/llm/mcp)。
 
 ## Model Card
 
