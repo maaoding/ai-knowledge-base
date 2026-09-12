@@ -1,6 +1,6 @@
 ---
 layout: home
-description: '面向零基础中文读者的 AI 综合知识库，按 AI 基础、LLM、Prompt、RAG、Agent、工具与 AI 绘画路线系统学习。'
+description: '面向零基础中文读者的 AI 综合知识库，按 AI 基础、LLM、Prompt、RAG、Agent、MCP、工具与 AI 绘画路线系统学习。'
 
 hero:
   name: AI 综合知识库
@@ -25,25 +25,25 @@ features:
       width: 48
       height: 48
     details: 从 AI、机器学习和神经网络，到 Token、Embedding、Transformer、推理与解码、训练与对齐，共 8 页，适合建立原理框架或按概念查阅。
-  - title: 应用实践（5 页）
+  - title: 应用实践（7 页）
     icon:
       src: /assets/icon-tools.png
       alt: 应用实践图标
       width: 48
       height: 48
-    details: 围绕 Prompt、RAG 与 Agent、工作流、常用工具与效果评估，共 5 页，帮助把模型能力变成可验证、可复用的任务流程。
-  - title: AI 绘画（6 页）
+    details: 围绕 Prompt、RAG、Agent、MCP、工作流、常用工具与效果评估，共 7 页，帮助把模型能力变成可验证、可复用的任务流程。
+  - title: AI 绘画（8 页）
     icon:
       src: /assets/icon-workflow.png
       alt: AI 绘画图标
       width: 48
       height: 48
-    details: 理解底模、模型组成、扩散原理、模型生态、LoRA 与 ControlNet，共 6 页，可以独立作为图像生成专题查阅。
+    details: 理解底模、模型组成、扩散原理、采样器与步数、模型生态、LoRA、ControlNet 与 ComfyUI，共 8 页，可以独立作为图像生成专题查阅。
 ---
 
 ## 这份知识库适合谁
 
-面向刚接触 AI 的中文读者：你可能听过大语言模型、Token、Embedding、RAG、Agent、Stable Diffusion、ComfyUI、LoRA 这些词，但说不清它们之间是什么关系，也不知道该先学哪个。
+面向刚接触 AI 的中文读者：你可能听过大语言模型、Token、Embedding、RAG、Agent、MCP、Stable Diffusion、ComfyUI、LoRA 这些词，但说不清它们之间是什么关系，也不知道该先学哪个。
 
 本站按主题组织知识。每页都以一个明确的结论开头，配上前置知识、学习目标、对比表和自测问题，既可以围绕一个目标组合阅读，也可以直接当查阅手册使用。
 
@@ -53,8 +53,8 @@ features:
 
 - **AI 基础**：从 [AI 基础概念](/ai/basics) 开始，按需补充 [机器学习入门](/ai/machine-learning) 和 [神经网络直觉](/ai/neural-networks)。
 - **大模型原理**：从 [大模型入门](/llm/basics) 建立总览，再查 Token、Transformer、推理与解码或训练与对齐。
-- **应用实践**：从 [Prompt 入门](/prompting/basics) 进入，也可以直接查 [RAG 与 Agent](/llm/rag-agent)、[工作流和模板区别](/workflows/workflow-vs-template)、[效果评估](/prompting/evaluation) 或 [常用工具](/tools/common-tools)。
-- **AI 绘画**：从 [底模是什么](/concepts/base-model) 认识核心对象，再按问题查组成、原理、模型生态、LoRA 与 ControlNet。
+- **应用实践**：从 [Prompt 入门](/prompting/basics) 进入，也可以直接查 [RAG 入门](/llm/rag-agent)、[Agent 入门](/llm/agents)、[MCP 入门](/llm/mcp)、[工作流和模板区别](/workflows/workflow-vs-template)、[效果评估](/prompting/evaluation) 或 [常用工具](/tools/common-tools)。
+- **AI 绘画**：从 [底模是什么](/concepts/base-model) 认识核心对象，再按问题查组成、原理、采样器与步数、模型生态、LoRA、ControlNet 或 ComfyUI。
 - **资源**：通过 [常用网站](/resources/websites) 和 [精选教程](/resources/tutorials) 继续学习，遇到陌生词随时查 [术语表](/glossary)。
 
 这些主题不是必须依次完成的课程。想快速解决问题可以直接查对应页面；想系统入门，则在[学习地图](/guide/getting-started)里选择一条符合目标的路线。
