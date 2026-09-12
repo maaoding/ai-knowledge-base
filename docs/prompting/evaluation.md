@@ -234,7 +234,7 @@ Prompt 的改动是全局的：为修好一类题加上的要求，会作用到�
 ## 关联阅读
 
 - **迭代对象：** [Prompt 入门](/prompting/basics)讲解 Prompt 的组成部分——评估就是验证这些改动是否有效的手段。
-- **评估对象：** [RAG 与 Agent](/llm/rag-agent)的检索质量、引用真实性与工具调用安全，都需要本页的方法来检验。
+- **评估对象：** [RAG 入门](/llm/rag-agent) 与 [Agent 入门](/llm/agents)的检索质量、引用真实性与工具调用安全，都需要本页的方法来检验。
 - **理解随机性：** [推理与解码](/llm/inference-decoding)解释为什么单次输出不足为凭。
 - **数据划分：** [机器学习入门](/ai/machine-learning)讲测试集纪律与数据泄漏——本页的防泄漏是同一条原则在 Prompt 场景的应用。
 - **随时查词：** [术语表](/glossary)汇总 Benchmark、LLM-as-judge 等术语。

@@ -41,7 +41,7 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
   - 课程以英文和 Python 为主，适合已经理解 [大模型入门](/llm/basics) 的读者。
 
 - **Hugging Face Agents Course**（地址：[https://huggingface.co/learn/agents-course/en/unit0/introduction](https://huggingface.co/learn/agents-course/en/unit0/introduction)）
-  - 学习 Agent、工具调用、Agentic RAG 和评估，配合本站 [RAG 与 Agent](/llm/rag-agent) 理解实践流程。
+  - 学习 Agent、工具调用、Agentic RAG 和评估，配合本站 [Agent 入门](/llm/agents) 理解实践流程。
   - 框架和课程依赖变化较快，运行代码前确认当前单元版本。
 
 #### Prompt 工程

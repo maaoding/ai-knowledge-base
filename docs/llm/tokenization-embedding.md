@@ -262,7 +262,7 @@ BPE 从单个字符出发，反复把语料中出现次数最多的相邻组合�
 
 - **前置概念：** [大模型入门](/llm/basics)说明 LLM 在预测什么，以及 Token 位于流程中的哪一步。
 - **同主题：** [Transformer 直觉](/llm/transformer)解释 Token 向量进入模型后怎样结合上下文形成表示。
-- **应用方向：** [RAG 与 Agent](/llm/rag-agent)展示语义 Embedding 在检索增强中的用途。
+- **应用方向：** [RAG 入门](/llm/rag-agent)展示语义 Embedding 在检索增强中的用途。
 
 ## 官方或原始资料来源
 

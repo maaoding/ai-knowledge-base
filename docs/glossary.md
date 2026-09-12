@@ -17,7 +17,7 @@ outline: false
 
 ## Agent
 
-围绕目标规划步骤并调用工具的 AI 应用形态。Agent 的执行能力来自模型、工具接口、权限和控制流程，不等于模型拥有独立意识。详见 [RAG 与 Agent](/llm/rag-agent)。
+围绕目标规划步骤并调用工具的 AI 应用形态。Agent 的执行能力来自模型、工具接口、权限和控制流程，不等于模型拥有独立意识。详见 [Agent 入门](/llm/agents)。
 
 ## Alignment
 
@@ -57,7 +57,7 @@ CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模�
 
 ## Chunk
 
-文档切分后的片段。RAG 通常先把长文档拆成 Chunk，再建立索引和检索。切分过细会丢失上下文，过大则可能降低检索精度。详见 [RAG 与 Agent](/llm/rag-agent)。
+文档切分后的片段。RAG 通常先把长文档拆成 Chunk，再建立索引和检索。切分过细会丢失上下文，过大则可能降低检索精度。详见 [RAG 入门](/llm/rag-agent)。
 
 ## CLIP
 
@@ -121,7 +121,7 @@ DPO（Direct Preference Optimization，直接偏好优化）。与 RLHF 使用�
 
 ## Function Calling
 
-模型按约定结构生成函数名和参数，由应用程序验证后调用真实函数。模型提出调用意图，程序负责权限、执行、错误处理和结果回传，也称 Tool Use。详见 [RAG 与 Agent](/llm/rag-agent)。
+模型按约定结构生成函数名和参数，由应用程序验证后调用真实函数。模型提出调用意图，程序负责权限、执行、错误处理和结果回传，也称 Tool Use。详见 [Agent 入门](/llm/agents)。
 
 ## GAN
 
@@ -189,7 +189,7 @@ Low-Rank Adaptation，低秩适配。通过训练少量附加参数调整模型�
 
 ## MCP
 
-MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外部工具、数据源的对接标准化的开放协议：工具方按协议暴露能力，兼容的宿主可通过 MCP 客户端发现和调用；具体功能、权限、认证与版本兼容仍取决于实现。它不取代 Function Calling，标准化的是工具的发现、描述与对接层。详见 [RAG 与 Agent](/llm/rag-agent)。
+MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外部工具、数据源的对接标准化的开放协议：工具方按协议暴露能力，兼容的宿主可通过 MCP 客户端发现和调用；具体功能、权限、认证与版本兼容仍取决于实现。它不取代 Function Calling，标准化的是工具的发现、描述与对接层。详见 [Agent 入门](/llm/agents)。
 
 ## Model Card
 
@@ -233,7 +233,7 @@ MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外�
 
 ## Prompt Injection
 
-提示注入。把恶意指令藏进模型会读到的内容（网页、文档、检索片段、工具返回）里，诱导模型当成任务指令执行。RAG 与 Agent 会放大其后果，防护靠权限最小化、高危操作人工确认与调用审计。详见 [RAG 与 Agent](/llm/rag-agent)。
+提示注入。把恶意指令藏进模型会读到的内容（网页、文档、检索片段、工具返回）里，诱导模型当成任务指令执行。[RAG 入门](/llm/rag-agent) 与 [Agent 入门](/llm/agents) 会放大其后果，防护靠权限最小化、高危操作人工确认与调用审计。详见 [Agent 入门](/llm/agents)。
 
 ## Quantization
 
@@ -241,7 +241,7 @@ MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外�
 
 ## RAG
 
-Retrieval-Augmented Generation，检索增强生成。先从外部资料中检索相关片段，再把资料放入上下文供模型回答。详见 [RAG 与 Agent](/llm/rag-agent)。
+Retrieval-Augmented Generation，检索增强生成。先从外部资料中检索相关片段，再把资料放入上下文供模型回答。详见 [RAG 入门](/llm/rag-agent)。
 
 ## Reasoning Model
 
@@ -253,7 +253,7 @@ Retrieval-Augmented Generation，检索增强生成。先从外部资料中检�
 
 ## Rerank
 
-重排。检索链路中的二次排序步骤：先用快速检索召回一批候选片段，再用专门的重排模型按“与问题的相关程度”精细排序，把最相关的排到最前，是提升检索质量的常用手段。详见 [RAG 与 Agent](/llm/rag-agent)。
+重排。检索链路中的二次排序步骤：先用快速检索召回一批候选片段，再用专门的重排模型按“与问题的相关程度”精细排序，把最相关的排到最前，是提升检索质量的常用手段。详见 [RAG 入门](/llm/rag-agent)。
 
 ## Reward Model
 
@@ -329,7 +329,7 @@ AI 绘画中的小型提示词嵌入，用少量学习到的向量触发特定�
 
 ## Tool Use
 
-工具调用。让模型调用外部函数/工具的能力，社区也常写作 Function Calling（见 Function Calling 词条）。详见 [RAG 与 Agent](/llm/rag-agent)。
+工具调用。让模型调用外部函数/工具的能力，社区也常写作 Function Calling（见 Function Calling 词条）。详见 [Agent 入门](/llm/agents)。
 
 ## Top-k
 
@@ -373,7 +373,7 @@ U-Net。以卷积为主的网络结构，SD1.5 与 SDXL 两代绘画模型用它
 
 ## Vector Database
 
-向量数据库。保存和检索 Embedding 的系统，常用于语义搜索和 RAG。它解决的是向量存储与相似度检索，不负责判断资料真假。详见 [RAG 与 Agent](/llm/rag-agent)。
+向量数据库。保存和检索 Embedding 的系统，常用于语义搜索和 RAG。它解决的是向量存储与相似度检索，不负责判断资料真假。详见 [RAG 入门](/llm/rag-agent)。
 
 ## Vocabulary
 
