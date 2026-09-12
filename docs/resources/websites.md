@@ -185,7 +185,7 @@ description: '按用途分组整理常用 AI 网站并说明选用时机，给�
 - 学习工作流、节点数据流和模型支持情况。
 - 排查自定义节点和核心版本兼容问题。
 
-选用：装了 ComfyUI 或遇到节点报错时来查；还没决定用哪个绘画工具的话，先读 [常见模型生态](/models/ecosystems) 再动手。
+选用：装了 [ComfyUI](/concepts/comfyui) 或遇到节点报错时来查；还没决定用哪个绘画工具的话，先读 [常见模型生态](/models/ecosystems) 再动手。
 
 ### Stability AI
 

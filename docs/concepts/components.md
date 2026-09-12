@@ -48,11 +48,11 @@ description: '拆解 AI 绘画系统中的文本编码器、扩散模型、VAE�
 - **调度器（Scheduler）**：决定噪声强度随步数怎么衰减，常与采样器成对出现。
 - **LoRA**：挂在底模权重上的小型附加模型，补充角色、画风、服装等概念。
 - **ControlNet**：注入线稿、深度、骨架等条件，约束构图和姿势，详见[ControlNet 入门](/concepts/controlnet)。
-- **工作流（Workflow）**：把以上部件按顺序连接的执行流程，在 ComfyUI 里表现为节点图。
+- **工作流（Workflow）**：把以上部件按顺序连接的执行流程，在 [ComfyUI](/concepts/comfyui) 里表现为节点图。
   - 常见形态：文生图、图生图、局部重绘、放大修复、参考图控制。
   - 同一个模型可以配多种工作流；工作流只是流程，模型能力仍是基础。
 
-放大模型（Upscaler）是流水线末端的另一类角色：它不重新理解提示词，只在低分辨率图上补充细节、扩大尺寸。常见用法是先生成小图再放大，或在放大后低强度重绘补细节；相比直接生成大图，这条路对显存更友好。想上手时，可从[精选教程](/resources/tutorials)的 ComfyUI 官方示例工作流进入，那里有现成的放大示例。
+放大模型（Upscaler）是流水线末端的另一类角色：它不重新理解提示词，只在低分辨率图上补充细节、扩大尺寸。常见用法是先生成小图再放大，或在放大后低强度重绘补细节；相比直接生成大图，这条路对显存更友好。想上手时，可从[精选教程](/resources/tutorials)的 ComfyUI 官方示例工作流进入，那里有现成的放大示例；工具本身的入门见 [ComfyUI 入门](/concepts/comfyui)。
 
 ### 对应到 ComfyUI 的常见节点
 
@@ -213,7 +213,7 @@ description: '拆解 AI 绘画系统中的文本编码器、扩散模型、VAE�
 - **前置概念：** [底模是什么](/concepts/base-model)介绍流水线的核心模型。
 - **同主题：** [基本原理](/concepts/how-it-works)解释为什么要分步去噪，以及文本条件怎样引导画面。
 - **组件深入：** [LoRA 入门](/lora/basics)展开 LoRA 的位置、兼容关系和使用方法。
-- **进阶方向：** [ControlNet 入门](/concepts/controlnet)展开条件控制的原理与用法；[精选教程](/resources/tutorials)收录 ComfyUI 官方 ControlNet 教程供上手。
+- **进阶方向：** [ControlNet 入门](/concepts/controlnet)展开条件控制的原理与用法；[ComfyUI 入门](/concepts/comfyui)把上面这张节点表放回真实界面；[精选教程](/resources/tutorials)收录 ComfyUI 官方 ControlNet 教程供上手。
 - **提示词写法：** [Prompt 入门](/prompting/basics)包含图像 Prompt 与负向提示词的专门讨论。
 
 ## 官方或原始资料来源

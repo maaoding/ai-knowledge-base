@@ -389,4 +389,4 @@ AI 绘画图形界面。常用于指 Stable Diffusion WebUI，也可以泛指浏
 
 ## Workflow
 
-工作流。把多个步骤按顺序组织起来、可包含条件分支和工具调用的执行流程；模板是它的可复用起点。在 ComfyUI 中通常表现为节点图。详见 [工作流和模板区别](/workflows/workflow-vs-template)。
+工作流。把多个步骤按顺序组织起来、可包含条件分支和工具调用的执行流程；模板是它的可复用起点。在 [ComfyUI](/concepts/comfyui) 中通常表现为节点图。详见 [工作流和模板区别](/workflows/workflow-vs-template)。

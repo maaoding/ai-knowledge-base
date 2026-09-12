@@ -132,7 +132,7 @@ export default defineConfig({
         text: 'AI 绘画',
         link: '/concepts/base-model',
         activeMatch:
-          '^/(?:concepts/(?:base-model|components|how-it-works|controlnet)|models/ecosystems|lora/basics)(?:$|/)'
+          '^/(?:concepts/(?:base-model|components|how-it-works|controlnet|comfyui)|models/ecosystems|lora/basics)(?:$|/)'
       },
       {
         text: '资源',
@@ -184,7 +184,8 @@ export default defineConfig({
           { text: '基本原理', link: '/concepts/how-it-works' },
           { text: '常见模型生态', link: '/models/ecosystems' },
           { text: 'LoRA 入门', link: '/lora/basics' },
-          { text: 'ControlNet 入门', link: '/concepts/controlnet' }
+          { text: 'ControlNet 入门', link: '/concepts/controlnet' },
+          { text: 'ComfyUI 入门', link: '/concepts/comfyui' }
         ]
       },
       {

@@ -70,7 +70,7 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
 
 - **文生图教程**（地址：[https://docs.comfy.org/zh/tutorials/basic/text-to-image](https://docs.comfy.org/zh/tutorials/basic/text-to-image)）
   - 跑通最基础的 text-to-image 流程，理解 checkpoint、prompt、采样器和输出节点之间的关系。
-  - 适合第一次接触 ComfyUI 的用户。
+  - 适合第一次接触 ComfyUI 的用户，还不了解这个工具的话，先读 [ComfyUI 入门](/concepts/comfyui)。
 
 - **工作流模板**（地址：[https://docs.comfy.org/zh/interface/features/template](https://docs.comfy.org/zh/interface/features/template)）
   - 学习如何复用模板，区分模板、工作流和单个节点设置。
@@ -132,7 +132,7 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
   - 了解 FLUX.2 Klein 的 ComfyUI 使用方式，对比新模型与传统 Stable Diffusion 工作流的差别。
   - 这类教程版本变化快，使用前要确认模型文件和节点版本。
 
-如果刚开始学 AI 绘画，建议按这个顺序看：先用 ComfyUI 官方教程跑通文生图；再学习 LoRA、ControlNet 和工作流示例；最后再看模型卡、许可证和训练资料。教程更新很快，阅读时注意教程发布时间、工具版本、模型版本、节点版本和下载来源。
+如果刚开始学 AI 绘画，建议按这个顺序看：先读 [ComfyUI 入门](/concepts/comfyui)建立整体印象，再用 ComfyUI 官方教程跑通文生图；再学习 LoRA、ControlNet 和工作流示例；最后再看模型卡、许可证和训练资料。教程更新很快，阅读时注意教程发布时间、工具版本、模型版本、节点版本和下载来源。
 
 ### 怎么判断教程质量
 

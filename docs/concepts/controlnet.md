@@ -84,7 +84,7 @@ ControlNet 本身是一个训练出来的神经网络：用海量“图片 + 对
 
 ### 在 ComfyUI 里长什么样
 
-把概念放回工具里：ControlNet 不改变文生图的主干，只是在注入条件这一步多接了几条支路。以姿势控制为例，节点链从左到右大致是：
+把概念放回工具里（界面与节点的上手见 [ComfyUI 入门](/concepts/comfyui)）：ControlNet 不改变文生图的主干，只是在注入条件这一步多接了几条支路。以姿势控制为例，节点链从左到右大致是：
 
 ```text
 加载图像 → 预处理节点 → Apply ControlNet 类节点 → KSampler
@@ -203,7 +203,7 @@ ControlNet 管结构与构图（条件图输入），LoRA 管固定角色或画�
 
 - **前置概念：** [AI 绘画由哪些部分组成](/concepts/components)说明 ControlNet 在流水线中注入的位置与部件分工。
 - **同主题：** [LoRA 入门](/lora/basics)讲另一类附件：管“多会画什么”，而不是“结构怎么摆”。
-- **进阶实操：** [精选教程](/resources/tutorials)收录 ComfyUI 官方 ControlNet 教程，跟着跑通第一个可控构图工作流。
+- **进阶实操：** [精选教程](/resources/tutorials)收录 ComfyUI 官方 ControlNet 教程，跟着跑通第一个可控构图工作流；工具界面不熟的，先过一遍 [ComfyUI 入门](/concepts/comfyui)。
 
 ## 官方或原始资料来源
 
