@@ -7,7 +7,7 @@ const root = resolve(fileURLToPath(new URL('..', import.meta.url)))
 const distDir = join(root, 'docs', '.vitepress', 'dist')
 const expectedDomain = 'ai-knowledge-base.maaoding.icu'
 
-const required = ['index.html', 'CNAME', '.nojekyll', 'robots.txt', 'sitemap.xml']
+const required = ['index.html', 'CNAME', '.nojekyll', 'robots.txt', 'sitemap.xml', 'rss.xml']
 
 for (const file of required) {
   if (!existsSync(join(distDir, file))) {

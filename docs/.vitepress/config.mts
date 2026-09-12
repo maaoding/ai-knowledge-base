@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 const siteUrl = 'https://ai-knowledge-base.maaoding.icu'
 const siteName = 'AI 综合知识库'
-const socialImageUrl = `${siteUrl}/assets/home-hero.png`
+const socialImageUrl = `${siteUrl}/assets/og-image.jpg`
 
 function canonicalUrlFor(relativePath: string) {
   const normalizedPath = relativePath.replace(/\\/g, '/').replace(/\.md$/, '')
@@ -61,7 +61,7 @@ export default defineConfig({
       ['meta', { property: 'og:description', content: description }],
       ['meta', { property: 'og:url', content: canonicalUrl }],
       ['meta', { property: 'og:image', content: socialImageUrl }],
-      ['meta', { property: 'og:image:type', content: 'image/png' }],
+      ['meta', { property: 'og:image:type', content: 'image/jpeg' }],
       ['meta', { property: 'og:image:width', content: '1200' }],
       ['meta', { property: 'og:image:height', content: '760' }],
       ['meta', { property: 'og:image:alt', content: 'AI 综合知识库主视觉' }],
@@ -79,7 +79,11 @@ export default defineConfig({
   },
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }]
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'manifest', href: '/site.webmanifest' }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'AI 综合知识库', href: '/rss.xml' }],
+    ['meta', { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#ffffff' }],
+    ['meta', { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#1b1b1f' }]
   ],
   themeConfig: {
     logo: { src: '/assets/logo.png', alt: 'AI 综合知识库' },

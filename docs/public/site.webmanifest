@@ -1,0 +1,28 @@
+{
+  "name": "AI 综合知识库",
+  "short_name": "AI 知识库",
+  "description": "面向零基础用户的 AI 基础、LLM 理论、Prompt、工具与 AI 绘画知识库",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
