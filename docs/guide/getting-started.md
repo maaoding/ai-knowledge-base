@@ -36,7 +36,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 
 - **AI 基础。** [AI 基础概念](/ai/basics)、[机器学习入门](/ai/machine-learning)、[神经网络直觉](/ai/neural-networks)，用于理解模型、训练、参数、泛化和神经网络等共通知识。
 - **大模型原理。** [大模型入门](/llm/basics)、[Tokenization 与 Embedding](/llm/tokenization-embedding)、[Transformer 直觉](/llm/transformer)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)，用于理解文本怎样进入模型、回答怎样生成以及能力怎样形成。
-- **应用实践。** [Prompt 入门](/prompting/basics)、[效果评估](/prompting/evaluation)、[RAG 入门](/llm/rag-agent)、[Agent 入门](/llm/agents)、[MCP 入门](/llm/mcp)、[工作流和模板区别](/workflows/workflow-vs-template)、[常用工具](/tools/common-tools)，用于把模型能力组织成明确、可验证、可复用的任务流程。
+- **应用实践。** [Prompt 入门](/prompting/basics)、[效果评估](/prompting/evaluation)、[RAG 入门](/llm/rag-agent)、[检索与向量](/llm/retrieval)、[Agent 入门](/llm/agents)、[MCP 入门](/llm/mcp)、[工作流和模板区别](/workflows/workflow-vs-template)、[常用工具](/tools/common-tools)，用于把模型能力组织成明确、可验证、可复用的任务流程。
 - **AI 绘画。** [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[采样器与步数](/concepts/samplers)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics)、[ControlNet 入门](/concepts/controlnet)、[ComfyUI 入门](/concepts/comfyui)，用于理解图像生成系统及常见模型文件。
 - **资源。** [常用网站](/resources/websites)、[精选教程](/resources/tutorials)、[术语表](/glossary)，用于查来源、找教程和确认词义，不需要单独“学完”。
 
@@ -85,7 +85,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 | --- | --- | --- |
 | 快速用上对话 AI | [AI 基础概念](/ai/basics) → [大模型入门](/llm/basics) → [Prompt 入门](/prompting/basics) → [常用工具](/tools/common-tools) | Token、上下文窗口、幻觉、结果验证 |
 | 搞懂大模型原理 | [AI 基础概念](/ai/basics) → [机器学习入门](/ai/machine-learning) → [神经网络直觉](/ai/neural-networks) → [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Transformer 直觉](/llm/transformer) → [推理与解码](/llm/inference-decoding) → [训练、微调与对齐](/llm/training-alignment) | 注意力、自回归生成、训练与推理 |
-| 搭建 RAG 或 Agent | [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Prompt 入门](/prompting/basics) → [训练、微调与对齐](/llm/training-alignment) → [RAG 入门](/llm/rag-agent) → [Agent 入门](/llm/agents) → [工作流和模板区别](/workflows/workflow-vs-template) | 检索质量、工具权限、失败路径 |
+| 搭建 RAG 或 Agent | [大模型入门](/llm/basics) → [Tokenization 与 Embedding](/llm/tokenization-embedding) → [Prompt 入门](/prompting/basics) → [训练、微调与对齐](/llm/training-alignment) → [RAG 入门](/llm/rag-agent) → [检索与向量](/llm/retrieval) → [Agent 入门](/llm/agents) → [工作流和模板区别](/workflows/workflow-vs-template) | 检索质量、工具权限、失败路径 |
 | 画 AI 插画 | [AI 基础概念](/ai/basics) → [底模是什么](/concepts/base-model) → [AI 绘画由哪些部分组成](/concepts/components) → [基本原理](/concepts/how-it-works) → [采样器与步数](/concepts/samplers) → [常见模型生态](/models/ecosystems) → [LoRA 入门](/lora/basics) → [ControlNet 入门](/concepts/controlnet) → [ComfyUI 入门](/concepts/comfyui) | 底模、采样、生态兼容性、LoRA、可控构图、工作流上手 |
 | 组织可复用任务 | [Prompt 入门](/prompting/basics) → [工作流和模板区别](/workflows/workflow-vs-template) → [RAG 入门](/llm/rag-agent) → [Agent 入门](/llm/agents) → [常用工具](/tools/common-tools) → [效果评估](/prompting/evaluation) | 输入输出、固定步骤、动态决策、审计、测试集与基线 |
 
@@ -97,7 +97,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 
 - **快速用上对话 AI**：先读两页基础，是为了拿到 Token、上下文窗口、幻觉这几个词——没有它们，[Prompt 入门](/prompting/basics)里的“约束”“示例”只能照抄而不懂为什么；直接跳到 Prompt 也能用，但输出不稳定时会缺少排查的语言。工具页放最后，因为工具只是调用模型，先知道模型能做什么，选工具才不浪费时间。
 - **搞懂大模型原理**：这条路线基本是一条依赖链——[AI 基础概念](/ai/basics)给词汇，[机器学习入门](/ai/machine-learning)给“训练”这个概念，[神经网络直觉](/ai/neural-networks)讲参数怎么被调整，[大模型入门](/llm/basics)把三者串成 LLM 图景，之后四页再逐层拆开。最容易卡的地方是从 Transformer 直接开始：注意力的推演要用到 Token 向量和损失的概念，缺了会觉得每句话都在引入新名词。
-- **搭建 RAG 或 Agent**：从[大模型入门](/llm/basics)直接起步，跳过了 AI 基础两页，默认你已带齐基础词汇，不熟就先补 [AI 基础概念](/ai/basics)。顺序的逻辑：[Tokenization 与 Embedding](/llm/tokenization-embedding)决定检索质量的一半（文本怎么被切开和表示），[Prompt 入门](/prompting/basics)决定另一半（拿到资料后怎么问）；[训练、微调与对齐](/llm/training-alignment)帮你判断什么时候该微调而不是继续堆检索；[RAG 入门](/llm/rag-agent) 与 [Agent 入门](/llm/agents)才谈架构，工作流页收尾工程化。跳过 Prompt 直接上框架，容易做出“检索都对、回答不行”的系统，还说不清问题出在哪一层。
+- **搭建 RAG 或 Agent**：从[大模型入门](/llm/basics)直接起步，跳过了 AI 基础两页，默认你已带齐基础词汇，不熟就先补 [AI 基础概念](/ai/basics)。顺序的逻辑：[Tokenization 与 Embedding](/llm/tokenization-embedding)决定检索质量的一半（文本怎么被切开和表示），[Prompt 入门](/prompting/basics)决定另一半（拿到资料后怎么问）；[训练、微调与对齐](/llm/training-alignment)帮你判断什么时候该微调而不是继续堆检索；[RAG 入门](/llm/rag-agent)才谈架构，[检索与向量](/llm/retrieval)把最容易卡住的检索一环单独讲透，[Agent 入门](/llm/agents)再往动作与工具走，工作流页收尾工程化。跳过 Prompt 直接上框架，容易做出“检索都对、回答不行”的系统，还说不清问题出在哪一层。
 - **画 AI 插画**：先认识底模这个核心对象，再看部件分工，然后才是原理与生态——因为“换底模”“VAE”“采样器”这些日常操作词，都建立在知道系统由什么组成之上。[AI 基础概念](/ai/basics)放最前，是让“模型是训练产物”这句话先立住；[采样器与步数](/concepts/samplers)紧跟原理页，把“每一步怎么走”的旋钮拆开讲；ControlNet 排最后，因为可控构图要用到前面认识的所有部件；[ComfyUI 入门](/concepts/comfyui)收尾，等部件都认识了，再把它们摊开在真实界面上。
 - **组织可复用任务**：这个顺序和真实搭建顺序一致——[Prompt 入门](/prompting/basics)是最小单元，工作流把多个 Prompt 串成流程，[RAG 入门](/llm/rag-agent) 与 [Agent 入门](/llm/agents)再往流程里加检索和动态决策，工具页提供承载方式，评估页最后把关。倒过来先装框架再想 Prompt，常在“每一步都不稳定”上耗尽耐心。
 
@@ -118,7 +118,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 | 读者背景 | 建议入口 | 暂时不必深入 | 当前目标 |
 | --- | --- | --- | --- |
 | 完全零基础 | [学习地图](/guide/getting-started) → [AI 基础概念](/ai/basics) → [大模型入门](/llm/basics)，然后选择一个主题 | 神经网络和 Transformer 的推演细节 | 建立概念图并找到主方向 |
-| 有编程经验 | [大模型入门](/llm/basics)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)、[RAG 入门](/llm/rag-agent)、[Agent 入门](/llm/agents) | 已熟悉的机器学习直觉内容 | 理解模型的工程行为与成本 |
+| 有编程经验 | [大模型入门](/llm/basics)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)、[RAG 入门](/llm/rag-agent)、[检索与向量](/llm/retrieval)、[Agent 入门](/llm/agents) | 已熟悉的机器学习直觉内容 | 理解模型的工程行为与成本 |
 | 主要使用 AI 绘画 | [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[采样器与步数](/concepts/samplers)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics)、[ControlNet 入门](/concepts/controlnet)、[ComfyUI 入门](/concepts/comfyui) | 大模型原理的大部分页面 | 看懂工作流并定位出图问题 |
 | 主要使用对话模型 | [大模型入门](/llm/basics)、[Prompt 入门](/prompting/basics)、[RAG 入门](/llm/rag-agent)、[Agent 入门](/llm/agents)、[效果评估](/prompting/evaluation)、[常用工具](/tools/common-tools) | AI 绘画专题 | 稳定地交付任务并验证结果 |
 

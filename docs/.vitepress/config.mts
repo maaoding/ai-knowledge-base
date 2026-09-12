@@ -126,7 +126,7 @@ export default defineConfig({
         text: '应用实践',
         link: '/prompting/basics',
         activeMatch:
-          '^/(?:prompting/(?:basics|evaluation)|llm/(?:rag-agent|agents|mcp)|workflows/workflow-vs-template|tools/common-tools)(?:$|/)'
+          '^/(?:prompting/(?:basics|evaluation)|llm/(?:rag-agent|retrieval|agents|mcp)|workflows/workflow-vs-template|tools/common-tools)(?:$|/)'
       },
       {
         text: 'AI 绘画',
@@ -172,6 +172,7 @@ export default defineConfig({
           { text: 'Prompt 入门', link: '/prompting/basics' },
           { text: '效果评估', link: '/prompting/evaluation' },
           { text: 'RAG 入门', link: '/llm/rag-agent' },
+          { text: '检索与向量', link: '/llm/retrieval' },
           { text: 'Agent 入门', link: '/llm/agents' },
           { text: 'MCP 入门', link: '/llm/mcp' },
           { text: '工作流和模板区别', link: '/workflows/workflow-vs-template' },
