@@ -33,7 +33,7 @@ outline: false
 
 ## Base Model
 
-基础模型。在 LLM 中通常指尚未完成特定指令对齐的通用预训练模型；在 AI 绘画中也用于说明 checkpoint 或 LoRA 所属的模型生态。详见 [底模是什么](/concepts/base-model)。
+基座模型（也称基础模型）。在 LLM 中通常指尚未完成特定指令对齐的通用预训练模型；在 AI 绘画中也用于说明 checkpoint 或 LoRA 所属的模型生态。详见 [底模是什么](/concepts/base-model)。
 
 ## Benchmark
 
@@ -81,7 +81,7 @@ CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模�
 
 ## Denoising Strength
 
-去噪强度（Denoising Strength，常简称 Denoise）。图生图和局部重绘中的常见参数：决定在原图噪声基础上改动多大，数值越高，改动越大。详见 [图生图与重绘幅度](/concepts/img2img)。
+去噪强度（Denoising Strength，又称重绘幅度，常简称 Denoise）。图生图和局部重绘中的常见参数：决定在原图噪声基础上改动多大，数值越高，改动越大。详见 [图生图与重绘幅度](/concepts/img2img)。
 
 ## Diffusion Model
 
@@ -229,7 +229,7 @@ MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外�
 
 ## Prompt
 
-提示或任务说明。LLM Prompt 通常包含角色、任务、上下文、输出格式、约束和示例；图像 Prompt 常描述主体、场景、风格和构图，并可能区分正向与负向提示词。详见 [Prompt 入门](/prompting/basics)。
+提示词（Prompt）。交给模型的任务说明：LLM Prompt 通常包含角色、任务、上下文、输出格式、约束和示例；图像 Prompt 常描述主体、场景、风格和构图，并可能区分正向与负向提示词。详见 [Prompt 入门](/prompting/basics)。
 
 ## Prompt Injection
 

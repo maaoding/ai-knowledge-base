@@ -209,7 +209,7 @@ export default defineConfig({
     ],
     footer: {
       message: '面向公开发布的 AI 入门资料。请遵守模型、素材、数据与平台许可。',
-      copyright: 'Copyright © 2026'
+      copyright: `Copyright © ${new Date().getFullYear()}`
     },
     docFooter: {
       prev: '上一篇',

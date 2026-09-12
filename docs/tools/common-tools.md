@@ -71,7 +71,7 @@ Ollama、LM Studio、llama.cpp 可以在自己电脑上下载和运行开源模�
 
 框架和 API 能减少重复开发，但解决不了文档质量、切分方式和检索效果这些核心问题。API 调用成功只代表请求完成，不代表结果已经正确。
 
-不想写代码时，另一个常见路径是 MCP 宿主：Claude、ChatGPT、VS Code、Cursor 等工具已普遍支持通过 MCP 接入外部数据与工具，原理见 [MCP 入门](/llm/mcp)。
+不想写代码时，另一个常见路径是 MCP 宿主：截至 2026 年，Claude、ChatGPT、VS Code、Cursor 等工具已普遍支持通过 MCP 接入外部数据与工具，原理见 [MCP 入门](/llm/mcp)。
 
 ### MCP：把“接工具”标准化成一次封装、多端复用
 

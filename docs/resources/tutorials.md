@@ -79,7 +79,7 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
 #### ComfyUI 工作流
 
 - **LoRA 教程**（地址：[https://docs.comfy.org/zh/tutorials/basic/lora](https://docs.comfy.org/zh/tutorials/basic/lora)）
-  - 学习在 ComfyUI 中加载 LoRA，理解 LoRA 权重和基础模型的关系。
+  - 学习在 ComfyUI 中加载 LoRA，理解 LoRA 权重和基座模型的关系。
   - 排查 LoRA 不生效、风格过强或模型不匹配的问题。
 
 - **ControlNet 教程**（地址：[https://docs.comfy.org/zh/tutorials/controlnet/controlnet](https://docs.comfy.org/zh/tutorials/controlnet/controlnet)）
