@@ -204,8 +204,8 @@ export default defineConfig({
       copyright: 'Copyright © 2026'
     },
     docFooter: {
-      prev: false,
-      next: false
+      prev: '上一篇',
+      next: '下一篇'
     },
     lastUpdated: {
       text: '最后更新'
