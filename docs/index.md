@@ -32,13 +32,13 @@ features:
       width: 48
       height: 48
     details: 围绕 Prompt、RAG 与检索、Agent、MCP、工作流、常用工具与效果评估，共 8 页，帮助把模型能力变成可验证、可复用的任务流程。
-  - title: AI 绘画（8 页）
+  - title: AI 绘画（10 页）
     icon:
       src: /assets/icon-workflow.png
       alt: AI 绘画图标
       width: 48
       height: 48
-    details: 理解底模、模型组成、扩散原理、采样器与步数、模型生态、LoRA、ControlNet 与 ComfyUI，共 8 页，可以独立作为图像生成专题查阅。
+    details: 理解底模、模型组成、扩散原理、采样器与步数、模型生态、LoRA、ControlNet、ComfyUI，以及图生图与放大两类进阶工作流，共 10 页，可以独立作为图像生成专题查阅。
 ---
 
 ## 这份知识库适合谁
@@ -54,7 +54,7 @@ features:
 - **AI 基础**：从 [AI 基础概念](/ai/basics) 开始，按需补充 [机器学习入门](/ai/machine-learning) 和 [神经网络直觉](/ai/neural-networks)。
 - **大模型原理**：从 [大模型入门](/llm/basics) 建立总览，再查 Token、Transformer、推理与解码或训练与对齐。
 - **应用实践**：从 [Prompt 入门](/prompting/basics) 进入，也可以直接查 [RAG 入门](/llm/rag-agent)、[检索与向量](/llm/retrieval)、[Agent 入门](/llm/agents)、[MCP 入门](/llm/mcp)、[工作流和模板区别](/workflows/workflow-vs-template)、[效果评估](/prompting/evaluation) 或 [常用工具](/tools/common-tools)。
-- **AI 绘画**：从 [底模是什么](/concepts/base-model) 认识核心对象，再按问题查组成、原理、采样器与步数、模型生态、LoRA、ControlNet 或 ComfyUI。
+- **AI 绘画**：从 [底模是什么](/concepts/base-model) 认识核心对象，再按问题查组成、原理、采样器与步数、模型生态、LoRA、ControlNet、ComfyUI，进阶查 [图生图与重绘幅度](/concepts/img2img) 与 [放大与细节修复](/concepts/upscaling)。
 - **资源**：通过 [常用网站](/resources/websites) 和 [精选教程](/resources/tutorials) 继续学习，遇到陌生词随时查 [术语表](/glossary)。
 
 这些主题不是必须依次完成的课程。想快速解决问题可以直接查对应页面；想系统入门，则在[学习地图](/guide/getting-started)里选择一条符合目标的路线。

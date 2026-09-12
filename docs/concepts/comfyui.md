@@ -189,7 +189,7 @@ LoRA Loader 接在 Checkpoint Loader (Simple) 与 KSampler 之间，可以串联
 ## 关联阅读
 
 - **前置概念：** [AI 绘画由哪些部分组成](/concepts/components)给出部件与节点的完整对照表，是看懂任何工作流的地基。
-- **同主题：** [LoRA 入门](/lora/basics)与 [ControlNet 入门](/concepts/controlnet)讲工作流里最常挂的两类附件；[工作流和模板区别](/workflows/workflow-vs-template)讲工作流文件为什么值得存下来复用。
+- **同主题：** [LoRA 入门](/lora/basics)与 [ControlNet 入门](/concepts/controlnet)讲工作流里最常挂的两类附件；[图生图与重绘幅度](/concepts/img2img)与[放大与细节修复](/concepts/upscaling)讲上手后最常用的两个进阶工作流；[工作流和模板区别](/workflows/workflow-vs-template)讲工作流文件为什么值得存下来复用。
 - **动手实操：** [精选教程](/resources/tutorials)收录 ComfyUI 官方中文文档与官方示例工作流，跟着跑通第一个工作流。
 
 ## 官方或原始资料来源

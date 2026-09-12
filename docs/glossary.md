@@ -81,7 +81,7 @@ CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模�
 
 ## Denoising Strength
 
-去噪强度（Denoising Strength，常简称 Denoise）。图生图和局部重绘中的常见参数：决定在原图噪声基础上改动多大，数值越高，改动越大。详见 [基本原理](/concepts/how-it-works)。
+去噪强度（Denoising Strength，常简称 Denoise）。图生图和局部重绘中的常见参数：决定在原图噪声基础上改动多大，数值越高，改动越大。详见 [图生图与重绘幅度](/concepts/img2img)。
 
 ## Diffusion Model
 
@@ -361,7 +361,7 @@ U-Net。以卷积为主的网络结构，SD1.5 与 SDXL 两代绘画模型用它
 
 ## Upscaler
 
-放大模型。流水线末端的辅助模型：不重新理解提示词，只在低分辨率图上补充细节、扩大尺寸。详见 [AI 绘画由哪些部分组成](/concepts/components)。
+放大模型。流水线末端的辅助模型：不重新理解提示词，只在低分辨率图上补充细节、扩大尺寸。详见 [放大与细节修复](/concepts/upscaling)。
 
 ## VAE
 

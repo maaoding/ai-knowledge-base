@@ -89,7 +89,7 @@ description: '精选 AI 基础、LLM、Prompt、ComfyUI 与 LoRA 教程，按官
 - **ComfyUI 官方示例工作流**（地址：[https://comfyanonymous.github.io/ComfyUI_examples/](https://comfyanonymous.github.io/ComfyUI_examples/)）
   - 查看可直接参考的官方示例流程，学习不同任务需要哪些节点组合。
   - 对照自己的工作流排查节点缺失或连接错误。
-  - 其中的放大（upscale）示例演示如何把小图放大成高清大图，对应[AI 绘画由哪些部分组成](/concepts/components)里的放大模型概念。
+  - 其中的放大模型（Upscale Models）示例演示如何把小图放大成高清大图，对应[AI 绘画由哪些部分组成](/concepts/components)里的放大模型概念，取舍见 [放大与细节修复](/concepts/upscaling)。
 
 #### WebUI / A1111
 
