@@ -89,7 +89,7 @@ CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模�
 
 ## Distillation
 
-蒸馏。用大模型的输出训练更小的模型，让小模型以更低成本接近大模型的能力。详见 [底模是什么](/concepts/base-model)。
+蒸馏。用大模型的输出训练更小的模型，让小模型以更低成本接近大模型的能力。详见 [训练、微调与对齐](/llm/training-alignment) 与 [底模是什么](/concepts/base-model)。
 
 ## DiT
 
