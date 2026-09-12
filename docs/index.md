@@ -18,13 +18,13 @@ hero:
       link: /glossary
 
 features:
-  - title: AI 基础与大模型原理（8 页）
+  - title: AI 基础与大模型原理（9 页）
     icon:
       src: /assets/icon-concepts.png
       alt: AI 基础与大模型图标
       width: 48
       height: 48
-    details: 从 AI、机器学习和神经网络，到 Token、Embedding、Transformer、推理与解码、训练与对齐，共 8 页，适合建立原理框架或按概念查阅。
+    details: 从 AI、机器学习和神经网络，到 Token、Embedding、Transformer、推理与解码、量化与本地部署、训练与对齐，共 9 页，适合建立原理框架或按概念查阅。
   - title: 应用实践（8 页）
     icon:
       src: /assets/icon-tools.png
@@ -52,7 +52,7 @@ features:
 ## 按主题浏览
 
 - **AI 基础**：从 [AI 基础概念](/ai/basics) 开始，按需补充 [机器学习入门](/ai/machine-learning) 和 [神经网络直觉](/ai/neural-networks)。
-- **大模型原理**：从 [大模型入门](/llm/basics) 建立总览，再查 Token、Transformer、推理与解码或训练与对齐。
+- **大模型原理**：从 [大模型入门](/llm/basics) 建立总览，再查 Token、Transformer、推理与解码、[量化与本地部署](/llm/quantization) 或训练与对齐。
 - **应用实践**：从 [Prompt 入门](/prompting/basics) 进入，也可以直接查 [RAG 入门](/llm/rag-agent)、[检索与向量](/llm/retrieval)、[Agent 入门](/llm/agents)、[MCP 入门](/llm/mcp)、[工作流和模板区别](/workflows/workflow-vs-template)、[效果评估](/prompting/evaluation) 或 [常用工具](/tools/common-tools)。
 - **AI 绘画**：从 [底模是什么](/concepts/base-model) 认识核心对象，再按问题查组成、原理、采样器与步数、模型生态、LoRA、ControlNet、ComfyUI，进阶查 [图生图与重绘幅度](/concepts/img2img) 与 [放大与细节修复](/concepts/upscaling)。
 - **资源**：通过 [常用网站](/resources/websites) 和 [精选教程](/resources/tutorials) 继续学习，遇到陌生词随时查 [术语表](/glossary)。

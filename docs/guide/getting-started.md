@@ -35,7 +35,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 ```
 
 - **AI 基础。** [AI 基础概念](/ai/basics)、[机器学习入门](/ai/machine-learning)、[神经网络直觉](/ai/neural-networks)，用于理解模型、训练、参数、泛化和神经网络等共通知识。
-- **大模型原理。** [大模型入门](/llm/basics)、[Tokenization 与 Embedding](/llm/tokenization-embedding)、[Transformer 直觉](/llm/transformer)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)，用于理解文本怎样进入模型、回答怎样生成以及能力怎样形成。
+- **大模型原理。** [大模型入门](/llm/basics)、[Tokenization 与 Embedding](/llm/tokenization-embedding)、[Transformer 直觉](/llm/transformer)、[推理与解码](/llm/inference-decoding)、[量化与本地部署](/llm/quantization)、[训练、微调与对齐](/llm/training-alignment)，用于理解文本怎样进入模型、回答怎样生成、模型怎样跑在自己手里以及能力怎样形成。
 - **应用实践。** [Prompt 入门](/prompting/basics)、[效果评估](/prompting/evaluation)、[RAG 入门](/llm/rag-agent)、[检索与向量](/llm/retrieval)、[Agent 入门](/llm/agents)、[MCP 入门](/llm/mcp)、[工作流和模板区别](/workflows/workflow-vs-template)、[常用工具](/tools/common-tools)，用于把模型能力组织成明确、可验证、可复用的任务流程。
 - **AI 绘画。** [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[采样器与步数](/concepts/samplers)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics)、[ControlNet 入门](/concepts/controlnet)、[ComfyUI 入门](/concepts/comfyui)、[图生图与重绘幅度](/concepts/img2img)、[放大与细节修复](/concepts/upscaling)，用于理解图像生成系统及常见模型文件。
 - **资源。** [常用网站](/resources/websites)、[精选教程](/resources/tutorials)、[术语表](/glossary)，用于查来源、找教程和确认词义，不需要单独“学完”。
@@ -118,7 +118,7 @@ description: 'AI 综合知识库学习地图，按 AI 基础、大模型原理�
 | 读者背景 | 建议入口 | 暂时不必深入 | 当前目标 |
 | --- | --- | --- | --- |
 | 完全零基础 | [学习地图](/guide/getting-started) → [AI 基础概念](/ai/basics) → [大模型入门](/llm/basics)，然后选择一个主题 | 神经网络和 Transformer 的推演细节 | 建立概念图并找到主方向 |
-| 有编程经验 | [大模型入门](/llm/basics)、[推理与解码](/llm/inference-decoding)、[训练、微调与对齐](/llm/training-alignment)、[RAG 入门](/llm/rag-agent)、[检索与向量](/llm/retrieval)、[Agent 入门](/llm/agents) | 已熟悉的机器学习直觉内容 | 理解模型的工程行为与成本 |
+| 有编程经验 | [大模型入门](/llm/basics)、[推理与解码](/llm/inference-decoding)、[量化与本地部署](/llm/quantization)、[训练、微调与对齐](/llm/training-alignment)、[RAG 入门](/llm/rag-agent)、[检索与向量](/llm/retrieval)、[Agent 入门](/llm/agents) | 已熟悉的机器学习直觉内容 | 理解模型的工程行为与成本 |
 | 主要使用 AI 绘画 | [底模是什么](/concepts/base-model)、[AI 绘画由哪些部分组成](/concepts/components)、[基本原理](/concepts/how-it-works)、[采样器与步数](/concepts/samplers)、[常见模型生态](/models/ecosystems)、[LoRA 入门](/lora/basics)、[ControlNet 入门](/concepts/controlnet)、[ComfyUI 入门](/concepts/comfyui)、[图生图与重绘幅度](/concepts/img2img)、[放大与细节修复](/concepts/upscaling) | 大模型原理的大部分页面 | 看懂工作流并定位出图问题 |
 | 主要使用对话模型 | [大模型入门](/llm/basics)、[Prompt 入门](/prompting/basics)、[RAG 入门](/llm/rag-agent)、[Agent 入门](/llm/agents)、[效果评估](/prompting/evaluation)、[常用工具](/tools/common-tools) | AI 绘画专题 | 稳定地交付任务并验证结果 |
 

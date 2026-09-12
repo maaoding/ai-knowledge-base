@@ -98,7 +98,7 @@ Transformer Attention 会为 Token 计算 Key 和 Value。自回归生成第 100
 - KV Cache 不会扩大模型的上下文窗口。
 - 它主要优化生成阶段的重复计算，首次处理整段输入的 Prefill（预填充，即把整段 Prompt 一次性算完前向的过程）仍需要计算输入 Token。
 
-显存不够时，常用量化技术压缩模型权重和缓存，见[常用工具](/tools/common-tools)。
+显存不够时，常用量化技术压缩模型权重和缓存，支持这类做法的工具见[常用工具](/tools/common-tools)；这笔账怎么手算、量化格式怎么选，展开在 [量化与本地部署](/llm/quantization)。
 
 ### 延迟、吞吐量和 Token 成本
 
@@ -220,7 +220,7 @@ Top-k 固定最多保留 5 个高概率候选；Top-p 保留累计概率达到 0
 ## 关联阅读
 
 - **前置概念：** [Transformer 直觉](/llm/transformer)说明 Attention 如何利用上下文。
-- **同主题：** [训练、微调与对齐](/llm/training-alignment)解释生成时固定的参数是怎样形成的。
+- **同主题：** [训练、微调与对齐](/llm/training-alignment)解释生成时固定的参数是怎样形成的；[量化与本地部署](/llm/quantization)讲显存总账怎么手算。
 - **应用方向：** [Prompt 入门](/prompting/basics)区分任务说明与采样参数各自能改变什么。
 - **延伸方向：** [效果评估](/prompting/evaluation)说明怎样用固定测试集验证改动与选型的真实效果，而不是凭单次输出下结论。
 

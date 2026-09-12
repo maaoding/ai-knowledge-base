@@ -120,7 +120,7 @@ export default defineConfig({
         text: '大模型',
         link: '/llm/basics',
         activeMatch:
-          '^/llm/(?:basics|tokenization-embedding|transformer|inference-decoding|training-alignment)(?:$|/)'
+          '^/llm/(?:basics|tokenization-embedding|transformer|inference-decoding|quantization|training-alignment)(?:$|/)'
       },
       {
         text: '应用实践',
@@ -163,6 +163,7 @@ export default defineConfig({
           { text: 'Tokenization 与 Embedding', link: '/llm/tokenization-embedding' },
           { text: 'Transformer 直觉', link: '/llm/transformer' },
           { text: '推理与解码', link: '/llm/inference-decoding' },
+          { text: '量化与本地部署', link: '/llm/quantization' },
           { text: '训练、微调与对齐', link: '/llm/training-alignment' }
         ]
       },
