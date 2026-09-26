@@ -21,7 +21,7 @@ const trail = computed(() => {
 
 <template>
   <nav v-if="trail" class="vp-breadcrumb" aria-label="面包屑">
-    <span class="vp-breadcrumb-group">{{ trail.group }}</span>
+    <a class="vp-breadcrumb-group" href="/guide/getting-started">{{ trail.group }}</a>
     <span class="vp-breadcrumb-sep" aria-hidden="true">/</span>
     <span class="vp-breadcrumb-current">{{ trail.title }}</span>
   </nav>
@@ -39,6 +39,11 @@ const trail = computed(() => {
 
 .vp-breadcrumb-group {
   color: var(--vp-c-text-3);
+  text-decoration: none;
+}
+
+.vp-breadcrumb-group:hover {
+  color: var(--vp-c-text-1);
 }
 
 .vp-breadcrumb-sep {

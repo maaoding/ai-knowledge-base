@@ -143,6 +143,7 @@ export default defineConfig({
     sidebar: [
       {
         text: '学习地图',
+        collapsed: true,
         items: [
           { text: '首页', link: '/' },
           { text: '学习地图', link: '/guide/getting-started' }
@@ -150,6 +151,7 @@ export default defineConfig({
       },
       {
         text: 'AI 基础',
+        collapsed: true,
         items: [
           { text: 'AI 基础概念', link: '/ai/basics' },
           { text: '机器学习入门', link: '/ai/machine-learning' },
@@ -158,6 +160,7 @@ export default defineConfig({
       },
       {
         text: '大模型原理',
+        collapsed: true,
         items: [
           { text: '大模型入门', link: '/llm/basics' },
           { text: 'Tokenization 与 Embedding', link: '/llm/tokenization-embedding' },
@@ -169,6 +172,7 @@ export default defineConfig({
       },
       {
         text: '应用实践',
+        collapsed: true,
         items: [
           { text: 'Prompt 入门', link: '/prompting/basics' },
           { text: '效果评估', link: '/prompting/evaluation' },
@@ -182,6 +186,7 @@ export default defineConfig({
       },
       {
         text: 'AI 绘画',
+        collapsed: true,
         items: [
           { text: '底模是什么', link: '/concepts/base-model' },
           { text: 'AI 绘画由哪些部分组成', link: '/concepts/components' },
@@ -197,6 +202,7 @@ export default defineConfig({
       },
       {
         text: '资源',
+        collapsed: true,
         items: [
           { text: '常用网站', link: '/resources/websites' },
           { text: '精选教程', link: '/resources/tutorials' },

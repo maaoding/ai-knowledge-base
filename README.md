@@ -29,26 +29,22 @@ VitePress 构建产物位于：
 docs/.vitepress/dist
 ```
 
-## 本地导出与部署检查
+`docs:build` 在构建之后会自动生成 RSS：`scripts/generate-rss.mjs` 读取 `docs/` 下的 Markdown 与各自最后一次 git 提交时间，取最近 20 篇写入 `docs/.vitepress/dist/rss.xml`（线上地址为 `/rss.xml`，页面 `<link rel="alternate">` 已指向它）。
 
-如需在本地同步仓库根目录中的静态发布副本，可运行：
-
-```powershell
-npm run docs:export
-```
-
-该命令会：
-
-- 构建 VitePress 文档。
-- 把 `docs/.vitepress/dist` 的静态文件复制到仓库根目录。
-- 写入 `.nojekyll` 和 `CNAME`。
-- 生成 `.pages-manifest.json`，用于下次导出时清理旧产物。
+## 部署检查
 
 提交前可运行：
 
 ```powershell
 npm run deploy:check
 ```
+
+该命令等于「构建（含 RSS）+ 产物校验」：先跑一次 `docs:build`，再由 `scripts/deploy-check.mjs` 只读校验 `docs/.vitepress/dist`。
+
+`scripts/` 下两个脚本的分工：
+
+- `generate-rss.mjs`：生成 `dist/rss.xml` 订阅源，由 `docs:build` 自动调用，不需要单独执行。
+- `deploy-check.mjs`：不构建，只核对 `dist` 里的必需文件（`index.html`、`CNAME`、`.nojekyll`、`robots.txt`、`sitemap.xml`、`rss.xml`）、`CNAME` 域名，以及所有站内链接是否都有对应产物、站内链接的 `#锚点` 是否存在；任一项不过就以非零状态退出。
 
 ## GitHub Pages
 
