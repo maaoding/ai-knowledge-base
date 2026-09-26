@@ -21,7 +21,7 @@ const trail = computed(() => {
 
 <template>
   <nav v-if="trail" class="vp-breadcrumb" aria-label="面包屑">
-    <a class="vp-breadcrumb-group" href="/guide/getting-started">{{ trail.group }}</a>
+    <a class="vp-breadcrumb-group" href="/guide/getting-started" title="返回学习地图">{{ trail.group }}</a>
     <span class="vp-breadcrumb-sep" aria-hidden="true">/</span>
     <span class="vp-breadcrumb-current">{{ trail.title }}</span>
   </nav>
