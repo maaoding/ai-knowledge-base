@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 const siteUrl = 'https://ai-knowledge-base.maaoding.icu'
 const siteName = 'AI 综合知识库'
-const socialImageUrl = `${siteUrl}/assets/og-image.jpg`
+const socialImageUrl = `${siteUrl}/assets/og-image.jpg?v=743d7bee4b06`
 
 function canonicalUrlFor(relativePath: string) {
   const normalizedPath = relativePath.replace(/\\/g, '/').replace(/\.md$/, '')
@@ -64,12 +64,12 @@ export default defineConfig({
       ['meta', { property: 'og:image:type', content: 'image/jpeg' }],
       ['meta', { property: 'og:image:width', content: '1200' }],
       ['meta', { property: 'og:image:height', content: '760' }],
-      ['meta', { property: 'og:image:alt', content: 'AI 综合知识库主视觉' }],
+      ['meta', { property: 'og:image:alt', content: '书页连接 AI 原理、应用实践和图像创作的知识地图' }],
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { name: 'twitter:title', content: title }],
       ['meta', { name: 'twitter:description', content: description }],
       ['meta', { name: 'twitter:image', content: socialImageUrl }],
-      ['meta', { name: 'twitter:image:alt', content: 'AI 综合知识库主视觉' }],
+      ['meta', { name: 'twitter:image:alt', content: '书页连接 AI 原理、应用实践和图像创作的知识地图' }],
       [
         'script',
         { type: 'application/ld+json' },
@@ -78,15 +78,15 @@ export default defineConfig({
     ]
   },
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png?v=0cbe2b58eb2f' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png?v=4843da6f74bb' }],
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
     ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'AI 综合知识库', href: '/rss.xml' }],
     ['meta', { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#ffffff' }],
     ['meta', { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#1b1b1f' }]
   ],
   themeConfig: {
-    logo: { src: '/assets/logo.png', alt: 'AI 综合知识库' },
+    logo: { src: '/assets/logo.png?v=224737b2ed93', alt: 'AI 综合知识库' },
     search: {
       provider: 'local',
       options: {

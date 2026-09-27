@@ -9,17 +9,17 @@
   "lang": "zh-CN",
   "icons": [
     {
-      "src": "/favicon.png",
+      "src": "/favicon.png?v=0cbe2b58eb2f",
       "sizes": "64x64",
       "type": "image/png"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/apple-touch-icon.png?v=4843da6f74bb",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "/assets/logo.png",
+      "src": "/assets/logo.png?v=224737b2ed93",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"

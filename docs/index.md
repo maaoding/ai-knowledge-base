@@ -7,8 +7,8 @@ hero:
   text: 从基础原理到应用实践
   tagline: 按主题查找，也可沿学习地图入门——不堆链接，不追热点，全部从零讲起
   image:
-    src: /assets/home-hero.webp
-    alt: AI 知识库主视觉
+    src: /assets/home-hero.webp?v=8a8bbf092c48
+    alt: 打开的书连接 AI 原理、应用实践和图像创作三条学习路径
   actions:
     - theme: brand
       text: 查看学习地图
@@ -20,21 +20,21 @@ hero:
 features:
   - title: AI 基础与大模型原理（9 页）
     icon:
-      src: /assets/icon-concepts.png
+      src: /assets/icon-concepts.png?v=9c3b300b33ff
       alt: AI 基础与大模型图标
       width: 48
       height: 48
     details: 从 AI、机器学习和神经网络，到 Token、Embedding、Transformer、推理与解码、量化与本地部署、训练与对齐，共 9 页，适合建立原理框架或按概念查阅。
   - title: 应用实践（8 页）
     icon:
-      src: /assets/icon-tools.png
+      src: /assets/icon-tools.png?v=3875d520bb35
       alt: 应用实践图标
       width: 48
       height: 48
     details: 围绕 Prompt、RAG 与检索、Agent、MCP、工作流、常用工具与效果评估，共 8 页，帮助把模型能力变成可验证、可复用的任务流程。
   - title: AI 绘画（10 页）
     icon:
-      src: /assets/icon-workflow.png
+      src: /assets/icon-workflow.png?v=39e1df3ccb9c
       alt: AI 绘画图标
       width: 48
       height: 48
