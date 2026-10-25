@@ -11,6 +11,14 @@ const siteName = 'AI 综合知识库'
 const siteDescription = '面向零基础用户的 AI 基础、LLM 理论、Prompt、工具与 AI 绘画知识库'
 const maxItems = 20
 
+// RSS 只收录教程文章页；导航、清单与工具页更新不进订阅源
+const excludedFromRss = new Set([
+  'glossary.md',
+  'guide/getting-started.md',
+  'resources/tutorials.md',
+  'resources/websites.md'
+])
+
 function gitLastCommitDate(file) {
   const result = spawnSync('git', ['log', '-1', '--format=%aI', '--', file], {
     cwd: root,
@@ -33,8 +41,11 @@ function parseFrontmatter(text) {
 }
 
 function extractTitle(text, fallback) {
-  const frontmatterTitle = text.match(/^---\r?\n[\s\S]*?\btitle:\s*(.+)/)
-  if (frontmatterTitle) return frontmatterTitle[1].trim().replace(/^['"]|['"]$/g, '')
+  const frontmatter = text.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  if (frontmatter) {
+    const titleLine = frontmatter[1].match(/^title:\s*(.+)$/m)
+    if (titleLine) return titleLine[1].trim().replace(/^['"]|['"]$/g, '')
+  }
   const h1 = text.match(/^#\s+(.+)$/m)
   return h1 ? h1[1].trim() : fallback
 }
@@ -69,6 +80,7 @@ for (const file of mdFiles) {
   const text = await readFile(file, 'utf8')
   const frontmatter = parseFrontmatter(text)
   const relativePath = file.slice(docsDir.length + 1).replace(/\\/g, '/')
+  if (excludedFromRss.has(relativePath)) continue
   const route = relativePath.replace(/\.md$/, '')
   const title = extractTitle(text, route)
   items.push({
@@ -79,7 +91,8 @@ for (const file of mdFiles) {
   })
 }
 
-items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+// 同一提交时间的条目按路径排序，保证批次提交时选出的 20 篇是确定的
+items.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate) || a.link.localeCompare(b.link))
 const selected = items.slice(0, maxItems)
 
 const rssItems = selected

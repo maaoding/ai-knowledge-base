@@ -29,7 +29,7 @@ VitePress 构建产物位于：
 docs/.vitepress/dist
 ```
 
-`docs:build` 在构建之后会自动生成 RSS：`scripts/generate-rss.mjs` 读取 `docs/` 下的 Markdown 与各自最后一次 git 提交时间，取最近 20 篇写入 `docs/.vitepress/dist/rss.xml`（线上地址为 `/rss.xml`，页面 `<link rel="alternate">` 已指向它）。
+`docs:build` 在构建之后会自动生成 RSS：`scripts/generate-rss.mjs` 读取 `docs/` 下的文章页（不含首页、学习地图、术语表与资源清单页）与各自最后一次 git 提交时间，取最近 20 篇写入 `docs/.vitepress/dist/rss.xml`（线上地址为 `/rss.xml`，页面 `<link rel="alternate">` 已指向它）。
 
 ## 部署检查
 
