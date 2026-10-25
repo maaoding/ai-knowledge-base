@@ -25,6 +25,8 @@ export default defineConfig({
 
     const canonicalUrl = canonicalUrlFor(pageData.relativePath)
     const isHome = pageData.relativePath === 'index.md'
+    // og/twitter 用纯页名（<title> 保留站名后缀，社交卡片则不带）
+    const plainTitle = pageData.title || title
     const structuredData = isHome
       ? {
           '@context': 'https://schema.org',
@@ -57,7 +59,7 @@ export default defineConfig({
       ['meta', { property: 'og:type', content: isHome ? 'website' : 'article' }],
       ['meta', { property: 'og:locale', content: 'zh_CN' }],
       ['meta', { property: 'og:site_name', content: siteName }],
-      ['meta', { property: 'og:title', content: title }],
+      ['meta', { property: 'og:title', content: plainTitle }],
       ['meta', { property: 'og:description', content: description }],
       ['meta', { property: 'og:url', content: canonicalUrl }],
       ['meta', { property: 'og:image', content: socialImageUrl }],
@@ -66,7 +68,7 @@ export default defineConfig({
       ['meta', { property: 'og:image:height', content: '760' }],
       ['meta', { property: 'og:image:alt', content: '书页连接 AI 原理、应用实践和图像创作的知识地图' }],
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-      ['meta', { name: 'twitter:title', content: title }],
+      ['meta', { name: 'twitter:title', content: plainTitle }],
       ['meta', { name: 'twitter:description', content: description }],
       ['meta', { name: 'twitter:image', content: socialImageUrl }],
       ['meta', { name: 'twitter:image:alt', content: '书页连接 AI 原理、应用实践和图像创作的知识地图' }],
