@@ -9,7 +9,7 @@ outline: false
 
 **快速跳转：** [A](#activation-function) · [B](#backpropagation) · [C](#cfg) · [D](#decoding) · [E](#embedding) · [F](#feature) · [G](#gan) · [H](#hallucination) · [I](#inference) · [K](#knowledge-cutoff) · [L](#label) · [M](#mcp) · [N](#negative-prompt) · [O](#overfitting) · [P](#positional-encoding) · [Q](#quantization) · [R](#rag) · [S](#safetensors) · [T](#temperature) · [U](#u-net) · [V](#vae) · [W](#webui)
 
-词条内容核对于 2026 年 9 月。
+词条内容核对于 2026 年 10 月。
 
 ## Activation Function
 
