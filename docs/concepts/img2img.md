@@ -198,7 +198,7 @@ seed 固定的是加在原图上的那片噪声，也就是对照实验的起点
 
 - **前置概念：** [基本原理](/concepts/how-it-works)（加噪与去噪的完整解释）、[AI 绘画由哪些部分组成](/concepts/components)（部件分工与重绘幅度词条）、[ComfyUI 入门](/concepts/comfyui)（图生图在节点上怎么接）。
 - **同主题：** [ControlNet 入门](/concepts/controlnet)（大幅改动时守住结构）、[采样器与步数](/concepts/samplers)（去噪路上的步态）、[放大与细节修复](/concepts/upscaling)（低幅度重绘在放大流程里的用法）。
-- **动手实操：** [精选教程](/resources/tutorials)。
+- **动手实操：** [精选教程](/resources/tutorials)（含图生图与可控构图的上手教程）。
 
 ## 官方或原始资料来源
 

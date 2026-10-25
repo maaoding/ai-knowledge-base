@@ -225,9 +225,9 @@ recall@5 衡量“应命中的片段有没有出现在前 5 条里”——找�
 
 ## 关联阅读
 
-- **前置概念：** [Tokenization 与 Embedding](/llm/tokenization-embedding)（向量怎么来的）、[大模型入门](/llm/basics)。
+- **前置概念：** [Tokenization 与 Embedding](/llm/tokenization-embedding)（向量怎么来的）、[大模型入门](/llm/basics)（检索最终为它供给上下文）。
 - **同主题：** [RAG 入门](/llm/rag-agent)（端到端流程与引用溯源）、[常用工具](/tools/common-tools)（框架与托管入口）、[效果评估](/prompting/evaluation)（评估方法总纲）。
-- **动手实操：** [精选教程](/resources/tutorials)。
+- **动手实操：** [精选教程](/resources/tutorials)（含 RAG 与评估的实践教程入口）。
 
 ## 官方或原始资料来源
 
