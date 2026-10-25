@@ -17,7 +17,7 @@ outline: false
 
 ## Agent
 
-围绕目标规划步骤并调用工具的 AI 应用形态。Agent 的执行能力来自模型、工具接口、权限和控制流程，不等于模型拥有独立意识。详见 [Agent 入门](/llm/agents)。
+智能体。围绕目标规划步骤并调用工具的 AI 应用形态。Agent 的执行能力来自模型、工具接口、权限和控制流程，不等于模型拥有独立意识。详见 [Agent 入门](/llm/agents)。
 
 ## Alignment
 
@@ -35,6 +35,10 @@ outline: false
 
 基座模型（也称基础模型）。在 LLM 中通常指尚未完成特定指令对齐的通用预训练模型；在 AI 绘画中也用于说明 checkpoint 或 LoRA 所属的模型生态。详见 [底模是什么](/concepts/base-model)。
 
+## Baseline
+
+基线。改动前的第一次完整评测记录：没有基线，任何“变好了”都缺少参照物。每次改 Prompt、换模型或调参数后重跑同一组测试，与基线比较分数再决定采纳还是回滚。详见 [效果评估](/prompting/evaluation)。
+
 ## Benchmark
 
 基准测试。公开的标准考试（如 MMLU、HumanEval、SWE-bench），用于横向比较模型的大致能力段位。分数不能直接预测具体任务的表现，可能存在数据污染与任务分布差异；最终应以自己的固定测试集验证。详见 [效果评估](/prompting/evaluation)。
@@ -42,6 +46,10 @@ outline: false
 ## Bias
 
 偏置。神经元在加权输入之外学习的平移参数，使激活门槛不必固定经过原点。这里的 Bias 是模型参数，不等同于数据偏差或算法公平性语境中的偏见。详见 [神经网络直觉](/ai/neural-networks)。
+
+## BM25
+
+基于词频统计的经典关键词检索算法：一个词在当前文档出现得多、在整个语料出现得少，它就重要。管字面命中，救专有名词、编号、错误代码这类字面串，弱项是同义改写。详见 [检索与向量](/llm/retrieval)。
 
 ## CFG
 
@@ -57,7 +65,7 @@ CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模�
 
 ## Chunk
 
-文档切分后的片段。RAG 通常先把长文档拆成 Chunk，再建立索引和检索。切分过细会丢失上下文，过大则可能降低检索精度。详见 [RAG 入门](/llm/rag-agent)。
+分块，也称切片。文档切分后的片段。RAG 通常先把长文档拆成 Chunk，再建立索引和检索。切分过细会丢失上下文，过大则可能降低检索精度。详见 [RAG 入门](/llm/rag-agent)。
 
 ## CLIP
 
@@ -89,7 +97,7 @@ CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模�
 
 ## Distillation
 
-蒸馏。用大模型的输出训练更小的模型，让小模型以更低成本接近大模型的能力。详见 [训练、微调与对齐](/llm/training-alignment) 与 [底模是什么](/concepts/base-model)。
+蒸馏。让一个模型（学生）模仿另一个模型（教师）的行为。LLM 侧是用大模型的输出当教材训练更小的模型，以更低成本接近其能力；AI 绘画侧的“蒸馏加速版”学的不是变小而是“少走几步就到位”，把步数压到个位数到十来步，代价是步数与 CFG 的推荐值与原版明显不同。详见 [训练、微调与对齐](/llm/training-alignment) 与 [采样器与步数](/concepts/samplers)。
 
 ## DiT
 
@@ -121,7 +129,7 @@ DPO（Direct Preference Optimization，直接偏好优化）。与 RLHF 使用�
 
 ## Function Calling
 
-模型按约定结构生成函数名和参数，由应用程序验证后调用真实函数。模型提出调用意图，程序负责权限、执行、错误处理和结果回传，也称 Tool Use。详见 [Agent 入门](/llm/agents)。
+函数调用。模型按约定结构生成函数名和参数，由应用程序验证后调用真实函数。模型提出调用意图，程序负责权限、执行、错误处理和结果回传，也称 Tool Use。详见 [Agent 入门](/llm/agents)。
 
 ## GAN
 
@@ -143,6 +151,10 @@ GAN（Generative Adversarial Network，生成对抗网络）。由生成器与�
 
 超参数。训练开始前人工设定的配置（如学习率、轮次），与模型训练中学出来的参数相对。详见 [机器学习入门](/ai/machine-learning)。
 
+## Hybrid Retrieval
+
+混合检索。关键词路（BM25）与向量路（语义相似度）并行、再融合排名的检索做法；最常用的融合是 RRF（Reciprocal Rank Fusion，倒数排名融合）——把每条结果在两路里排名的倒数相加，两路都靠前的胜出。详见 [检索与向量](/llm/retrieval)。
+
 ## Inference
 
 推理。使用训练完成的模型处理输入并生成预测或内容的阶段。普通用户的大多数模型调用都属于推理。详见 [推理与解码](/llm/inference-decoding)。
@@ -150,6 +162,10 @@ GAN（Generative Adversarial Network，生成对抗网络）。由生成器与�
 ## Knowledge Cutoff
 
 知识截止。模型训练数据的时间下限，之后发生的事它默认不知道。详见 [大模型入门](/llm/basics)。
+
+## IP-Adapter
+
+内容参考适配器。把参考图的风格或内容注入生成过程，与提示词（内容方向）、LoRA（画风补充）、ControlNet（结构构图）各管一个维度。详见 [ControlNet 入门](/concepts/controlnet)。
 
 ## KV Cache
 
@@ -199,6 +215,10 @@ MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外�
 
 稀疏混合专家（Mixture of Experts）。把 Transformer 的前馈层拆成多个“专家”，每个 Token 只激活其中一小部分，用更大的总参数量换更低的推理成本；DeepSeek-V3 等主流模型采用。详见 [Transformer 直觉](/llm/transformer)。
 
+## MRR
+
+Mean Reciprocal Rank，平均倒数排名。检索评估指标：看第一条正确结果排第几，排第 1 得 1 分、第 2 得 0.5、第 3 得 1/3，整卷各题取平均，对顺序敏感。recall@k 不低而 MRR 低，说明“找到了但排得靠后”，该上重排。详见 [检索与向量](/llm/retrieval)。
+
 ## Multimodal
 
 多模态。同一个模型能同时处理文字与图片、音频等多种形式的输入输出；本站为讲清原理把文字与图像分开讲解，真实产品正在走向融合。详见 [大模型入门](/llm/basics)。
@@ -218,6 +238,10 @@ MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外�
 ## Positional Encoding
 
 位置编码。给序列中每个 Token 注入位置信息的机制，让注意力能区分词序；Transformer 常用 RoPE 等旋转位置编码方案。详见 [Tokenization 与 Embedding](/llm/tokenization-embedding)。
+
+## Preprocessor
+
+预处理器。把参考图加工成条件图的组件：真人照片经 OpenPose 提取骨架、风景照提取深度图、草稿跑 Canny 提取边缘；工具里通常与 ControlNet 节点成对出现。条件类型常见的即线稿（Canny）、深度（Depth）、姿势骨架（OpenPose）。详见 [ControlNet 入门](/concepts/controlnet)。
 
 ## Preprint
 
@@ -243,9 +267,17 @@ MCP（Model Context Protocol，模型上下文协议）。把 LLM 应用与外�
 
 Retrieval-Augmented Generation，检索增强生成。先从外部资料中检索相关片段，再把资料放入上下文供模型回答。详见 [RAG 入门](/llm/rag-agent)。
 
+## Recall@k
+
+前 k 条命中率。检索评估指标：应命中的片段有没有出现在返回的前 k 条里，多个标准片段时用命中数除以应命中数；检到但排第 8 名、k 给到 10 就不扣分。数值低是召回问题，查切分粒度、Embedding 模型，或加大 k、上混合检索。详见 [检索与向量](/llm/retrieval)。
+
 ## Reasoning Model
 
 推理模型。在给出最终答案前先生成中间思考 Token 的模型（这里的“推理”指 Reasoning 多步思考，注意与指 Inference 的“推理”区分），如 GPT-5 的内置思考模式、Claude 的扩展思考、Gemini 的思考模式，以及 DeepSeek-R1、Qwen 思考系列等开源推理模型。擅长可分步验证的任务；思考 Token 会增加延迟与成本。详见 [推理与解码](/llm/inference-decoding)。
+
+## Regression
+
+回归。评估语境里指改动后已做对的部分退步：Prompt 改动作用于全部考题，修好一类题的同时可能在另一类退步，所以每次改动都要重跑整份旧考卷、分题型对比明细，守住“已经做对的还在不在”。详见 [效果评估](/prompting/evaluation)。
 
 ## Reinforcement Learning
 
@@ -263,6 +295,10 @@ Retrieval-Augmented Generation，检索增强生成。先从外部资料中检�
 
 RLHF（Reinforcement Learning from Human Feedback，基于人类反馈的强化学习）。对齐方法：让模型对同一问题生成多个回答，人类比较好坏形成偏好数据，训练奖励模型打分，再用强化学习让主模型生成更高分的回答。详见 [训练、微调与对齐](/llm/training-alignment)。
 
+## Rubric
+
+评分量规。把评分标准写成维度与分值的明确规则（如“按 0–2 分评价回答是否解决了用户的问题，0 = 未解决……”），交给人或 LLM-as-a-Judge 逐项打分；量规越具体、例子越多，打分越稳定。详见 [效果评估](/prompting/evaluation)。
+
 ## safetensors
 
 safetensors。为安全设计的模型权重存储格式，不夹带可执行代码；旧的 `.ckpt` 格式可能被塞入可执行代码，来源不明的文件优先避开。同一扩展名下可能是 checkpoint、LoRA、VAE 等不同内容，按模型页说明判断。详见 [常见模型生态](/models/ecosystems)。
@@ -277,7 +313,7 @@ safetensors。为安全设计的模型权重存储格式，不夹带可执行代
 
 ## Seed
 
-随机种子。固定 seed 可以复现相近结果，便于比较参数。详见 [AI 绘画由哪些部分组成](/concepts/components)。
+随机种子。决定“从哪片噪声出发”的编号：同一环境下固定 seed 加全套参数，可复现同一张图；“固定 seed、只改一处”则是做单变量对照的前提。注意 seed 固定的是起点、不是路径，重绘幅度或采样器一变，同一 seed 的结果也会变。详见 [基本原理](/concepts/how-it-works)。
 
 ## Self-Attention
 
@@ -286,6 +322,10 @@ safetensors。为安全设计的模型权重存储格式，不夹带可执行代
 ## Self-supervised Learning
 
 自监督学习。从数据自身构造监督信号的学习方式：遮住一部分输入，让模型预测被遮住的内容，不需要人工打标签。大模型的预训练用的正是这一路。详见 [机器学习入门](/ai/machine-learning)。
+
+## Similarity Metric
+
+相似度度量。比较两个向量有多像的打分方式，常用三族：余弦相似度比夹角、点积看方向也看长度、欧氏距离量绝对位置的远近；向量归一化后余弦与点积的排序等价。详见 [检索与向量](/llm/retrieval)。
 
 ## SFT
 
@@ -317,7 +357,7 @@ SFT（Supervised Fine-Tuning，指令微调）。用成对的“指令-回答”
 
 ## Textual Inversion
 
-AI 绘画中的小型提示词嵌入，用少量学习到的向量触发特定概念或改善某类输出。它是 Embedding 的一种具体应用，不等同于通用语义 Embedding。详见 [Tokenization 与 Embedding](/llm/tokenization-embedding)。
+文本反演。AI 绘画中的小型提示词嵌入，用少量学习到的向量触发特定概念或改善某类输出。它是 Embedding 的一种具体应用，不等同于通用语义 Embedding。详见 [Tokenization 与 Embedding](/llm/tokenization-embedding)。
 
 ## Token
 
@@ -337,7 +377,7 @@ AI 绘画中的小型提示词嵌入，用少量学习到的向量触发特定�
 
 ## Top-p
 
-也称 Nucleus Sampling。按概率从高到低保留累计概率首次达到阈值 `p` 的最小候选集合，再重新归一化并采样；候选数量会动态变化。详见 [推理与解码](/llm/inference-decoding)。
+核采样，也称 Nucleus Sampling。按概率从高到低保留累计概率首次达到阈值 `p` 的最小候选集合，再重新归一化并采样；候选数量会动态变化。详见 [推理与解码](/llm/inference-decoding)。
 
 ## Training Set
 
