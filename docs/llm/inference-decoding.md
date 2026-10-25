@@ -217,6 +217,15 @@ Top-k 固定最多保留 5 个高概率候选；Top-p 保留累计概率达到 0
 
 </details>
 
+### 5. 需要“每次运行结果都一样”的任务（如数据抽取），解码参数该怎么设？为什么说 Temperature=0 只是近似？
+
+<details>
+<summary>查看答案</summary>
+
+用 Greedy 或关闭采样：每步直接取最高概率 Token，行为确定。界面的 Temperature=0 是实现约定——数学上 Temperature 须大于 0，它的实际效果是把分布压得极尖、高分 Token 几乎必选，近似确定但仍保留采样机制；要完全确定，准确的概念是 Greedy。代价是失去多样性，且模型早期一步选错就会沿错误路径走到底，没有低概率路径可纠偏。
+
+</details>
+
 ## 关联阅读
 
 - **前置概念：** [Transformer 直觉](/llm/transformer)说明 Attention 如何利用上下文。

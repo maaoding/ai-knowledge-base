@@ -41,7 +41,7 @@ outline: false
 
 ## Benchmark
 
-基准测试。公开的标准考试（如 MMLU、HumanEval、SWE-bench），用于横向比较模型的大致能力段位。分数不能直接预测具体任务的表现，可能存在数据污染与任务分布差异；最终应以自己的固定测试集验证。详见 [效果评估](/prompting/evaluation)。
+基准测试。公开的标准考试（如 MMLU、HumanEval、SWE-bench），用于横向比较模型的大致能力段位。分数不能直接预测具体任务的表现，可能存在数据污染与任务分布差异；最终应以自己的固定测试集验证。与 Baseline 的区别：Benchmark 是公开的横向标尺，Baseline 是你自己的改动前记录——一个和别人比，一个和自己比。详见 [效果评估](/prompting/evaluation)。
 
 ## Bias
 
@@ -61,11 +61,11 @@ CFG（Classifier-Free Guidance，无分类器引导）。AI 绘画中控制模�
 
 ## Checkpoint
 
-保存某一训练阶段模型权重和相关状态的文件。AI 绘画中常见扩展名包括 `.safetensors` 和 `.ckpt`，日常说“换底模”通常就是换一个 checkpoint 文件。详见 [底模是什么](/concepts/base-model)。
+保存某一训练阶段模型权重和相关状态的文件。AI 绘画中常见扩展名包括 `.safetensors` 和 `.ckpt`，日常说“换底模”通常就是换一个 checkpoint 文件。与 Base Model 的关系：底模是“属于哪一系”的概念，checkpoint 是承载它的具体文件。详见 [底模是什么](/concepts/base-model)。
 
 ## Chunk
 
-分块，也称切片。文档切分后的片段。RAG 通常先把长文档拆成 Chunk，再建立索引和检索。切分过细会丢失上下文，过大则可能降低检索精度。详见 [RAG 入门](/llm/rag-agent)。
+分块，也称切片。文档切分后的片段。RAG 通常先把长文档拆成 Chunk，再建立索引和检索。切分过细会丢失上下文，过大则可能降低检索精度。与 Token 的区别：Token 是模型读写的最小单位，Chunk 是检索侧为建索引切出的较大片段，一个 Chunk 通常包含许多 Token。详见 [RAG 入门](/llm/rag-agent)。
 
 ## CLIP
 
@@ -157,7 +157,7 @@ GAN（Generative Adversarial Network，生成对抗网络）。由生成器与�
 
 ## Inference
 
-推理。使用训练完成的模型处理输入并生成预测或内容的阶段。普通用户的大多数模型调用都属于推理。详见 [推理与解码](/llm/inference-decoding)。
+推理。使用训练完成的模型处理输入并生成预测或内容的阶段。普通用户的大多数模型调用都属于推理。注意中文“推理”双义：这里指 Inference（模型运行），多步思考意义上的“推理”是 Reasoning，见 [Reasoning Model](#reasoning-model) 词条。详见 [推理与解码](/llm/inference-decoding)。
 
 ## IP-Adapter
 
@@ -309,7 +309,7 @@ safetensors。为安全设计的模型权重存储格式，不夹带可执行代
 
 ## Scheduler
 
-调度器，控制去噪过程中噪声强度的变化方式。详见 [采样器与步数](/concepts/samplers)。
+调度器，控制去噪过程中噪声强度的变化方式。与采样器的分工：采样器决定每一步怎么走（算法），调度器决定每一步走多远（噪声强度的安排），工具里常成对出现、按模型卡推荐组合使用。详见 [采样器与步数](/concepts/samplers)。
 
 ## Seed
 
@@ -321,11 +321,11 @@ safetensors。为安全设计的模型权重存储格式，不夹带可执行代
 
 ## Self-supervised Learning
 
-自监督学习。从数据自身构造监督信号的学习方式：遮住一部分输入，让模型预测被遮住的内容，不需要人工打标签。大模型的预训练用的正是这一路。详见 [机器学习入门](/ai/machine-learning)。
+自监督学习。从数据自身构造监督信号的学习方式：遮住一部分输入，让模型预测被遮住的内容，不需要人工打标签。与监督学习的区别：标签不是人工标注的，而是从数据自身构造的，因此能吃下海量无标注文本——大模型的预训练用的正是这一路。详见 [机器学习入门](/ai/machine-learning)。
 
 ## SFT
 
-SFT（Supervised Fine-Tuning，指令微调）。用成对的“指令-回答”示例继续训练预训练模型，让它学会按指令完成任务、遵守输出格式。它教的是“怎么用”预训练能力，不是往模型里塞新知识。详见 [训练、微调与对齐](/llm/training-alignment)。
+SFT（Supervised Fine-Tuning，指令微调）。用成对的“指令-回答”示例继续训练预训练模型，让它学会按指令完成任务、遵守输出格式。它教的是“怎么用”预训练能力，不是往模型里塞新知识。与 RLHF 的区别：SFT 模仿标准答案学“怎么答”，RLHF 靠人类偏好比较学“哪个更好”，两者常先后接力。详见 [训练、微调与对齐](/llm/training-alignment)。
 
 ## Similarity Metric
 
@@ -373,7 +373,7 @@ SFT（Supervised Fine-Tuning，指令微调）。用成对的“指令-回答”
 
 ## Top-k
 
-解码采样方法。每一步只保留概率最高的 `k` 个候选 Token，再重新归一化并采样。候选数量固定，不会自动适应概率分布的集中程度。详见 [推理与解码](/llm/inference-decoding)。
+解码采样方法。每一步只保留概率最高的 `k` 个候选 Token，再重新归一化并采样。候选数量固定，不会自动适应概率分布的集中程度——这是它与 Top-p 最主要的区别：分布很尖时 Top-p 可能只留一两个候选，分布平缓时可能留几十个。详见 [推理与解码](/llm/inference-decoding)。
 
 ## Top-p
 
