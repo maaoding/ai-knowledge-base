@@ -155,6 +155,23 @@ for (const file of files) {
       problems.push(`glossary.md: 条目乱序「${entries[i - 1].title}」应排在「${entries[i].title}」之后`)
     }
   }
+
+  // 快速跳转锚应指向对应字母区间的第一个条目
+  const slugify = (s) =>
+    s.trim().toLowerCase()
+      .replace(/[\u0000-\u001f]/g, '')
+      .replace(/[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g, '-')
+      .replace(/-{2,}/g, '-')
+      .replace(/^-+|-+$/g, '')
+  const jumpLine = text.match(/\*\*快速跳转：\*\*\s*(.+)/)
+  if (jumpLine) {
+    for (const [, letter, anchor] of jumpLine[1].matchAll(/\[([A-Z])\]\(#([^)]+)\)/g)) {
+      const firstInGroup = entries.find((e) => normalize(e.title).charAt(0) === letter.toLowerCase())
+      if (firstInGroup && slugify(firstInGroup.title) !== anchor) {
+        problems.push(`glossary.md: 快速跳转 [${letter}] 应指向 #${slugify(firstInGroup.title)}，实际指向 #${anchor}`)
+      }
+    }
+  }
 }
 
 if (problems.length > 0) {
