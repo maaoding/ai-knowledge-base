@@ -39,12 +39,13 @@ docs/.vitepress/dist
 npm run deploy:check
 ```
 
-该命令等于「构建（含 RSS）+ 产物校验」：先跑一次 `docs:build`，再由 `scripts/deploy-check.mjs` 只读校验 `docs/.vitepress/dist`。
+该命令等于「源校验 + 构建（含 RSS）+ 产物校验」：先由 `scripts/check-content.mjs` 校验 `docs/` 源文件，再跑一次 `docs:build`，最后由 `scripts/deploy-check.mjs` 只读校验 `docs/.vitepress/dist`。
 
-`scripts/` 下两个脚本的分工：
+`scripts/` 下三个脚本的分工：
 
+- `check-content.mjs`：不构建，只校验 Markdown 源——文章必备模板块（description、一句话结论、前置知识、自测、带理由的关联阅读）、术语表回链与字母序、文字细节（全角空格、GB 单位空格、中文间单破折号连接号）；任一项不过就以非零状态退出。
 - `generate-rss.mjs`：生成 `dist/rss.xml` 订阅源，由 `docs:build` 自动调用，不需要单独执行。
-- `deploy-check.mjs`：不构建，只核对 `dist` 里的必需文件（`index.html`、`CNAME`、`.nojekyll`、`robots.txt`、`sitemap.xml`、`rss.xml`）、`CNAME` 域名，以及所有站内链接是否都有对应产物、站内链接的 `#锚点` 是否存在；任一项不过就以非零状态退出。
+- `deploy-check.mjs`：不构建，只核对 `dist` 里的必需文件（`index.html`、`CNAME`、`.nojekyll`、`robots.txt`、`sitemap.xml`、`rss.xml`）、`CNAME` 域名、所有站内链接是否都有对应产物、站内链接的 `#锚点` 是否存在，以及 RSS 条目数量与链接可解析；任一项不过就以非零状态退出。
 
 ## GitHub Pages
 

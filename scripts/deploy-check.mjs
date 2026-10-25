@@ -126,6 +126,23 @@ for (const file of htmlFiles) {
   }
 }
 
+// RSS 内容断言：条目数在生成上限内，且每条链接都能在产物内解析。
+// 只取链接的路径部分与产物比对，不断言域名（站点地址由 CNAME 检查负责）。
+const rssMaxItems = 20
+const rssXml = await readFile(join(distDir, 'rss.xml'), 'utf8')
+const rssItems = [...rssXml.matchAll(/<item>[\s\S]*?<\/item>/g)].map((m) => m[0])
+if (rssItems.length === 0 || rssItems.length > rssMaxItems) {
+  throw new Error(`Unexpected RSS item count: ${rssItems.length}`)
+}
+for (const item of rssItems) {
+  const title = item.match(/<title>([^<]*)<\/title>/)?.[1] ?? ''
+  const link = item.match(/<link>([^<]*)<\/link>/)?.[1] ?? ''
+  if (!title.trim()) throw new Error(`RSS item with empty title: ${link}`)
+  if (resolveTarget(new URL(link).pathname.replace(/^\/+/, '')) === null) {
+    throw new Error(`RSS item link has no dist page: ${link}`)
+  }
+}
+
 if (broken.length > 0) {
   throw new Error(`Broken local links found (${broken.length}):\n${broken.join('\n')}`)
 }
