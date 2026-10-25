@@ -31,13 +31,13 @@ outline: false
 
 反向传播。从输出层向前高效计算损失对各参数的梯度，通常与梯度下降或其他优化器配合训练神经网络。反向传播负责计算梯度，不等同于参数更新算法。详见 [神经网络直觉](/ai/neural-networks)。
 
-## Base Model
-
-基座模型（也称基础模型）。在 LLM 中通常指尚未完成特定指令对齐的通用预训练模型；在 AI 绘画中也用于说明 checkpoint 或 LoRA 所属的模型生态。详见 [底模是什么](/concepts/base-model)。
-
 ## Baseline
 
 基线。改动前的第一次完整评测记录：没有基线，任何“变好了”都缺少参照物。每次改 Prompt、换模型或调参数后重跑同一组测试，与基线比较分数再决定采纳还是回滚。详见 [效果评估](/prompting/evaluation)。
+
+## Base Model
+
+基座模型（也称基础模型）。在 LLM 中通常指尚未完成特定指令对齐的通用预训练模型；在 AI 绘画中也用于说明 checkpoint 或 LoRA 所属的模型生态。详见 [底模是什么](/concepts/base-model)。
 
 ## Benchmark
 
@@ -147,25 +147,25 @@ GAN（Generative Adversarial Network，生成对抗网络）。由生成器与�
 
 幻觉。模型生成了流畅、看似合理但缺少依据或事实错误的内容。检索、工具和 Prompt 可以降低风险，但仍需要来源与结果验证。详见 [大模型入门](/llm/basics)。
 
-## Hyperparameter
-
-超参数。训练开始前人工设定的配置（如学习率、轮次），与模型训练中学出来的参数相对。详见 [机器学习入门](/ai/machine-learning)。
-
 ## Hybrid Retrieval
 
 混合检索。关键词路（BM25）与向量路（语义相似度）并行、再融合排名的检索做法；最常用的融合是 RRF（Reciprocal Rank Fusion，倒数排名融合）——把每条结果在两路里排名的倒数相加，两路都靠前的胜出。详见 [检索与向量](/llm/retrieval)。
+
+## Hyperparameter
+
+超参数。训练开始前人工设定的配置（如学习率、轮次），与模型训练中学出来的参数相对。详见 [机器学习入门](/ai/machine-learning)。
 
 ## Inference
 
 推理。使用训练完成的模型处理输入并生成预测或内容的阶段。普通用户的大多数模型调用都属于推理。详见 [推理与解码](/llm/inference-decoding)。
 
-## Knowledge Cutoff
-
-知识截止。模型训练数据的时间下限，之后发生的事它默认不知道。详见 [大模型入门](/llm/basics)。
-
 ## IP-Adapter
 
 内容参考适配器。把参考图的风格或内容注入生成过程，与提示词（内容方向）、LoRA（画风补充）、ControlNet（结构构图）各管一个维度。详见 [ControlNet 入门](/concepts/controlnet)。
+
+## Knowledge Cutoff
+
+知识截止。模型训练数据的时间下限，之后发生的事它默认不知道。详见 [大模型入门](/llm/basics)。
 
 ## KV Cache
 
@@ -239,13 +239,13 @@ Mean Reciprocal Rank，平均倒数排名。检索评估指标：看第一条正
 
 位置编码。给序列中每个 Token 注入位置信息的机制，让注意力能区分词序；Transformer 常用 RoPE 等旋转位置编码方案。详见 [Tokenization 与 Embedding](/llm/tokenization-embedding)。
 
-## Preprocessor
-
-预处理器。把参考图加工成条件图的组件：真人照片经 OpenPose 提取骨架、风景照提取深度图、草稿跑 Canny 提取边缘；工具里通常与 ControlNet 节点成对出现。条件类型常见的即线稿（Canny）、深度（Depth）、姿势骨架（OpenPose）。详见 [ControlNet 入门](/concepts/controlnet)。
-
 ## Preprint
 
 预印本。正式发表前先公开在 arXiv 等平台的论文版本，未经同行评审。详见 [常用网站](/resources/websites)。
+
+## Preprocessor
+
+预处理器。把参考图加工成条件图的组件：真人照片经 OpenPose 提取骨架、风景照提取深度图、草稿跑 Canny 提取边缘；工具里通常与 ControlNet 节点成对出现。条件类型常见的即线稿（Canny）、深度（Depth）、姿势骨架（OpenPose）。详见 [ControlNet 入门](/concepts/controlnet)。
 
 ## Pre-training
 
@@ -267,13 +267,13 @@ Mean Reciprocal Rank，平均倒数排名。检索评估指标：看第一条正
 
 Retrieval-Augmented Generation，检索增强生成。先从外部资料中检索相关片段，再把资料放入上下文供模型回答。详见 [RAG 入门](/llm/rag-agent)。
 
-## Recall@k
-
-前 k 条命中率。检索评估指标：应命中的片段有没有出现在返回的前 k 条里，多个标准片段时用命中数除以应命中数；检到但排第 8 名、k 给到 10 就不扣分。数值低是召回问题，查切分粒度、Embedding 模型，或加大 k、上混合检索。详见 [检索与向量](/llm/retrieval)。
-
 ## Reasoning Model
 
 推理模型。在给出最终答案前先生成中间思考 Token 的模型（这里的“推理”指 Reasoning 多步思考，注意与指 Inference 的“推理”区分），如 GPT-5 的内置思考模式、Claude 的扩展思考、Gemini 的思考模式，以及 DeepSeek-R1、Qwen 思考系列等开源推理模型。擅长可分步验证的任务；思考 Token 会增加延迟与成本。详见 [推理与解码](/llm/inference-decoding)。
+
+## Recall@k
+
+前 k 条命中率。检索评估指标：应命中的片段有没有出现在返回的前 k 条里，多个标准片段时用命中数除以应命中数；检到但排第 8 名、k 给到 10 就不扣分。数值低是召回问题，查切分粒度、Embedding 模型，或加大 k、上混合检索。详见 [检索与向量](/llm/retrieval)。
 
 ## Regression
 
@@ -323,13 +323,13 @@ safetensors。为安全设计的模型权重存储格式，不夹带可执行代
 
 自监督学习。从数据自身构造监督信号的学习方式：遮住一部分输入，让模型预测被遮住的内容，不需要人工打标签。大模型的预训练用的正是这一路。详见 [机器学习入门](/ai/machine-learning)。
 
-## Similarity Metric
-
-相似度度量。比较两个向量有多像的打分方式，常用三族：余弦相似度比夹角、点积看方向也看长度、欧氏距离量绝对位置的远近；向量归一化后余弦与点积的排序等价。详见 [检索与向量](/llm/retrieval)。
-
 ## SFT
 
 SFT（Supervised Fine-Tuning，指令微调）。用成对的“指令-回答”示例继续训练预训练模型，让它学会按指令完成任务、遵守输出格式。它教的是“怎么用”预训练能力，不是往模型里塞新知识。详见 [训练、微调与对齐](/llm/training-alignment)。
+
+## Similarity Metric
+
+相似度度量。比较两个向量有多像的打分方式，常用三族：余弦相似度比夹角、点积看方向也看长度、欧氏距离量绝对位置的远近；向量归一化后余弦与点积的排序等价。详见 [检索与向量](/llm/retrieval)。
 
 ## Supervised Learning
 
